@@ -36,7 +36,7 @@ use DawPhpValidator\Validator;
 if (isset($_POST) && !empty($_POST)) {
     $validator = new Validator();
 
-    $validator = new Validator($_GET);  // pour y est à GET au lieu de POST
+    //$validator = new Validator($_GET);  // For method GET instead of POST
 
     $validator->rules([
         'alpha' => [
