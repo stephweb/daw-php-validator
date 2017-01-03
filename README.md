@@ -22,6 +22,16 @@ php composer.phar require stephweb/daw-php-validator
 
 
 
+## How to do ? :
+* You must first instantiate the Validator.
+* Then you pass him validation rules.
+* Then check whether the submitted form is valid according to the rules defined.
+* The response can then be returned in HTML or Json format.
+
+
+
+
+
 ## Example :
 
 ### Code PHP :
@@ -35,7 +45,7 @@ require 'daw-php-validator/DawPhpValidator/bootstrap/autoload.php';
 
 use DawPhpValidator\Validator;
 
-if (isset($_POST) && !empty($_POST)) {
+if (Request::isPost()) {
     $validator = new Validator();
 
     //$validator = new Validator($_GET);  // For method GET instead of POST
@@ -110,9 +120,9 @@ if (isset($_POST) && !empty($_POST)) {
     if ($validator->isValid()) {
         // Success
     } else {
-        var_dump($validator->getErrors());
-        var_dump($validator->getErrorsHtml());
-        var_dump($validator->getErrorsJson());
+        var_dump($validator->getErrors());    // return array
+        var_dump($validator->getErrorsHtml());    // return string
+        var_dump($validator->getErrorsJson());    // return string
     }
 }
 
@@ -195,5 +205,29 @@ if (isset($_POST) && !empty($_POST)) {
 
     <input type="submit" value="Envoyer">
 </form>
+
+```
+
+
+
+
+
+## Description of the "rules" method :
+
+```php
+
+<?php
+
+use DawPhpValidator\Validator;
+
+if (Request::isPost()) {
+    $validator = new Validator();
+
+    $validator->rules([
+        'input_name' => $arrayRules,
+    ]);
+
+    var_dump($validator->isValid());    // return bool
+}
 
 ```

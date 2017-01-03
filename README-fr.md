@@ -22,6 +22,16 @@ php composer.phar require stephweb/daw-php-validator
 
 
 
+## Comment faire ? :
+* Il faut d'abord instancier le Validateur.
+* Il faut ensuite lui passez lui des règles de validation.
+* Il faut ensuite vérifiez si le formulaire soumis est valide en fonction des règles définis.
+* On peut ensuite renvoyer la réponse au format HTML ou au format Json.
+
+
+
+
+
 ## Exemple :
 
 ### Code PHP :
@@ -35,7 +45,7 @@ require 'daw-php-validator/DawPhpValidator/bootstrap/autoload.php';
 
 use DawPhpValidator\Validator;
 
-if (isset($_POST) && !empty($_POST)) {
+if (Request::isPost()) {
     $validator = new Validator();
 
     //$validator = new Validator($_GET);  // pour method GET au lieu de POST
@@ -110,9 +120,9 @@ if (isset($_POST) && !empty($_POST)) {
     if ($validator->isValid()) {
         // Success
     } else {
-        var_dump($validator->getErrors());
-        var_dump($validator->getErrorsHtml());
-        var_dump($validator->getErrorsJson());
+        var_dump($validator->getErrors());    // return array
+        var_dump($validator->getErrorsHtml());    // return string
+        var_dump($validator->getErrorsJson());    // return string
     }
 }
 
@@ -195,5 +205,29 @@ if (isset($_POST) && !empty($_POST)) {
 
     <input type="submit" value="Envoyer">
 </form>
+
+```
+
+
+
+
+
+## Description de la méthode "rules" :
+
+```php
+
+<?php
+
+use DawPhpValidator\Validator;
+
+if (Request::isPost()) {
+    $validator = new Validator();
+
+    $validator->rules([
+        'name_du_input' => $arrayRules,
+    ]);
+
+    var_dump($validator->isValid());    // return bool
+}
 
 ```
