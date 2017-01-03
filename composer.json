@@ -1,0 +1,24 @@
+{
+    "name": "stephweb/daw-php-validator",
+    "description": "PHP library of simple Validation system",
+    "type": "library",
+    "keywords": ["php","validation","validator"],
+    "license": "MIT",
+    "homepage": "https://www.devandweb.fr/packages/daw-php-validator",
+    "authors": [
+        {
+            "name": "stephweb",
+            "email": "stephweb@live.fr"
+        }
+    ],
+    "require": {
+        "php": ">=5.6"
+    },
+    "autoload": {
+        "psr-4" : {
+            "DawPhpValidator\\": "DawPhpValidator/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
