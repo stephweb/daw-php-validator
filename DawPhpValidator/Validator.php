@@ -130,10 +130,10 @@ class Validator implements ValidatorInterface
     {
         foreach ($array as $input => $rules) {
             $this->input = $input;
-            
-            $this->setLabel($rules);
 
             if (is_array($rules)) {
+                $this->setLabel($rules);
+                
                 foreach ($rules as $rule => $value) {
                     if ($rule != 'label') {
                         $this->value = $value;

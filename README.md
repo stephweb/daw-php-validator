@@ -51,7 +51,7 @@ if (Request::isPost()) {
 
     //$validator = new Validator($_GET);  // For method GET instead of POST
 
-    // Add validation rules
+    // Add validation rule for inputs
     $validator->rules([
         'alpha' => [
              'alpha' => true
