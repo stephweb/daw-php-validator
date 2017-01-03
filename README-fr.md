@@ -23,6 +23,8 @@ php composer.phar require stephweb/daw-php-validator
 
 
 ## Exemple :
+
+### Code PHP :
 ```php
 
 <?php
@@ -114,5 +116,84 @@ if (isset($_POST) && !empty($_POST)) {
     }
 }
 
+
+```
+
+
+
+### Code HTML :
+```html
+
+<form action="#" method="post">
+    <label>Alpha :</label>
+    <input type="text" name="alpha"><br>
+
+    <label>Alpha numerique :</label>
+    <input type="text" name="alpha_numeric"><br>
+
+    <label>Between :</label>
+    <input type="text" name="between"><br>
+
+    <label>Mot de passe :</label>
+    <input type="password" name="password"><br>
+
+    <label>Confirmamtion du Mot de passe :</label>
+    <input type="password_confirmation" name="password_confirmation"><br>
+
+    <label>Empty :</label>
+    <input type="empty" name="empty"><br>
+
+    <label>Date :</label>
+    <input type="date" name="date"><br>
+
+    <label>Date time :</label>
+    <input type="date_time" name="date_time"><br>
+
+    <label>Email :</label>
+    <input type="email" name="email"><br>
+
+    <label>IP :</label>
+    <input type="ip" name="ip"><br>
+
+    <label>Nom du fichier :</label>
+    <input type="name_file" name="name_file"><br>
+
+    <label>Code postale :</label>
+    <input type="postal_code" name="postal_code"><br>
+
+    <label>Slug :</label>
+    <input type="text" name="slug"><br>
+
+    <label>TEL :</label>
+    <input type="text" name="tel"><br>
+
+    <label>Integer :</label>
+    <input type="text" name="integer"><br>
+
+    <label>In array :</label>
+    <select name="in_array">
+        <option value="0">Choisir...</option>
+        <option value="1">Choix 1</option>
+        <option value="2">Choix 2</option>
+        <option value="3">Choix 3</option>
+    </select><br>
+
+    <label>Max :</label>
+    <input type="text" name="max"><br>
+
+    <label>Min :</label>
+    <input type="text" name="min"><br>
+
+    <label>No regex :</label>
+    <input type="text" name="no_regex"><br>
+
+    <label>Regex :</label>
+    <input type="text" name="regex"><br>
+
+    <label>Requis :</label>
+    <input type="text" name="required"><br>
+
+    <input type="submit" value="Envoyer">
+</form>
 
 ```
