@@ -46,10 +46,12 @@ require 'daw-php-validator/DawPhpValidator/bootstrap/autoload.php';
 use DawPhpValidator\Validator;
 
 if (Request::isPost()) {
+    // Instantiate the Validator
     $validator = new Validator();
 
     //$validator = new Validator($_GET);  // For method GET instead of POST
 
+    // Add validation rules
     $validator->rules([
         'alpha' => [
              'alpha' => true
@@ -116,10 +118,12 @@ if (Request::isPost()) {
             'required' => true,     
         ],
     ]);
-
+    
+    // Verify if the form is valid
     if ($validator->isValid()) {
         // Success
     } else {
+        // Show all errors :
         var_dump($validator->getErrors());    // return array
         var_dump($validator->getErrorsHtml());    // return string
         var_dump($validator->getErrorsJson());    // return string
@@ -228,6 +232,22 @@ if (Request::isPost()) {
     ]);
 
     var_dump($validator->isValid());    // return bool
+}
+
+```
+
+
+
+
+
+## Verify if a specific error exists :
+
+```php
+
+<?php
+
+if ($validator->hasError('input_name')) {
+    var_dump($validator->getError('input_name'));    // return string
 }
 
 ```

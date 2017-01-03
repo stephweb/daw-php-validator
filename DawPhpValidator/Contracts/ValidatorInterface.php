@@ -31,6 +31,18 @@ Interface ValidatorInterface
     public function isValid();
 
     /**
+     * @param string $key - name de l'input
+     * @return bool - True si input à une erreur
+     */
+    public function hasError($key);
+
+    /**
+     * @param string $key - name de l'input
+     * @return string - Erreur(s) de l'input
+     */
+    public function getError($key);
+
+    /**
      * @return array - Array associatif des erreurs
      */
     public function getErrors();
