@@ -20,6 +20,11 @@ class Config extends SingletonConfig
     private static $require = [];
 
     /**
+     * @var array
+     */
+    private static $config = [];
+
+    /**
      * Pour charger fichier(s) de config
      *
      * @param string $method
@@ -29,6 +34,10 @@ class Config extends SingletonConfig
      */
     public function __call($method, array $arguments)
     {
+        if ($method === 'config' && self::$config !== []) {
+            return self::$config;
+        }
+
         if (!isset(self::$require[$method])) {
             $path = dirname(dirname(dirname(__FILE__))).'/config/'.$method.'.php';
             
@@ -40,6 +49,15 @@ class Config extends SingletonConfig
         }
 
         return self::$require[$method];
+    }
+
+
+    /**
+     * @param array $config
+     */
+    public static function set(array $config)
+    {
+        self::$config = $config;
     }
 
 }

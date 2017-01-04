@@ -35,7 +35,7 @@ class Lang extends SingletonConfig
             if (file_exists($path)) {
                 self::$require[$method] = require_once $path;
             } else {
-                throw new ExceptionHandler('Lang file "'.$method.'" not found.');
+                throw new ExceptionHandler('Lang file "'.$this->getLang().'" not found.');
             }
         }
 
