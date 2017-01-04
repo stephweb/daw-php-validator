@@ -50,7 +50,7 @@ class Lang extends SingletonConfig
         static $lang;
 
         if ($lang === null) {
-            $lang = Config::getInstance()->config()['lang'];
+            $lang = Config::getInstance()->get()['lang'];
         }
 
         return $lang;

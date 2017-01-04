@@ -2,54 +2,22 @@
 
 namespace DawPhpValidator\Config;
 
-use DawPhpValidator\Exception\ExceptionHandler;
+use DawPhpValidator\Contracts\Config\ConfigInterface;
 
 /**
- * Pour require les fichiers qui sont dans le dossier de config
+ * Pour require les fichier(s) qui sont dans le dossier de config
  */
-class Config extends SingletonConfig
+class Config extends SingletonConfig implements ConfigInterface
 {
     /**
      * @var Config
      */
     protected static $instance;
-
-    /**
-     * @var array
-     */
-    private static $require = [];
-
+    
     /**
      * @var array
      */
     private static $config = [];
-
-    /**
-     * Pour charger fichier(s) de config
-     *
-     * @param string $method
-     * @param array $arguments
-     * @return mixed
-     * @throws ExceptionHandler
-     */
-    public function __call($method, array $arguments)
-    {
-        if ($method === 'config' && self::$config !== []) {
-            return self::$config;
-        }
-
-        if (!isset(self::$require[$method])) {
-            $path = dirname(dirname(dirname(__FILE__))).'/config/'.$method.'.php';
-            
-            if (file_exists($path)) {
-                self::$require[$method] = require_once $path;
-            } else {
-                throw new ExceptionHandler('Config file "'.$method.'" not foud.');
-            }
-        }
-
-        return self::$require[$method];
-    }
 
 
     /**
@@ -58,6 +26,25 @@ class Config extends SingletonConfig
     public static function set(array $config)
     {
         self::$config = $config;
+    }
+
+
+    /**
+     * @return array
+     */
+    public static function get()
+    {
+        static $config;
+
+        if ($config === null) {
+            if (self::$config !== []) {
+                $config = self::$config;
+            } else {
+                $config = require_once dirname(dirname(dirname(__FILE__))).'/config/config.php';
+            }
+        }
+
+        return $config;
     }
 
 }

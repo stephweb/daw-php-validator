@@ -8,16 +8,6 @@ namespace DawPhpValidator\Config;
 abstract class SingletonConfig
 {
     /**
-     * Pour charger fichier(s)
-     *
-     * @param string $method
-     * @param array $arguments
-     * @return mixed
-     * @throws Exception
-     */
-    abstract public function __call($method, array $arguments);
-
-    /**
      * Singleton
      *
      * @return mixed

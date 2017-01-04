@@ -6,6 +6,8 @@
 
 require_once dirname(dirname(__FILE__)).'/Exception/ExceptionHandler.php';
 
+require_once dirname(dirname(__FILE__)).'/Contracts/Config/ConfigInterface.php';
+
 require_once dirname(dirname(__FILE__)).'/Contracts/ValidatorInterface.php';
 
 require_once dirname(dirname(__FILE__)).'/Config/SingletonConfig.php';
