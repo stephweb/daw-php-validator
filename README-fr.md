@@ -251,3 +251,35 @@ if ($validator->hasError('input_name')) {
 }
 
 ```
+
+
+
+
+
+## Modifier la configuration par defaut :
+
+```php
+
+<?php
+
+use DawPhpValidator\Config\Config;
+
+// Changer la langue
+Config::set(['lang'=>'en']);
+
+```
+
+
+
+
+
+## Bugs et vulnérabilités de sécurité
+Si vous découvrez un bug ou une faille de sécurité au sein de DAW PHP Validator, s'il vous plaît envoyer message à Steph. Merci.
+Toutes les beg et failles de sécurité seront traitées rapidement.
+
+
+
+
+
+## Licence
+DAW PHP Validator est une librarie open-source sous la licence MIT.
