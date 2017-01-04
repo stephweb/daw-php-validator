@@ -256,7 +256,7 @@ if ($validator->hasError('input_name')) {
 
 
 
-## Modifier la configuration par defaut :
+## Modifier la configuration par défaut :
 
 ```php
 
@@ -264,7 +264,7 @@ if ($validator->hasError('input_name')) {
 
 use DawPhpValidator\Config\Config;
 
-// Changer la langue - 'fr' et 'en' sont supportés
+// Changer la langue. Est à 'fr' par défaut. 'fr' et 'en' sont supportés
 Config::set(['lang'=>'en']);
 
 ```

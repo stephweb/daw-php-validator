@@ -264,7 +264,7 @@ if ($validator->hasError('input_name')) {
 
 use DawPhpValidator\Config\Config;
 
-// Change lang - Supported: 'fr', 'en'
+// Change the language - Is 'fr' by default. Supported: 'fr', 'en'
 Config::set(['lang'=>'en']);
 
 ```
