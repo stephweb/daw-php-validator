@@ -7,7 +7,7 @@ use DawPhpValidator\Contracts\Config\ConfigInterface;
 /**
  * Pour require les fichier(s) qui sont dans le dossier de config
  */
-class Config extends SingletonConfig implements ConfigInterface
+final class Config extends SingletonConfig implements ConfigInterface
 {
     /**
      * @var Config

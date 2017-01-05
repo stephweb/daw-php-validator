@@ -148,9 +148,9 @@ class Validator implements ValidatorInterface
     }
 
     /**
-     * @param mixed $rules
+     * @param array $rules
      */
-    private function setLabel($rules)
+    private function setLabel(array $rules)
     {
         if (isset($rules['label'])) {
             $this->label = $rules['label'];

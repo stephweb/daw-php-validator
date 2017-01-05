@@ -7,7 +7,7 @@ use DawPhpValidator\Exception\ExceptionHandler;
 /**
  * Pour require les fichiers qui sont dans le dossier de config
  */
-class Lang extends SingletonConfig
+final class Lang extends SingletonConfig
 {
     /**
      * @var Lang
