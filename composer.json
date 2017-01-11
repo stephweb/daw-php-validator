@@ -5,10 +5,16 @@
     "keywords": ["php","validation","validator"],
     "license": "MIT",
     "homepage": "https://www.devandweb.fr/packages/daw-php-validator",
+    "support": {
+        "email": "stephweb@live.fr",
+        "docs": "https://www.devandweb.fr/packages/daw-php-validator"
+    },
     "authors": [
         {
             "name": "stephweb",
-            "email": "stephweb@live.fr"
+            "email": "stephweb@live.fr",
+            "homepage": "https://www.devandweb.fr",
+            "role": "Developer"
         }
     ],
     "require": {

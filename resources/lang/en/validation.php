@@ -7,7 +7,7 @@
 return [
 
     /**
-     * Messages d'erreurs des validations
+     * Validation error messages
      */
     'alpha' => 'The "{field}" field must contain only alphabetical characters without accents and without special characters.',
     'alpha_numeric' => 'The "{field}" field must contain only alphanumeric characters.',
@@ -32,10 +32,11 @@ return [
     'required' => 'The "{field}" field is required.',
 
     /**
-     * Attributs de validation personnalisés
+     * Custom validation attributes
      */
     'attributes' => [
-
+        "first_name" => "First Name",
+        "last_name" => "Last Name",
     ],
     
 ];

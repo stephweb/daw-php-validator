@@ -5,7 +5,7 @@
 
 DAW PHP Validator is a PHP library of simple Validation system.
 
-### Full documentation :
+### Full documentation:
 https://www.devandweb.fr/packages/daw-php-validator
 
 
@@ -13,7 +13,7 @@ https://www.devandweb.fr/packages/daw-php-validator
 
 
 ## Installation
-Installation via Composer :
+Installation via Composer:
 ```
 php composer.phar require stephweb/daw-php-validator
 ```
@@ -22,7 +22,7 @@ php composer.phar require stephweb/daw-php-validator
 
 
 
-## How to do ? :
+## How to do ?
 * You must first instantiate the Validator.
 * Then you pass him validation rules.
 * Then check whether the submitted form is valid according to the rules defined.
@@ -32,9 +32,9 @@ php composer.phar require stephweb/daw-php-validator
 
 
 
-## Example :
+## Example:
 
-### Code PHP :
+### PHP Code (With for example all validation rules available in my method "rules"):
 ```php
 
 <?php
@@ -57,14 +57,13 @@ if (Request::isPost()) {
              'alpha' => true
         ],
         'alpha_numeric' => [
-            'label' => 'Alpha numerique',
+            'label' => 'Alpha numeric',
             'alpha_numeric' => true
         ],
         'between' => [
             'between' => [2, 9]
         ],
         'password' => [
-            'label' => 'Mot de passe',
             'confirm' => [$_POST['password'], $_POST['password_confirmation']]
         ],
         'empty' => [
@@ -83,7 +82,7 @@ if (Request::isPost()) {
             'format_ip' => true,
         ],
         'name_file' => [
-            'label' => 'Nom du fichier',
+            'label' => 'File name',
             'format_name_file' => true
         ],
         'postal_code' => [
@@ -114,7 +113,6 @@ if (Request::isPost()) {
             'regex'=>"#^[a-z]+$#",    
         ],
         'required' => [
-            'label' => 'Requis',
             'required' => true,     
         ],
     ]);
@@ -123,7 +121,7 @@ if (Request::isPost()) {
     if ($validator->isValid()) {
         // Success
     } else {
-        // Show all errors :
+        // Show all errors:
         var_dump($validator->getErrors());    // return array
         var_dump($validator->getErrorsHtml());    // return string
         var_dump($validator->getErrorsJson());    // return string
@@ -135,56 +133,56 @@ if (Request::isPost()) {
 
 
 
-### Code HTML :
+### HTML Code (example of form to test the code PHP of above):
 ```html
 
 <form action="#" method="post">
-    <label>Alpha :</label>
+    <label>Alpha:</label>
     <input type="text" name="alpha"><br>
 
-    <label>Alpha numerique :</label>
+    <label>Alpha numeriqc:</label>
     <input type="text" name="alpha_numeric"><br>
 
-    <label>Between :</label>
+    <label>Between:</label>
     <input type="text" name="between"><br>
 
-    <label>Mot de passe :</label>
+    <label>Password:</label>
     <input type="password" name="password"><br>
 
-    <label>Confirmamtion du Mot de passe :</label>
+    <label>Confirmamtion of Password:</label>
     <input type="password_confirmation" name="password_confirmation"><br>
 
-    <label>Empty :</label>
+    <label>Empty:</label>
     <input type="empty" name="empty"><br>
 
-    <label>Date :</label>
+    <label>Date:</label>
     <input type="date" name="date"><br>
 
-    <label>Date time :</label>
+    <label>Date time:</label>
     <input type="date_time" name="date_time"><br>
 
-    <label>Email :</label>
+    <label>Email:</label>
     <input type="email" name="email"><br>
 
-    <label>IP :</label>
+    <label>IP:</label>
     <input type="ip" name="ip"><br>
 
-    <label>Nom du fichier :</label>
+    <label>File name:</label>
     <input type="name_file" name="name_file"><br>
 
-    <label>Code postale :</label>
+    <label>Postal code:</label>
     <input type="postal_code" name="postal_code"><br>
 
-    <label>Slug :</label>
+    <label>Slug:</label>
     <input type="text" name="slug"><br>
 
-    <label>TEL :</label>
+    <label>TEL:</label>
     <input type="text" name="tel"><br>
 
-    <label>Integer :</label>
+    <label>Integer:</label>
     <input type="text" name="integer"><br>
 
-    <label>In array :</label>
+    <label>In array:</label>
     <select name="in_array">
         <option value="0">Choisir...</option>
         <option value="1">Choix 1</option>
@@ -192,19 +190,19 @@ if (Request::isPost()) {
         <option value="3">Choix 3</option>
     </select><br>
 
-    <label>Max :</label>
+    <label>Max:</label>
     <input type="text" name="max"><br>
 
-    <label>Min :</label>
+    <label>Min:</label>
     <input type="text" name="min"><br>
 
-    <label>No regex :</label>
+    <label>No regex:</label>
     <input type="text" name="no_regex"><br>
 
-    <label>Regex :</label>
+    <label>Regex:</label>
     <input type="text" name="regex"><br>
 
-    <label>Requis :</label>
+    <label>Required:</label>
     <input type="text" name="required"><br>
 
     <input type="submit" value="Envoyer">
@@ -216,7 +214,7 @@ if (Request::isPost()) {
 
 
 
-## Description of the "rules" method :
+## Description of the "rules" method:
 
 ```php
 
@@ -240,7 +238,7 @@ if (Request::isPost()) {
 
 
 
-## Verify if a specific error exists :
+## Verify if a specific error exists:
 
 ```php
 
@@ -256,7 +254,7 @@ if ($validator->hasError('input_name')) {
 
 
 
-## Set default configuration :
+## Set default configuration:
 
 ```php
 

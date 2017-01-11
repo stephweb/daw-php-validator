@@ -34,13 +34,13 @@ php composer.phar require stephweb/daw-php-validator
 
 ## Exemple :
 
-### Code PHP :
+### Code PHP (avec pour exemple toute les règles de validations disponibles dans ma méthode "rules") :
 ```php
 
 <?php
 
-// If you do not use Composer to download this package,
-// you must do it "require" manually
+// Si vous n'avez pas utiliser Composer pour télécharger ce package,
+// vous devez faire le "require" manuellement
 require 'daw-php-validator/DawPhpValidator/bootstrap/autoload.php';
 
 use DawPhpValidator\Validator;
@@ -135,7 +135,7 @@ if (Request::isPost()) {
 
 
 
-### Code HTML :
+### Code HTML (exemple de formulaire pour tester le code PHP de ci-dessus) :
 ```html
 
 <form action="#" method="post">
