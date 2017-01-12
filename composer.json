@@ -4,10 +4,10 @@
     "type": "library",
     "keywords": ["php","validation","validator"],
     "license": "MIT",
-    "homepage": "https://www.devandweb.fr/packages/daw-php-validator",
+    "homepage": "https://www.devandweb.com/packages/daw-php-validator",
     "support": {
         "email": "stephweb@live.fr",
-        "docs": "https://www.devandweb.fr/packages/daw-php-validator"
+        "docs": "https://www.devandweb.com/packages/daw-php-validator"
     },
     "authors": [
         {
