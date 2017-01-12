@@ -486,9 +486,9 @@ class Validator implements ValidatorInterface
      */
     public function getErrorsJson()
     {
-        $htmlRenderer = new JsonRenderer($this);
+        $jsonRenderer = new JsonRenderer($this);
 
-        return $htmlRenderer->getErrors();
+        return $jsonRenderer->getErrors();
     }
     
 }

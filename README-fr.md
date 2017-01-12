@@ -22,11 +22,36 @@ php composer.phar require stephweb/daw-php-validator
 
 
 
-## Comment faire ? :
+## Comment faire ?
 * Il faut d'abord instancier le Validateur.
 * Il faut ensuite lui passez lui des règles de validation.
 * Il faut ensuite vérifiez si le formulaire soumis est valide en fonction des règles définis.
 * On peut ensuite renvoyer la réponse au format HTML ou au format Json.
+
+
+
+
+## Règles de validations disponibles :
+* 'alpha' => bool
+* 'alpha_numeric' => bool
+* 'between' => array (2 valeurs : valeur min, valeur max)
+* 'confirm' => array (les 2 valeurs à vérifier)
+* 'empty' => bool
+* 'format_date' => bool
+* 'format_date_time' => bool
+* 'format_email' => bool
+* 'format_ip' => bool
+* 'format_name_file'
+* 'format_postal_code' => bool
+* 'format_slug' => bool
+* 'format_tel' =>bool
+* 'integer' => bool
+* 'in_array' => array
+* 'max' => int
+* 'min' => int
+* 'no_regex'=> string (regex qui ne doit pas matcher)
+* 'regex'=> string (regex qui doit matcher)
+* 'required' => bool
 
 
 
@@ -108,10 +133,10 @@ if (Request::isPost()) {
             'min' => 5,     
         ],
         'no_regex' => [
-            'no_regex'=>"#^[0-9]+$#",    
+            'no_regex' => "#^[0-9]+$#",    
         ],
         'regex' => [
-            'regex'=>"#^[a-z]+$#",    
+            'regex' => "#^[a-z]+$#",    
         ],
         'required' => [
             'label' => 'Requis',

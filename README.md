@@ -31,6 +31,31 @@ php composer.phar require stephweb/daw-php-validator
 
 
 
+## Available Validation Rules:
+* 'alpha' => bool
+* 'alpha_numeric' => bool
+* 'between' => array (2 values: min value, max value)
+* 'confirm' => array (2 values to verify)
+* 'empty' => bool
+* 'format_date' => bool
+* 'format_date_time' => bool
+* 'format_email' => bool
+* 'format_ip' => bool
+* 'format_name_file'
+* 'format_postal_code' => bool
+* 'format_slug' => bool
+* 'format_tel' =>bool
+* 'integer' => bool
+* 'in_array' => array
+* 'max' => int
+* 'min' => int
+* 'no_regex'=> string (regex which must not match)
+* 'regex'=> string (regex must match)
+* 'required' => bool
+
+
+
+
 
 ## Example:
 
@@ -107,10 +132,10 @@ if (Request::isPost()) {
             'min' => 5,     
         ],
         'no_regex' => [
-            'no_regex'=>"#^[0-9]+$#",    
+            'no_regex' => "#^[0-9]+$#",    
         ],
         'regex' => [
-            'regex'=>"#^[a-z]+$#",    
+            'regex' => "#^[a-z]+$#",    
         ],
         'required' => [
             'required' => true,     
