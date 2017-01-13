@@ -135,7 +135,7 @@ class Validator implements ValidatorInterface
                 $this->setLabel($rules);
                 
                 foreach ($rules as $rule => $value) {
-                    if ($rule != 'label') {
+                    if ($rule != 'label' && isset($this->requestHttp[$this->input])) {
                         $this->value = $value;
 
                         $methodVerify = 'verify'.$this->forReplaceUnderscoreToCamelCase($rule);
