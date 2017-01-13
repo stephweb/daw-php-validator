@@ -135,12 +135,14 @@ class Validator implements ValidatorInterface
                 $this->setLabel($rules);
                 
                 foreach ($rules as $rule => $value) {
-                    if ($rule != 'label' && isset($this->requestHttp[$this->input])) {
-                        $this->value = $value;
+                    if ($rule != 'label') {
+                        if ($rule == 'required' OR isset($this->requestHttp[$this->input])) {
+                            $this->value = $value;
 
-                        $methodVerify = 'verify'.$this->forReplaceUnderscoreToCamelCase($rule);
-                        if (!method_exists($this, $methodVerify)) throw new ExceptionHandler('Rule "'.$rule.'" not exist.');
-                        $this->$methodVerify();
+                            $methodVerify = 'verify'.$this->forReplaceUnderscoreToCamelCase($rule);
+                            if (!method_exists($this, $methodVerify)) throw new ExceptionHandler('Rule "'.$rule.'" not exist.');
+                            $this->$methodVerify();
+                        }
                     }
                 }
             }
@@ -339,7 +341,7 @@ class Validator implements ValidatorInterface
      */
     private function verifyMax()
     {
-        if (isset($this->requestHttp[$this->input]) && mb_strlen($this->requestHttp[$this->input]) > $this->value) {
+        if (mb_strlen($this->requestHttp[$this->input]) > $this->value) {
             $this->errors[$this->input] = $this->pushError('max', $this->value);
         }
     }
@@ -349,7 +351,7 @@ class Validator implements ValidatorInterface
      */
     private function verifyMin()
     {
-        if (isset($this->requestHttp[$this->input]) && mb_strlen($this->requestHttp[$this->input]) < $this->value) {
+        if (mb_strlen($this->requestHttp[$this->input]) < $this->value) {
             $this->errors[$this->input] = $this->pushError('min', $this->value);
         }
     }
