@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Si l'utilisateur n'a pas téléchargé ce package avec Composer, il devra "require" ce fichier
+ * Si le package n'a pas été téléchargé avec Composer, il faut "require" manuellement ce fichier
  */
 
 require_once dirname(dirname(__FILE__)).'/Exception/ExceptionHandler.php';

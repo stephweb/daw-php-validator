@@ -12,15 +12,14 @@ use DawPhpValidator\Exception\ExceptionHandler;
 class Validator implements ValidatorInterface
 {
     /**
-     * Erreurs dans un Array associatif
+     * Contiendra les éventuels erreurs
      *
      * @var array
      */
     private $errors = [];
 
     /**
-     * Pour permettre de par exemple dans le controller de faire ceci : 'key' => ['label'=>'Mots clés', ...], ...
-     * afficher la "value de 'label'" au lieu du "ucfirst(name) de l'input"
+     * Pour éventuellement personnaliser certains attributs de validation
      *
      * @var string
      */
@@ -41,7 +40,7 @@ class Validator implements ValidatorInterface
     private $value;
 
     /**
-     * POST ou GET - Est à POST par defaut
+     * POST ou GET - Sera à POST par defaut
      *
      * @var null|string
      */
@@ -121,7 +120,7 @@ class Validator implements ValidatorInterface
     }
 
     /**
-     * Vérification des données envoyées
+     * Vérification des données soumises
      *
      * @param array $array
      * @throws ExceptionHandler
@@ -185,8 +184,8 @@ class Validator implements ValidatorInterface
     }
 
     /**
-    * Vérifier que valeur entrée dans le champ est bien alphanumérique
-    */
+     * Vérifier que valeur entrée dans le champ est bien alphanumérique
+     */
     private function verifyAlphaNumeric()
     {
         if ($this->value === true && !preg_match(self::REGEX_ALPHA_NUMERIC, $this->requestHttp[$this->input])) {
@@ -207,7 +206,7 @@ class Validator implements ValidatorInterface
     }
 
     /**
-     * Pour obliger 2 valeur à être égales
+     * Pour obliger 2 valeurs à êtres égales
      */
     private function verifyConfirm()
     {
@@ -267,7 +266,7 @@ class Validator implements ValidatorInterface
     }
 
     /**
-     * Verif carractères format name fichier
+     * Verifier que valeur entrée est bien au format d'un nom de fichier
      */
     private function verifyFormatNameFile()
     {
@@ -277,7 +276,7 @@ class Validator implements ValidatorInterface
     }
 
     /**
-     * Verif carractères format name fichier
+     * Verifier que valeur entrée est bien au format d'un code postale
      */
     private function verifyFormatPostalCode()
     {
@@ -287,7 +286,7 @@ class Validator implements ValidatorInterface
     }
     
     /**
-     * Vérifier que valeur entrée est bien celui d'un slug
+     * Vérifier que valeur entrée est bien au format d'un d'un slug
      */
     private function verifyFormatSlug()
     {
@@ -297,7 +296,7 @@ class Validator implements ValidatorInterface
     }
 
     /**
-     * Vérifier que valeur entrée est bien celui d'une URL
+     * Vérifier que valeur entrée est bien au format d'un d'une URL
      */
     private function verifyFormatUrl()
     {
@@ -387,7 +386,7 @@ class Validator implements ValidatorInterface
     }
 
     /**
-     * Si il y a une erreur
+     * Si il y a une erreur -> pushera une erreur par input
      *
      * @param string $key - Key dans tableaux inclut dans resources/lang...
      * @param null|string $value - Pour éventuellemnt {value} dans tableaux inclut dans resources/lang...
@@ -436,11 +435,11 @@ class Validator implements ValidatorInterface
      */
     public function addError($error)
     {
-        $this->errors[$this->input] = $error;
+        $this->errors[] = $error;
     }
 
     /**
-     * @return bool - True si valide, false si pas valide
+     * @return bool - True si formulaire soumis est valide, false si pas valide
      */
     public function isValid()
     {
@@ -449,7 +448,7 @@ class Validator implements ValidatorInterface
 
     /**
      * @param string $key - name de l'input
-     * @return bool - True si input à une erreur
+     * @return bool - True si input à au minimum une erreur
      */
     public function hasError($key)
     {

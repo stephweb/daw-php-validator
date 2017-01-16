@@ -5,7 +5,7 @@ namespace DawPhpValidator\Config;
 use DawPhpValidator\Contracts\Config\ConfigInterface;
 
 /**
- * Pour require les fichier(s) qui sont dans le dossier de config
+ * Pour require les fichiers qui sont dans le dossier de config
  */
 final class Config extends SingletonConfig implements ConfigInterface
 {

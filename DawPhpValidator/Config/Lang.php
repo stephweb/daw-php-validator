@@ -5,7 +5,7 @@ namespace DawPhpValidator\Config;
 use DawPhpValidator\Exception\ExceptionHandler;
 
 /**
- * Pour require les fichiers qui sont dans le dossier de config
+ * Pour require les fichiers qui sont dans le dossier lang des resources
  */
 final class Lang extends SingletonConfig
 {

@@ -263,6 +263,22 @@ if (Request::isPost()) {
 
 
 
+## To add an error on the fly according to a treatment:
+
+```php
+
+<?php
+
+if ($condition === false) {
+    $validator->addError('Error message...');
+}
+
+```
+
+
+
+
+
 ## Verify if a specific error exists:
 
 ```php

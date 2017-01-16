@@ -2,6 +2,9 @@
 
 namespace DawPhpValidator;
 
+/**
+ * Pour retourner des string au format Json
+ */
 class JsonRenderer
 {
     /**

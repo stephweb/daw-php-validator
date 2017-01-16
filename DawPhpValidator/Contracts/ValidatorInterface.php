@@ -12,7 +12,7 @@ Interface ValidatorInterface
     public function __construct($requestHttp=null);
     
     /**
-     * Vérification des données envoyées en POST
+     * Vérification des données soumises
      *
      * @param array $params
      */
@@ -26,13 +26,13 @@ Interface ValidatorInterface
     public function addError($error);
 
     /**
-     * @return bool - True si valide, false si pas valide
+     * @return bool - True si formulaire soumis est valide, false si pas valide
      */
     public function isValid();
 
     /**
      * @param string $key - name de l'input
-     * @return bool - True si input à une erreur
+     * @return bool - True si input à au minimum une erreur
      */
     public function hasError($key);
 
