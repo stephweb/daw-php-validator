@@ -5,6 +5,9 @@
 
 DAW PHP Validator is a PHP library of simple Validation system.
 
+### Requirements:
+* PHP >= 5.6.16
+
 ### Full documentation:
 https://www.devandweb.fr/packages/daw-php-validator
 
