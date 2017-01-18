@@ -281,11 +281,12 @@ if (Request::isPost()) {
     // $value sera la valeur soumise de l'input
     // $parameters sera sa valeur spécifiée à la règle de validation au 'rule_name' à un 'name_input' dans la method "rules"
     $validator->extend('rule_name', function($input, $value, $parameters) {
-        return $value == $parameters;
+        return $value == $parameters;    // Retournez votre condition pour retourner un booléen
     }, 'Test error');
     
-    // Ajouter la règle de validation pour le input
+    // Ajouter règle(s) de validation pour les inputs
     $validator->rules([
+        // Ajouter la règle de validation que vous venez de créer pour le input
         'input_name' => ['rule_name'=>'value_to_rules'],
     ]);
 }

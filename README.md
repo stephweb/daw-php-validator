@@ -76,7 +76,7 @@ if (Request::isPost()) {
 
     //$validator = new Validator($_GET);  // For method GET instead of POST
 
-    // Add validation rule for inputs
+    // Add validation rule(s) for inputs
     $validator->rules([
         'alpha' => [
              'alpha' => true
@@ -279,11 +279,12 @@ if (Request::isPost()) {
     // $value Will be the submitted value of the input
     // $parameters Will be its specified value to the 'rule_name' validation rule to a 'name_input' in the rules method
     $validator->extend('rule_name', function($input, $value, $parameters) {
-        return $value == $parameters;
+        return $value == $parameters;    // Return your condition for return a bool
     }, 'Test error');
     
-    // Add the validation rule for the input
+    // Add validation rule(s) for inputs
     $validator->rules([
+        // Add the validation rule you just created for the input
         'input_name' => ['rule_name'=>'value_to_rules'],
     ]);
 }
