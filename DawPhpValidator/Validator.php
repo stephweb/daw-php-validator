@@ -164,42 +164,6 @@ class Validator implements ValidatorInterface
     }
 
     /**
-     * Pour éventuellement ajouter une règle da validation pour un traitement spécifique
-     *
-     * @param string $rule
-     * @param callable $callable
-     * @param string|null $message
-     */
-    public function extend(string $rule, callable $callable, string $message=null)
-    {
-        if (array_key_exists($rule, $this->langValidation)) {
-            throw new ExceptionHandler('Rule "'.$rule.'" already exists.');
-        }
-
-        $this->extends[$rule]['bool'] = $callable;
-
-        if ($message) {
-            $this->extends[$rule]['message'] = $message;
-        }
-
-        return $this;
-    }
-
-    /**
-     * @param string $rule
-     */
-    public function ruleWithExtends(string $rule)
-    {
-        if ($this->extends[$rule]['bool']($this->input, $this->requestHttp[$this->input], $this->value) === false) {
-            if (isset($this->extends[$rule]['message'])) {
-                $this->errors[$this->input] = $this->extends[$rule]['message'];
-            } else {
-                $this->errors[$this->input] = $this->pushError($rule);
-            }
-        }
-    }
-
-    /**
      * @param array $rules
      */
     private function setLabel(array $rules)
@@ -222,6 +186,33 @@ class Validator implements ValidatorInterface
     private function forReplaceUnderscoreToCamelCase($withUnderscore)
     {
         return str_replace(' ', '', ucwords(str_replace('_', ' ', $withUnderscore)));
+    }
+
+    /**
+     * Pour éventuellement ajouter une règle da validation pour un traitement spécifique
+     *
+     * @param string $rule
+     * @param callable $callable
+     * @param string $message
+     */
+    public function extend($rule, callable $callable, $message)
+    {
+        if (array_key_exists($rule, $this->langValidation)) {
+            throw new ExceptionHandler('Rule "'.$rule.'" already exists.');
+        }
+
+        $this->extends[$rule]['bool'] = $callable;
+        $this->extends[$rule]['message'] = $message;
+    }
+
+    /**
+     * @param string $rule
+     */
+    public function ruleWithExtends($rule)
+    {
+        if ($this->extends[$rule]['bool']($this->input, $this->requestHttp[$this->input], $this->value) === false) {
+            $this->errors[$this->input] = $this->label.': '.$this->extends[$rule]['message'];
+        }
     }
 
     /**
