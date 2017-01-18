@@ -145,17 +145,7 @@ class Validator implements ValidatorInterface
                         if ($rule == 'required' OR isset($this->requestHttp[$this->input])) {
                             $this->value = $value;
 
-                            $methodVerify = 'verify'.$this->forReplaceUnderscoreToCamelCase($rule);
-
-                            if (method_exists($this, $methodVerify)) {
-                                $this->$methodVerify();
-                            } else {
-                                if (!array_key_exists($rule, $this->extends)) {
-                                    throw new ExceptionHandler('Rule "'.$rule.'" not exist.');
-                                }
-
-                                $this->ruleWithExtends($rule);
-                            }
+                            $this->callRule($rule);
                         }
                     }
                 }
@@ -174,6 +164,26 @@ class Validator implements ValidatorInterface
             $this->label = $this->attributes[$this->input];
         } else {
             $this->label = ucfirst($this->input);
+        }
+    }
+
+    /**
+     * Appeler la règle de validation
+     *
+     * @param string $rule
+     */
+    protected function callRule(string $rule)
+    {
+        $methodVerify = 'verify'.$this->forReplaceUnderscoreToCamelCase($rule);
+
+        if (method_exists($this, $methodVerify)) {
+            $this->$methodVerify();
+        } else {
+            if (!array_key_exists($rule, $this->extends)) {
+                throw new ExceptionHandler('Rule "'.$rule.'" not exist.');
+            }
+
+            $this->ruleWithExtends($rule);
         }
     }
 
