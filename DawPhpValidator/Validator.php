@@ -12,11 +12,11 @@ use DawPhpValidator\Exception\ExceptionHandler;
 class Validator implements ValidatorInterface
 {
     /**
-     * Contiendra les éventuels erreurs
+     * Les éventuels règles da validation pour un traitement spécifique
      *
      * @var array
      */
-    private $errors = [];
+    private $extends = [];
 
     /**
      * Pour éventuellement personnaliser certains attributs de validation
@@ -59,6 +59,13 @@ class Validator implements ValidatorInterface
      * @var array
      */
     private $attributes;
+
+    /**
+     * Contiendra les éventuels erreurs
+     *
+     * @var array
+     */
+    private $errors = [];
 
     /**
      * @const string
@@ -139,11 +146,55 @@ class Validator implements ValidatorInterface
                             $this->value = $value;
 
                             $methodVerify = 'verify'.$this->forReplaceUnderscoreToCamelCase($rule);
-                            if (!method_exists($this, $methodVerify)) throw new ExceptionHandler('Rule "'.$rule.'" not exist.');
-                            $this->$methodVerify();
+
+                            if (method_exists($this, $methodVerify)) {
+                                $this->$methodVerify();
+                            } else {
+                                if (!array_key_exists($rule, $this->extends)) {
+                                    throw new ExceptionHandler('Rule "'.$rule.'" not exist.');
+                                }
+
+                                $this->ruleWithExtends($rule);
+                            }
                         }
                     }
                 }
+            }
+        }
+    }
+
+    /**
+     * Pour éventuellement ajouter une règle da validation pour un traitement spécifique
+     *
+     * @param string $rule
+     * @param callable $callable
+     * @param string|null $message
+     */
+    public function extend(string $rule, callable $callable, string $message=null)
+    {
+        if (array_key_exists($rule, $this->langValidation)) {
+            throw new ExceptionHandler('Rule "'.$rule.'" already exists.');
+        }
+
+        $this->extends[$rule]['bool'] = $callable;
+
+        if ($message) {
+            $this->extends[$rule]['message'] = $message;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param string $rule
+     */
+    public function ruleWithExtends(string $rule)
+    {
+        if ($this->extends[$rule]['bool']($this->input, $this->requestHttp[$this->input], $this->value) === false) {
+            if (isset($this->extends[$rule]['message'])) {
+                $this->errors[$this->input] = $this->extends[$rule]['message'];
+            } else {
+                $this->errors[$this->input] = $this->pushError($rule);
             }
         }
     }

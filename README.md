@@ -263,6 +263,37 @@ if (Request::isPost()) {
 
 
 
+## To add possibly a rule of validation for a specific treatment:
+
+```php
+
+<?php
+
+use DawPhpValidator\Validator;
+
+if (Request::isPost()) {
+    $validator = new Validator();
+    
+    // Add a new validation rule
+    // $input Will be the name of the input
+    // $value Will be the submitted value of the input
+    // $parameters Will be its specified value to the 'rule_name' validation rule to a 'name_input' in the rules method
+    $validator->extend('rule_name', function($input, $value, $parameters) {
+        return $value == $parameters;
+    }, 'Test error');
+    
+    // Add the validation rule for the input
+    $validator->rules([
+        'input_name' => ['rule_name'=>'value_to_rules'],
+    ]);
+}
+
+```
+
+
+
+
+
 ## To add an error on the fly according to a treatment:
 
 ```php
