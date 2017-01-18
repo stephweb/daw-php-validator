@@ -172,7 +172,7 @@ class Validator implements ValidatorInterface
      *
      * @param string $rule
      */
-    protected function callRule(string $rule)
+    protected function callRule($rule)
     {
         $methodVerify = 'verify'.$this->forReplaceUnderscoreToCamelCase($rule);
 
