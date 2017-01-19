@@ -60,6 +60,21 @@ php composer.phar require stephweb/daw-php-validator
 
 
 
+## Résumé des méthodes d'instance du Validator:
+* $validator = new Validator($optionalRequestMethod);
+* $validator->extend(string $ruleName, callable $condition, string $errorMessage)
+* $validator->rules($array)
+* $validator->isValid() (return bool)
+* $validator->getErrors() (return array)
+* $validator->getErrorsHtml() (return string)
+* $validator->getErrorsJson() (return string)
+* $validator->hasError('input_name') (return bool)
+* $validator->getError('input_name') (return string)
+
+
+
+
+
 ## Exemple :
 
 ### Code PHP (avec pour exemple toute les règles de validations disponibles dans ma méthode "rules") :

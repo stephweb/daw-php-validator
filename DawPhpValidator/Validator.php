@@ -42,9 +42,9 @@ class Validator implements ValidatorInterface
     /**
      * POST ou GET - Sera à POST par defaut
      *
-     * @var null|string
+     * @var mixed
      */
-    private $requestHttp;
+    private $requestMethod;
 
     /**
      * Langue choisie dans config/config.php
@@ -115,11 +115,11 @@ class Validator implements ValidatorInterface
     /**
      * Validator constructor.
      *
-     * @param null $requestHttp
+     * @param null $requestMethod
      */
-    public function __construct($requestHttp=null)
+    public function __construct($requestMethod=null)
     {
-        $this->requestHttp = ($requestHttp != null) ? $requestHttp : $_POST;
+        $this->requestMethod = ($requestMethod != null) ? $requestMethod : $_POST;
 
         $this->langValidation = Lang::getInstance()->validation();
 
@@ -159,7 +159,7 @@ class Validator implements ValidatorInterface
                 
                 foreach ($rules as $rule => $value) {
                     if ($rule != 'label') {
-                        if ($rule == 'required' OR isset($this->requestHttp[$this->input])) {
+                        if ($rule == 'required' OR isset($this->requestMethod[$this->input])) {
                             $this->value = $value;
 
                             $this->callRule($rule);
@@ -220,7 +220,7 @@ class Validator implements ValidatorInterface
      */
     public function ruleWithExtends($rule)
     {
-        if ($this->extends[$rule]['bool']($this->input, $this->requestHttp[$this->input], $this->value) === false) {
+        if ($this->extends[$rule]['bool']($this->input, $this->requestMethod[$this->input], $this->value) === false) {
             $this->errors[$this->input] = $this->label.': '.$this->extends[$rule]['message'];
         }
     }
@@ -230,7 +230,7 @@ class Validator implements ValidatorInterface
      */
     private function verifyAlpha()
     {
-        if ($this->value === true && !preg_match(self::REGEX_ALPHA, $this->requestHttp[$this->input])) {
+        if ($this->value === true && !preg_match(self::REGEX_ALPHA, $this->requestMethod[$this->input])) {
             $this->errors[$this->input] = $this->pushError('alpha');
         }
     }
@@ -240,7 +240,7 @@ class Validator implements ValidatorInterface
      */
     private function verifyAlphaNumeric()
     {
-        if ($this->value === true && !preg_match(self::REGEX_ALPHA_NUMERIC, $this->requestHttp[$this->input])) {
+        if ($this->value === true && !preg_match(self::REGEX_ALPHA_NUMERIC, $this->requestMethod[$this->input])) {
             $this->errors[$this->input] = $this->pushError('alpha_numeric');
         }
     }
@@ -252,7 +252,7 @@ class Validator implements ValidatorInterface
      */
     private function verifyBetween()
     {
-        if ($this->requestHttp[$this->input] < $this->value[0] OR $this->requestHttp[$this->input] > $this->value[1]) {
+        if ($this->requestMethod[$this->input] < $this->value[0] OR $this->requestMethod[$this->input] > $this->value[1]) {
             $this->errors[$this->input] = $this->pushError('between', $this->value);
         }
     }
@@ -272,7 +272,7 @@ class Validator implements ValidatorInterface
      */
     private function verifyEmpty()
     {
-        if ($this->requestHttp[$this->input] != '') {
+        if ($this->requestMethod[$this->input] != '') {
             $this->errors[$this->input] = $this->pushError('empty');
         }
     }
@@ -282,7 +282,7 @@ class Validator implements ValidatorInterface
      */
     private function verifyFormatDate()
     {
-        if ($this->value === true && !preg_match(self::REGEX_DATE, $this->requestHttp[$this->input])) {
+        if ($this->value === true && !preg_match(self::REGEX_DATE, $this->requestMethod[$this->input])) {
             $this->errors[$this->input] = $this->pushError('format_date');
         }
     }
@@ -292,7 +292,7 @@ class Validator implements ValidatorInterface
      */
     private function verifyFormatDateTime()
     {
-        if ($this->value === true && !preg_match(self::REGEX_DATE_TIME, $this->requestHttp[$this->input])) {
+        if ($this->value === true && !preg_match(self::REGEX_DATE_TIME, $this->requestMethod[$this->input])) {
             $this->errors[$this->input] = $this->pushError('format_date_time');
         }
     }
@@ -302,7 +302,7 @@ class Validator implements ValidatorInterface
      */
     private function verifyFormatEmail()
     {
-        if ($this->value === true && !filter_var($this->requestHttp[$this->input], FILTER_VALIDATE_EMAIL) == true) {
+        if ($this->value === true && !filter_var($this->requestMethod[$this->input], FILTER_VALIDATE_EMAIL) == true) {
             $this->errors[$this->input] = $this->pushError('format_email');
         }
     }
@@ -312,7 +312,7 @@ class Validator implements ValidatorInterface
      */
     private function verifyFormatIp()
     {
-        if ($this->value === true && !filter_var($this->requestHttp[$this->input], FILTER_VALIDATE_IP)) {
+        if ($this->value === true && !filter_var($this->requestMethod[$this->input], FILTER_VALIDATE_IP)) {
             $this->errors[$this->input] = $this->pushError('format_ip');
         }   
     }
@@ -322,7 +322,7 @@ class Validator implements ValidatorInterface
      */
     private function verifyFormatNameFile()
     {
-        if ($this->value === true && preg_match(self::REGEX_CHARACTERS_PROHIBITED_NAME_FILE, $this->requestHttp[$this->input])) {
+        if ($this->value === true && preg_match(self::REGEX_CHARACTERS_PROHIBITED_NAME_FILE, $this->requestMethod[$this->input])) {
             $this->errors[$this->input] = $this->pushError('format_name_file');
         }
     }
@@ -332,7 +332,7 @@ class Validator implements ValidatorInterface
      */
     private function verifyFormatPostalCode()
     {
-        if ($this->value === true && !preg_match(self::REGEX_POSTALE_CODE, $this->requestHttp[$this->input])) {
+        if ($this->value === true && !preg_match(self::REGEX_POSTALE_CODE, $this->requestMethod[$this->input])) {
             $this->errors[$this->input] = $this->pushError('format_postal_code');
         }
     }
@@ -342,7 +342,7 @@ class Validator implements ValidatorInterface
      */
     private function verifyFormatSlug()
     {
-        if ($this->value === true && !preg_match(self::REGEX_SLUG, $this->requestHttp[$this->input])) {
+        if ($this->value === true && !preg_match(self::REGEX_SLUG, $this->requestMethod[$this->input])) {
             $this->errors[$this->input] = $this->pushError('format_slug');
         }
     }
@@ -352,7 +352,7 @@ class Validator implements ValidatorInterface
      */
     private function verifyFormatUrl()
     {
-        if ($this->value === true && !filter_var($this->requestHttp[$this->input], FILTER_VALIDATE_URL)) {
+        if ($this->value === true && !filter_var($this->requestMethod[$this->input], FILTER_VALIDATE_URL)) {
             $this->errors[$this->input] = $this->pushError('format_url');
         }
     }
@@ -362,7 +362,7 @@ class Validator implements ValidatorInterface
      */
     private function verifyFormatTel()
     {
-        if ($this->value === true && !preg_match(self::REGEX_TEL, $this->requestHttp[$this->input])) {
+        if ($this->value === true && !preg_match(self::REGEX_TEL, $this->requestMethod[$this->input])) {
             $this->errors[$this->input] = $this->pushError('format_tel');
         }
     }
@@ -372,7 +372,7 @@ class Validator implements ValidatorInterface
      */
     private function verifyInteger()
     {
-        if ($this->value === true && !preg_match(self::REGEX_INTEGER, $this->requestHttp[$this->input])) {
+        if ($this->value === true && !preg_match(self::REGEX_INTEGER, $this->requestMethod[$this->input])) {
             $this->errors[$this->input] = $this->pushError('integer');
         }
     }
@@ -382,7 +382,7 @@ class Validator implements ValidatorInterface
      */
     private function verifyInArray()
     {
-        if (!in_array($this->requestHttp[$this->input], $this->value)) {
+        if (!in_array($this->requestMethod[$this->input], $this->value)) {
             $this->errors[$this->input] = $this->pushError('in_array');
         }
     }
@@ -392,7 +392,7 @@ class Validator implements ValidatorInterface
      */
     private function verifyMax()
     {
-        if (mb_strlen($this->requestHttp[$this->input]) > $this->value) {
+        if (mb_strlen($this->requestMethod[$this->input]) > $this->value) {
             $this->errors[$this->input] = $this->pushError('max', $this->value);
         }
     }
@@ -402,7 +402,7 @@ class Validator implements ValidatorInterface
      */
     private function verifyMin()
     {
-        if (mb_strlen($this->requestHttp[$this->input]) < $this->value) {
+        if (mb_strlen($this->requestMethod[$this->input]) < $this->value) {
             $this->errors[$this->input] = $this->pushError('min', $this->value);
         }
     }
@@ -412,7 +412,7 @@ class Validator implements ValidatorInterface
      */
     private function verifyNoRegex()
     {
-        if (preg_match($this->value, $this->requestHttp[$this->input])) {
+        if (preg_match($this->value, $this->requestMethod[$this->input])) {
             $this->errors[$this->input] = $this->pushError('no_regex', $this->value);
         }
     }
@@ -422,7 +422,7 @@ class Validator implements ValidatorInterface
      */
     private function verifyRegex()
     {
-        if (!preg_match($this->value, $this->requestHttp[$this->input])) {
+        if (!preg_match($this->value, $this->requestMethod[$this->input])) {
             $this->errors[$this->input] = $this->pushError('regex', $this->value);
         }
     }
@@ -432,7 +432,7 @@ class Validator implements ValidatorInterface
      */
     private function verifyRequired()
     {
-        if ($this->value === true && !array_key_exists($this->input, $this->requestHttp) OR $this->requestHttp[$this->input] == '') {
+        if ($this->value === true && !array_key_exists($this->input, $this->requestMethod) OR $this->requestMethod[$this->input] == '') {
             $this->errors[$this->input] = $this->pushError('required');
         }
     }
