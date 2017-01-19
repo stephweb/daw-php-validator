@@ -60,7 +60,7 @@ php composer.phar require stephweb/daw-php-validator
 
 
 
-## Résumé des méthodes d'instance du Validator:
+## Résumé des méthodes d'instance du Validator :
 * $validator = new Validator($optionalRequestMethod);
 * $validator->extend(string $ruleName, callable $condition, string $errorMessage)
 * $validator->rules($array)
