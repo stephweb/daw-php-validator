@@ -9,7 +9,7 @@ DAW PHP Validator is a PHP library of simple Validation system.
 * PHP >= 5.6.16
 
 ### Full documentation:
-https://www.devandweb.fr/packages/daw-php-validator
+https://www.devandweb.com/packages/daw-php-validator
 
 
 
@@ -283,7 +283,7 @@ if (Request::isPost()) {
     // $parameters Will be its specified value to the 'rule_name' validation rule to a 'name_input' in the rules method
     $validator->extend('rule_name', function($input, $value, $parameters) {
         return $value == $parameters;    // Return your condition for return a bool
-    }, 'Test error');
+    }, 'Your custom error messge.');
     
     // Add validation rule(s) for inputs
     $validator->rules([
@@ -305,7 +305,7 @@ if (Request::isPost()) {
 <?php
 
 if ($condition === false) {
-    $validator->addError('Error message...');
+    $validator->addError('Your custom error messge...');
 }
 
 ```

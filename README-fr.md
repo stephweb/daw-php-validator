@@ -5,7 +5,7 @@
 
 DAW PHP Validator est une library PHP d un simple système de Validation.
 
-### Exigences :
+### Pré-requis :
 * PHP >= 5.6.16
 
 ### Documentation complète :
@@ -285,7 +285,7 @@ if (Request::isPost()) {
     // $parameters sera sa valeur spécifiée à la règle de validation au 'rule_name' à un 'name_input' dans la method "rules"
     $validator->extend('rule_name', function($input, $value, $parameters) {
         return $value == $parameters;    // Retournez votre condition pour retourner un booléen
-    }, 'Test error');
+    }, 'Votre message d erreur personnalisé.');
     
     // Ajouter règle(s) de validation pour les inputs
     $validator->rules([
@@ -307,7 +307,7 @@ if (Request::isPost()) {
 <?php
 
 if ($condition === false) {
-     $validator->addError('Message d erreur...');
+     $validator->addError('Votre message d erreur personnalisé...');
 }
 
 ```

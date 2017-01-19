@@ -127,6 +127,23 @@ class Validator implements ValidatorInterface
     }
 
     /**
+     * Pour éventuellement ajouter une règle da validation pour un traitement spécifique
+     *
+     * @param string $rule
+     * @param callable $callable
+     * @param string $message
+     */
+    public function extend($rule, callable $callable, $message)
+    {
+        if (array_key_exists($rule, $this->langValidation)) {
+            throw new ExceptionHandler('Rule "'.$rule.'" already exists.');
+        }
+
+        $this->extends[$rule]['bool'] = $callable;
+        $this->extends[$rule]['message'] = $message;
+    }
+    
+    /**
      * Vérification des données soumises
      *
      * @param array $array
@@ -196,23 +213,6 @@ class Validator implements ValidatorInterface
     private function forReplaceUnderscoreToCamelCase($withUnderscore)
     {
         return str_replace(' ', '', ucwords(str_replace('_', ' ', $withUnderscore)));
-    }
-
-    /**
-     * Pour éventuellement ajouter une règle da validation pour un traitement spécifique
-     *
-     * @param string $rule
-     * @param callable $callable
-     * @param string $message
-     */
-    public function extend($rule, callable $callable, $message)
-    {
-        if (array_key_exists($rule, $this->langValidation)) {
-            throw new ExceptionHandler('Rule "'.$rule.'" already exists.');
-        }
-
-        $this->extends[$rule]['bool'] = $callable;
-        $this->extends[$rule]['message'] = $message;
     }
 
     /**
