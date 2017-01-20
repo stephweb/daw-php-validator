@@ -25,7 +25,7 @@ php composer.phar require stephweb/daw-php-validator
 
 
 
-## How to do ?
+## How to do?
 * You must first instantiate the Validator.
 * Then you pass him validation rules.
 * Then check whether the submitted form is valid according to the rules defined.
