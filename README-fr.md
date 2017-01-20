@@ -291,7 +291,7 @@ if (Request::isPost()) {
     // $input sera le name de l'input
     // $value sera la valeur soumise de l'input
     // $parameters sera sa valeur spécifiée à la règle de validation au 'rule_name' à un 'name_input' dans la method "rules"
-    $validator->extend('rule_name', function($input, $value, $parameters) {
+    $validator->extend('rule_name', function ($input, $value, $parameters) {
         return $value == $parameters;    // Retournez votre condition pour retourner un booléen
     }, 'Votre message d erreur personnalisé.');
     

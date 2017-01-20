@@ -289,7 +289,7 @@ if (Request::isPost()) {
     // $input Will be the name of the input
     // $value Will be the submitted value of the input
     // $parameters Will be its specified value to the 'rule_name' validation rule to a 'name_input' in the rules method
-    $validator->extend('rule_name', function($input, $value, $parameters) {
+    $validator->extend('rule_name', function ($input, $value, $parameters) {
         return $value == $parameters;    // Return your condition for return a bool
     }, 'Your custom error messge.');
     
