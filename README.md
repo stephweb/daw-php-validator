@@ -371,4 +371,4 @@ All bugs and all security vulnerabilities will be promptly addressed.
 
 
 ## License
-The DAW PHP Validator is open-sourced software licensed under the MIT license.
+The DAW PHP Validator is Open Source software licensed under the MIT license.

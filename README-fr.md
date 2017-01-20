@@ -373,4 +373,4 @@ Toutes les beg et failles de sécurité seront traitées rapidement.
 
 
 ## Licence
-DAW PHP Validator est une librarie open-source sous la licence MIT.
+DAW PHP Validator est une librarie Open Source sous la licence MIT.
