@@ -28,7 +28,6 @@ final class Config extends SingletonConfig implements ConfigInterface
         self::$config = $config;
     }
 
-
     /**
      * @return array
      */
