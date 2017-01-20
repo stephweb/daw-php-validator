@@ -79,7 +79,6 @@ php composer.phar require stephweb/daw-php-validator
 
 ### Code PHP (avec pour exemple toute les règles de validations disponibles dans ma méthode "rules") :
 ```php
-
 <?php
 
 // Si vous n'avez pas utiliser Composer pour télécharger ce package,
@@ -172,8 +171,6 @@ if (Request::isPost()) {
         var_dump($validator->getErrorsJson());    // return string
     }
 }
-
-
 ```
 
 
@@ -252,7 +249,6 @@ if (Request::isPost()) {
 
     <input type="submit" value="Envoyer">
 </form>
-
 ```
 
 
@@ -262,7 +258,6 @@ if (Request::isPost()) {
 ## Description de la méthode "rules" :
 
 ```php
-
 <?php
 
 use DawPhpValidator\Validator;
@@ -276,7 +271,6 @@ if (Request::isPost()) {
 
     var_dump($validator->isValid());    // return bool
 }
-
 ```
 
 
@@ -286,7 +280,6 @@ if (Request::isPost()) {
 ## Pour éventuellement ajouter une règle de validation pour un traitement spécifique :
 
 ```php
-
 <?php
 
 use DawPhpValidator\Validator;
@@ -308,7 +301,6 @@ if (Request::isPost()) {
         'input_name' => ['rule_name'=>'value_to_rules'],
     ]);
 }
-
 ```
 
 
@@ -318,13 +310,11 @@ if (Request::isPost()) {
 ## Pour éventuellement ajouter une erreur à la volé selon un traitement :
 
 ```php
-
 <?php
 
 if ($condition === false) {
      $validator->addError('Votre message d erreur personnalisé...');
 }
-
 ```
 
 
@@ -334,13 +324,11 @@ if ($condition === false) {
 ## Vérifier si une erreur spécifique existe :
 
 ```php
-
 <?php
 
 if ($validator->hasError('input_name')) {
     var_dump($validator->getError('input_name'));    // return string
 }
-
 ```
 
 
@@ -350,14 +338,12 @@ if ($validator->hasError('input_name')) {
 ## Modifier la configuration par défaut :
 
 ```php
-
 <?php
 
 use DawPhpValidator\Config\Config;
 
 // Changer la langue. Est à 'fr' par défaut. 'fr' et 'en' sont supportés
 Config::set(['lang'=>'en']);
-
 ```
 
 
