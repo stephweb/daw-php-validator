@@ -55,5 +55,4 @@ final class Lang extends SingletonConfig
 
         return $lang;
     }
-
 }

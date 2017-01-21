@@ -19,7 +19,6 @@ final class Config extends SingletonConfig implements ConfigInterface
      */
     private static $config = [];
 
-
     /**
      * @param array $config
      */
@@ -45,5 +44,4 @@ final class Config extends SingletonConfig implements ConfigInterface
 
         return $config;
     }
-
 }

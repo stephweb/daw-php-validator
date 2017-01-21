@@ -9,7 +9,7 @@ Interface ValidatorInterface
      *
      * @param null $requestHttp
      */
-    public function __construct($requestHttp=null);
+    public function __construct($requestHttp = null);
     
     /**
      * Vérification des données soumises
@@ -56,5 +56,4 @@ Interface ValidatorInterface
      * @return string - les erreurs à afficher au format Json
      */
     public function getErrorsJson();
-
 }

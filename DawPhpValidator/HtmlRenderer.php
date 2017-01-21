@@ -11,7 +11,7 @@ class HtmlRenderer
      * @var Validator
      */
     private $validator;
-
+    
 	/**
 	 * HtmlRenderconstructor.
 	 */
@@ -37,5 +37,4 @@ class HtmlRenderer
 
         return $html;
     }
-    
 }

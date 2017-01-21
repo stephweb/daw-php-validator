@@ -112,13 +112,12 @@ class Validator implements ValidatorInterface
      */
     const REGEX_CHARACTERS_PROHIBITED_NAME_FILE = '/[\/:*?"<>|\\\\ ÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØŒŠþÙÚÛÜÝŸàáâãäåæçèéêëìíîïðñòóôõöøœšÞùúûüýÿ¢ß¥£™©®ª×÷±²³¼½¾µ¿¶·¸º°¯§…¤¦≠¬ˆ¨‰]/';
 
-
     /**
      * Validator constructor.
      *
      * @param null $requestMethod
      */
-    public function __construct($requestMethod=null)
+    public function __construct($requestMethod = null)
     {
         $this->requestMethod = ($requestMethod != null) ? $requestMethod : $_POST;
 
@@ -445,7 +444,7 @@ class Validator implements ValidatorInterface
      * @param null|string $value - Pour éventuellemnt {value} dans tableaux inclut dans resources/lang...
      * @return string
      */
-    private function pushError($key, $value=null)
+    private function pushError($key, $value = null)
     {
         $errorMessage = str_replace('{field}', $this->label, $this->langValidation[$key]);
 
@@ -544,5 +543,4 @@ class Validator implements ValidatorInterface
 
         return $jsonRenderer->getErrors();
     }
-    
 }
