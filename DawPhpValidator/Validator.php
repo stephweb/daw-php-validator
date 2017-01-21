@@ -201,7 +201,7 @@ class Validator implements ValidatorInterface
                 throw new ExceptionHandler('Rule "'.$rule.'" not exist.');
             }
 
-            $this->ruleWithExtends($rule);
+            $this->ruleWithExtend($rule);
         }
     }
 
@@ -219,7 +219,7 @@ class Validator implements ValidatorInterface
     /**
      * @param string $rule
      */
-    public function ruleWithExtends($rule)
+    private function ruleWithExtend($rule)
     {
         if ($this->extends[$rule]['bool']($this->input, $this->requestMethod[$this->input], $this->value) === false) {
             $this->errors[$this->input] = $this->label.': '.$this->extends[$rule]['message'];
