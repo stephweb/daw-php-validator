@@ -5,6 +5,23 @@
 
 DAW PHP Validator est une library PHP d un simple système de Validation.
 
+
+*Vérifiez facilement les données soumises.*
+```php
+<?php
+
+if (Request::isPost()) {
+    $validator = new Validator();
+
+    $validator->rules($arrayRules);
+
+    if ($validator->isValid()) {
+        // Response with success
+    }
+}
+```
+
+
 ### Pré-requis :
 * PHP >= 5.6.16
 
