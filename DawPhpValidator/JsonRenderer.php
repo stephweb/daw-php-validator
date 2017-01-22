@@ -2,20 +2,22 @@
 
 namespace DawPhpValidator;
 
+use DawPhpValidator\Contracts\ValidatorInterface;
+
 /**
  * Pour retourner des string au format Json
  */
 class JsonRenderer
 {
     /**
-     * @var Validator
+     * @var ValidatorInterface
      */
     private $validator;
 
 	/**
 	 * HtmlRenderconstructor.
 	 */
-	public function __construct(Validator $validator)
+	public function __construct(ValidatorInterface $validator)
 	{
 		$this->validator = $validator;
 	}
