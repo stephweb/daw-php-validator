@@ -16,7 +16,9 @@ class JsonRenderer
 
 	/**
 	 * HtmlRenderconstructor.
-	 */
+     *
+     * @param ValidatorInterface $validator
+     */
 	public function __construct(ValidatorInterface $validator)
 	{
 		$this->validator = $validator;

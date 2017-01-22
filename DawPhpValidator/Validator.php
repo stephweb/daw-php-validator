@@ -132,6 +132,7 @@ class Validator implements ValidatorInterface
      * @param string $rule
      * @param callable $callable
      * @param string $message
+     * @throws ExceptionHandler
      */
     public function extend($rule, callable $callable, $message)
     {
@@ -188,6 +189,7 @@ class Validator implements ValidatorInterface
      * Appeler la règle de validation
      *
      * @param string $rule
+     * @throws ExceptionHandler
      */
     protected function callRule($rule)
     {
@@ -432,7 +434,10 @@ class Validator implements ValidatorInterface
      */
     private function verifyRequired()
     {
-        if ($this->value === true && !array_key_exists($this->input, $this->requestMethod) OR $this->requestMethod[$this->input] == '') {
+        if (
+            ($this->value === true && !array_key_exists($this->input, $this->requestMethod)) OR
+            $this->requestMethod[$this->input] == '')
+        {
             $this->errors[$this->input] = $this->pushError('required');
         }
     }

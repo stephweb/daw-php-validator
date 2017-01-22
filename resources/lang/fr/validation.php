@@ -38,7 +38,6 @@ return [
         "address" => "Adresse",
         "available" => "Disponible",
         "department" => "Département",
-        "country" => "Pays",
         "category" => "Categorie",
         "city" => "Ville",
         "comment" => "Commentaire",
