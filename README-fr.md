@@ -419,7 +419,7 @@ Config::set(['lang'=>'en']);
 ### Bugs et vulnérabilités de sécurité
 
 Si vous découvrez un bug ou une faille de sécurité au sein de DAW PHP Validator, merci d'envoyez message à Steph.
-Toutes les beg et failles de sécurité seront traitées rapidement.
+Toutes les bugs et failles de sécurité seront traitées rapidement.
 
 
 
