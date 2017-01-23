@@ -22,11 +22,12 @@ if (Request::isPost()) {
 ```
 
 
-### Pré-requis :
+### Pré-requis
 * PHP >= 5.6.16
 
 ### Documentation complète :
 https://www.devandweb.fr/packages/daw-php-validator
+
 
 
 
@@ -42,6 +43,7 @@ php composer.phar require stephweb/daw-php-validator
 
 
 
+
 ## Comment faire ?
 * Il faut d'abord instancier le Validateur.
 * Il faut ensuite lui passez lui des règles de validation.
@@ -51,7 +53,8 @@ php composer.phar require stephweb/daw-php-validator
 
 
 
-## Règles de validations disponibles :
+
+## Règles de validations disponibles
 * 'alpha' => bool
 * 'alpha_numeric' => bool
 * 'between' => array (2 valeurs : valeur min, valeur max)
@@ -77,7 +80,8 @@ php composer.phar require stephweb/daw-php-validator
 
 
 
-## Résumé des méthodes d'instance du Validator :
+
+## Méthodes d'instance du Validator
 * $validator = new Validator($optionalRequestMethod);
 * $validator->extend(string $ruleName, callable $condition, string $errorMessage)
 * $validator->rules($array)
@@ -92,9 +96,10 @@ php composer.phar require stephweb/daw-php-validator
 
 
 
-## Exemple :
 
-### Code PHP (avec pour exemple toute les règles de validations disponibles dans ma méthode "rules") :
+## Exemple
+
+### Code PHP (avec pour exemple toute les règles de validations disponibles dans ma méthode "rules")
 ```php
 <?php
 
@@ -192,7 +197,8 @@ if (Request::isPost()) {
 
 
 
-### Code HTML (exemple de formulaire pour tester le code PHP de ci-dessus) :
+
+### Code HTML (exemple de formulaire pour tester le code PHP de ci-dessus)
 ```html
 
 <form action="#" method="post">
@@ -272,7 +278,8 @@ if (Request::isPost()) {
 
 
 
-## Description de la méthode "rules" :
+
+## Description de la méthode "rules"
 
 ```php
 <?php
@@ -294,7 +301,8 @@ if (Request::isPost()) {
 
 
 
-## Pour éventuellement ajouter une règle de validation pour un traitement spécifique :
+
+## Pour éventuellement ajouter une règle de validation pour un traitement spécifique
 
 ```php
 <?php
@@ -324,7 +332,8 @@ if (Request::isPost()) {
 
 
 
-## Pour éventuellement ajouter une erreur à la volé selon un traitement :
+
+## Pour éventuellement ajouter une erreur à la volé selon un traitement
 
 ```php
 <?php
@@ -338,7 +347,8 @@ if ($condition === false) {
 
 
 
-## Vérifier si une erreur spécifique existe :
+
+## Vérifier si une erreur spécifique existe
 
 ```php
 <?php
@@ -352,7 +362,8 @@ if ($validator->hasError('input_name')) {
 
 
 
-## Modifier la configuration par défaut :
+
+## Modifier la configuration par défaut
 
 ```php
 <?php
@@ -367,9 +378,11 @@ Config::set(['lang'=>'en']);
 
 
 
+
 ## Bugs et vulnérabilités de sécurité
 Si vous découvrez un bug ou une faille de sécurité au sein de DAW PHP Validator, s'il vous plaît envoyer message à Steph. Merci.
 Toutes les beg et failles de sécurité seront traitées rapidement.
+
 
 
 
