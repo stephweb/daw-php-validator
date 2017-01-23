@@ -40,20 +40,9 @@ https://www.devandweb.fr/packages/daw-php-validator
 
 
 
-## Installation
+## * Sommaire *
 
-Installation via Composer :
-```
-php composer.phar require stephweb/daw-php-validator
-```
-
-
-
-
-
-
-## Sommaire
-
+* Installation
 * Règles de validations disponibles
 * Méthodes d'instance du Validator
 * Comment faire ?
@@ -64,6 +53,18 @@ php composer.phar require stephweb/daw-php-validator
 * Vérifier si une erreur spécifique existe
 * Modifier la configuration par défaut
 * Contribuer
+
+
+
+
+
+
+## Installation
+
+Installation via Composer :
+```
+php composer.phar require stephweb/daw-php-validator
+```
 
 
 
