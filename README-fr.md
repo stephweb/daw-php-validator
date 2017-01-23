@@ -130,6 +130,7 @@ php composer.phar require stephweb/daw-php-validator
 ## Exemple
 
 ### Code PHP (avec pour exemple toute les règles de validations disponibles dans ma méthode "rules")
+
 ```php
 <?php
 
