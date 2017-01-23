@@ -6,7 +6,7 @@
 DAW PHP Validator is a PHP library of simple Validation system.
 
 
-*Verify easily the submitted data.*
+*Verify easily the submitted data!*
 ```php
 <?php
 
@@ -42,6 +42,7 @@ https://www.devandweb.com/packages/daw-php-validator
 
 ## * Summary *
 
+* Introduction
 * Installation
 * Available Validation Rules
 * Validator instance methods
@@ -53,6 +54,16 @@ https://www.devandweb.com/packages/daw-php-validator
 * Verify if a specific error exists
 * Set default configuration
 * Contributing
+
+
+
+
+
+
+## Introduction
+
+This open source library allows you to validate your forms.
+The objective is to verify the submitted data, which is essential for the security of your web applications.
 
 
 
