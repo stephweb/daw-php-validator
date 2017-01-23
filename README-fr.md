@@ -22,10 +22,17 @@ if (Request::isPost()) {
 ```
 
 
+
+
 ### Pré-requis
+
 * PHP >= 5.6.16
 
+
+
+
 ### Documentation complète
+
 https://www.devandweb.fr/packages/daw-php-validator
 
 
@@ -34,6 +41,7 @@ https://www.devandweb.fr/packages/daw-php-validator
 
 
 ## Installation
+
 Installation via Composer :
 ```
 php composer.phar require stephweb/daw-php-validator
@@ -45,6 +53,7 @@ php composer.phar require stephweb/daw-php-validator
 
 
 ## Sommaire
+
 * Règles de validations disponibles
 * Méthodes d'instance du Validator
 * Comment faire ?
@@ -54,6 +63,7 @@ php composer.phar require stephweb/daw-php-validator
 * Pour éventuellement ajouter une erreur à la volé selon un traitement
 * Vérifier si une erreur spécifique existe
 * Modifier la configuration par défaut
+* Contribuer
 
 
 
@@ -61,6 +71,7 @@ php composer.phar require stephweb/daw-php-validator
 
 
 ## Règles de validations disponibles
+
 * 'alpha' => bool
 * 'alpha_numeric' => bool
 * 'between' => array (2 valeurs : valeur min, valeur max)
@@ -88,6 +99,7 @@ php composer.phar require stephweb/daw-php-validator
 
 
 ## Méthodes d'instance du Validator
+
 * $validator = new Validator($optionalRequestMethod);
 * $validator->extend(string $ruleName, callable $condition, string $errorMessage)
 * $validator->rules($array)
@@ -104,6 +116,7 @@ php composer.phar require stephweb/daw-php-validator
 
 
 ## Comment faire ?
+
 * Il faut d'abord instancier le Validateur.
 * Il faut ensuite lui passez lui des règles de validation.
 * Il faut ensuite vérifiez si le formulaire soumis est valide en fonction des règles définis.
@@ -216,6 +229,7 @@ if (Request::isPost()) {
 
 
 ### Code HTML (exemple de formulaire pour tester le code PHP de ci-dessus)
+
 ```html
 
 <form action="#" method="post">
@@ -399,14 +413,16 @@ Config::set(['lang'=>'en']);
 
 
 
-## Bugs et vulnérabilités de sécurité
-Si vous découvrez un bug ou une faille de sécurité au sein de DAW PHP Validator, s'il vous plaît envoyer message à Steph. Merci.
+## Contribuer
+
+### Bugs et vulnérabilités de sécurité
+
+Si vous découvrez un bug ou une faille de sécurité au sein de DAW PHP Validator, merci d'envoyez message à Steph.
 Toutes les beg et failles de sécurité seront traitées rapidement.
 
 
 
 
+### Licence
 
-
-## Licence
 DAW PHP Validator est une librarie Open Source sous la licence MIT.
