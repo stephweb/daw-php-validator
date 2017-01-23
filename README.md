@@ -44,11 +44,17 @@ php composer.phar require stephweb/daw-php-validator
 
 
 
-## How to do?
-* You must first instantiate the Validator.
-* Then you pass him validation rules.
-* Then check whether the submitted form is valid according to the rules defined.
-* The response can then be returned in HTML or Json format.
+## Summary
+* Available Validation Rules
+* Validator instance methods
+* How to do?
+* Example
+* Description of the "rules" method
+* To add possibly a rule of validation for a specific treatment
+* To add an error on the fly according to a treatment
+* Verify if a specific error exists
+* Set default configuration
+
 
 
 
@@ -81,7 +87,7 @@ php composer.phar require stephweb/daw-php-validator
 
 
 
-## Validator instance methods:
+## Validator instance methods
 * $validator = new Validator($optionalRequestMethod);
 * $validator->extend(string $ruleName, callable $condition, string $errorMessage)
 * $validator->rules($array)
@@ -91,6 +97,17 @@ php composer.phar require stephweb/daw-php-validator
 * $validator->getErrorsJson() (return string)
 * $validator->hasError('input_name') (return bool)
 * $validator->getError('input_name') (return string)
+
+
+
+
+
+
+## How to do?
+* You must first instantiate the Validator.
+* Then you pass him validation rules.
+* Then check whether the submitted form is valid according to the rules defined.
+* The response can then be returned in HTML or Json format.
 
 
 
@@ -279,6 +296,8 @@ if (Request::isPost()) {
 
 ## Description of the "rules" method
 
+In parameter of the method "rules" one must pass an associative array.
+The keys (string) must be the name of the inputs, the values (array) must be the rules that are specified to this input.
 ```php
 <?php
 
@@ -288,7 +307,8 @@ if (Request::isPost()) {
     $validator = new Validator();
 
     $validator->rules([
-        'input_name' => $arrayRules,
+        'input_name_1' => $arrayRulesInput1,
+        'input_name_2' => $arrayRulesInput2,
     ]);
 
     var_dump($validator->isValid());    // return bool

@@ -44,11 +44,17 @@ php composer.phar require stephweb/daw-php-validator
 
 
 
-## Comment faire ?
-* Il faut d'abord instancier le Validateur.
-* Il faut ensuite lui passez lui des règles de validation.
-* Il faut ensuite vérifiez si le formulaire soumis est valide en fonction des règles définis.
-* On peut ensuite renvoyer la réponse au format HTML ou au format Json.
+## Sommaire
+* Règles de validations disponibles
+* Méthodes d'instance du Validator
+* Comment faire ?
+* Exemple
+* Description de la méthode "rules"
+* Pour éventuellement ajouter une règle de validation pour un traitement spécifique
+* Pour éventuellement ajouter une erreur à la volé selon un traitement
+* Vérifier si une erreur spécifique existe
+* Modifier la configuration par défaut
+
 
 
 
@@ -91,6 +97,17 @@ php composer.phar require stephweb/daw-php-validator
 * $validator->getErrorsJson() (return string)
 * $validator->hasError('input_name') (return bool)
 * $validator->getError('input_name') (return string)
+
+
+
+
+
+
+## Comment faire ?
+* Il faut d'abord instancier le Validateur.
+* Il faut ensuite lui passez lui des règles de validation.
+* Il faut ensuite vérifiez si le formulaire soumis est valide en fonction des règles définis.
+* On peut ensuite renvoyer la réponse au format HTML ou au format Json.
 
 
 
@@ -281,6 +298,8 @@ if (Request::isPost()) {
 
 ## Description de la méthode "rules"
 
+En paramètre de la méthode "rules" on doit y passer un array associatif.
+Les keys (string) doivent êtres les name des inputs, les values (array) doivent êtres les règles que l'on spécifie à cette input.
 ```php
 <?php
 
@@ -290,7 +309,8 @@ if (Request::isPost()) {
     $validator = new Validator();
 
     $validator->rules([
-        'input_name' => $arrayRules,
+        'input_name_1' => $arrayRulesInput1,
+        'input_name_2' => $arrayRulesInput2,
     ]);
 
     var_dump($validator->isValid());    // return bool
