@@ -67,6 +67,16 @@ php composer.phar require stephweb/daw-php-validator
 ```
 
 
+If you do not use Composer to install this package,
+you will have to manually "require" before using this package.
+Example:
+```php
+<?php
+
+require_once 'your-path/daw-php-validator/DawPhpValidator/bootstrap/autoload.php';
+```
+
+
 
 
 
@@ -134,10 +144,6 @@ php composer.phar require stephweb/daw-php-validator
 
 ```php
 <?php
-
-// If you do not use Composer to download this package,
-// you must do it "require" manually
-require 'daw-php-validator/DawPhpValidator/bootstrap/autoload.php';
 
 use DawPhpValidator\Validator;
 
