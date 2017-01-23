@@ -3,8 +3,7 @@
 [![Latest Stable Version](https://poser.pugx.org/stephweb/daw-php-validator/v/stable)](https://packagist.org/packages/stephweb/daw-php-validator)
 [![License](https://poser.pugx.org/stephweb/daw-php-validator/license)](https://packagist.org/packages/stephweb/daw-php-validator)
 
-DAW PHP Validator est une library PHP d un simple système de Validation.
-
+DAW PHP Validator est une librairie PHP Open Source d'un simple système de validation.
 
 *Vérifiez facilement les données soumises !*
 ```php
