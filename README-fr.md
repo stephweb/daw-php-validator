@@ -25,7 +25,7 @@ if (Request::isPost()) {
 ### Pré-requis
 * PHP >= 5.6.16
 
-### Documentation complète :
+### Documentation complète
 https://www.devandweb.fr/packages/daw-php-validator
 
 
