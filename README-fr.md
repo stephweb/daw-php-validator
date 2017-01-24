@@ -370,7 +370,7 @@ if (Request::isPost()) {
     // $parameters sera sa valeur spécifiée à la règle de validation au 'rule_name' à un 'name_input' dans la method "rules"
     $validator->extend('rule_name', function ($input, $value, $parameters) {
         return $value == $parameters;    // Retournez votre condition pour retourner un booléen
-    }, 'Votre message d erreur personnalisé.');
+    }, 'Votre message d\'erreur personnalisé.');
     
     // Ajouter règle(s) de validation pour les inputs
     $validator->rules([
@@ -391,7 +391,7 @@ if (Request::isPost()) {
 <?php
 
 if ($condition === false) {
-     $validator->addError('Votre message d erreur personnalisé...');
+     $validator->addError('Votre message d\'erreur personnalisé...');
 }
 ```
 

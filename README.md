@@ -150,7 +150,7 @@ require_once 'your-path/daw-php-validator/DawPhpValidator/bootstrap/autoload.php
 
 ## Example
 
-### PHP Code (With for example all validation rules available in my method "rules")
+### PHP Code (with for example all validation rules available in my method "rules")
 
 ```php
 <?php
@@ -363,9 +363,9 @@ if (Request::isPost()) {
     $validator = new Validator();
     
     // Add a new validation rule
-    // $input Will be the name of the input
-    // $value Will be the submitted value of the input
-    // $parameters Will be its specified value to the 'rule_name' validation rule to a 'name_input' in the rules method
+    // $input will be the name of the input
+    // $value will be the submitted value of the input
+    // $parameters will be its specified value to the 'rule_name' validation rule to a 'name_input' in the rules method
     $validator->extend('rule_name', function ($input, $value, $parameters) {
         return $value == $parameters;    // Return your condition for return a bool
     }, 'Your custom error messge.');
