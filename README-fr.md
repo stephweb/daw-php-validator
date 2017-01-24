@@ -124,12 +124,12 @@ require_once 'your-path/daw-php-validator/DawPhpValidator/bootstrap/autoload.php
 * $validator = new Validator($optionalRequestMethod);
 * $validator->extend(string $ruleName, callable $condition, string $errorMessage)
 * $validator->rules($array)
-* $validator->isValid() (return bool)
-* $validator->getErrors() (return array)
-* $validator->getErrorsHtml() (return string)
-* $validator->getErrorsJson() (return string)
-* $validator->hasError('input_name') (return bool)
-* $validator->getError('input_name') (return string)
+* $validator->isValid() * (return bool) *
+* $validator->getErrors() * (return array) *
+* $validator->getErrorsHtml() * (return string) *
+* $validator->getErrorsJson() * (return string) *
+* $validator->hasError('input_name') * (return bool) *
+* $validator->getError('input_name') * (return string) *
 
 
 
