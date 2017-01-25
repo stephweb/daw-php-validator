@@ -61,7 +61,7 @@ https://www.devandweb.com/packages/daw-php-validator
 
 ## Introduction
 
-This open source library allows you to validate your forms.
+This Open Source library allows you to validate your forms.
 The objective is to verify the submitted data, which is essential for the security of your web applications.
 
 
