@@ -356,6 +356,9 @@ if (Request::isPost()) {
 
 ## Pour éventuellement ajouter une règle de validation pour un traitement spécifique
 
+Si vous souhaitez ajouter une règle de validation, il faut utiliser la méthode "extend" avant la méthodes "rules".
+Exemple :
+
 ```php
 <?php
 
