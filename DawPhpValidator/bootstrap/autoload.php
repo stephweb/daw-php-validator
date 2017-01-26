@@ -10,6 +10,8 @@ require_once dirname(dirname(__FILE__)).'/Contracts/Config/ConfigInterface.php';
 
 require_once dirname(dirname(__FILE__)).'/Contracts/ValidatorInterface.php';
 
+require_once dirname(dirname(__FILE__)).'/Support/Request.php';
+
 require_once dirname(dirname(__FILE__)).'/Config/SingletonConfig.php';
 
 require_once dirname(dirname(__FILE__)).'/Config/Config.php';
