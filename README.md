@@ -122,7 +122,7 @@ require_once 'your-path/daw-php-validator/DawPhpValidator/bootstrap/autoload.php
 ## Validator instance methods
 
 * $validator = new Validator($optionalRequestMethod);
-* $validator->extend(string $ruleName, callable $condition, string $errorMessage)
+* Validator::extend(string $ruleName, callable $condition, string $errorMessage)
 * $validator->rules($array)
 * $validator->isValid() *(return bool)*
 * $validator->getErrors() *(return array)*
@@ -369,7 +369,7 @@ if (Request::isPost()) {
     // $input will be the name of the input
     // $value will be the submitted value of the input
     // $parameters will be its specified value to the 'rule_name' validation rule to a 'name_input' in the rules method
-    $validator->extend('rule_name', function ($input, $value, $parameters) {
+    Validator::extend('rule_name', function ($input, $value, $parameters) {
         return $value == $parameters;    // Return your condition for return a bool
     }, 'Your custom error messge.');
     

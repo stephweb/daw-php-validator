@@ -7,7 +7,7 @@ class Request
     /**
      * @return array
      */
-    public static function methodGet()
+    public static function getMethodGet()
     {
         return $_GET;
     }
@@ -15,7 +15,7 @@ class Request
     /**
      * @return array
      */
-    public static function methodPost()
+    public static function getMethodPost()
     {
         return $_POST;
     }

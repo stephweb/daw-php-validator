@@ -122,7 +122,7 @@ require_once 'your-path/daw-php-validator/DawPhpValidator/bootstrap/autoload.php
 ## Méthodes d'instance du Validator
 
 * $validator = new Validator($optionalRequestMethod);
-* $validator->extend(string $ruleName, callable $condition, string $errorMessage)
+* Validator::extend(string $ruleName, callable $condition, string $errorMessage)
 * $validator->rules($array)
 * $validator->isValid() *(return bool)*
 * $validator->getErrors() *(return array)*
@@ -371,7 +371,7 @@ if (Request::isPost()) {
     // $input sera le name de l'input
     // $value sera la valeur soumise de l'input
     // $parameters sera sa valeur spécifiée à la règle de validation au 'rule_name' à un 'name_input' dans la method "rules"
-    $validator->extend('rule_name', function ($input, $value, $parameters) {
+    Validator::extend('rule_name', function ($input, $value, $parameters) {
         return $value == $parameters;    // Retournez votre condition pour retourner un booléen
     }, 'Votre message d\'erreur personnalisé.');
     

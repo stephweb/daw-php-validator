@@ -17,8 +17,15 @@ class Validator implements ValidatorInterface
      *
      * @var array
      */
-    private $extends = [];
+    private static $extends = [];
 
+    /**
+     * Langue choisie dans config/config.php
+     *
+     * @var string
+     */
+    private static $langValidation;
+    
     /**
      * Pour éventuellement personnaliser certains attributs de validation
      *
@@ -46,13 +53,6 @@ class Validator implements ValidatorInterface
      * @var mixed
      */
     private $requestMethod;
-
-    /**
-     * Langue choisie dans config/config.php
-     *
-     * @var string
-     */
-    private $langValidation;
 
     /**
      * Attributs de validation personnalisés
@@ -120,11 +120,11 @@ class Validator implements ValidatorInterface
      */
     public function __construct($requestMethod = null)
     {
-        $this->requestMethod = ($requestMethod != null) ? $requestMethod : Request::methodPost();
+        $this->requestMethod = ($requestMethod != null) ? $requestMethod : Request::getMethodPost();
 
-        $this->langValidation = Lang::getInstance()->validation();
+        self::$langValidation = Lang::getInstance()->validation();
 
-        $this->attributes = $this->langValidation['attributes'];
+        $this->attributes = self::$langValidation['attributes'];
     }
 
     /**
@@ -135,14 +135,14 @@ class Validator implements ValidatorInterface
      * @param string $message
      * @throws ExceptionHandler
      */
-    public function extend($rule, callable $callable, $message)
+    public static function extend($rule, callable $callable, $message)
     {
-        if (array_key_exists($rule, $this->langValidation)) {
+        if (array_key_exists($rule, self::$langValidation)) {
             throw new ExceptionHandler('Rule "'.$rule.'" already exists.');
         }
 
-        $this->extends[$rule]['bool'] = $callable;
-        $this->extends[$rule]['message'] = $message;
+        self::$extends[$rule]['bool'] = $callable;
+        self::$extends[$rule]['message'] = $message;
     }
     
     /**
@@ -199,7 +199,7 @@ class Validator implements ValidatorInterface
         if (method_exists($this, $methodVerify)) {
             $this->$methodVerify();
         } else {
-            if (!array_key_exists($rule, $this->extends)) {
+            if (!array_key_exists($rule, self::$extends)) {
                 throw new ExceptionHandler('Rule "'.$rule.'" not exist.');
             }
 
@@ -223,8 +223,8 @@ class Validator implements ValidatorInterface
      */
     private function ruleWithExtend($rule)
     {
-        if ($this->extends[$rule]['bool']($this->input, $this->requestMethod[$this->input], $this->value) === false) {
-            $this->errors[$this->input] = $this->label.': '.$this->extends[$rule]['message'];
+        if (self::$extends[$rule]['bool']($this->input, $this->requestMethod[$this->input], $this->value) === false) {
+            $this->errors[$this->input] = $this->label.': '.self::$extends[$rule]['message'];
         }
     }
 
@@ -452,7 +452,7 @@ class Validator implements ValidatorInterface
      */
     private function pushError($key, $value = null)
     {
-        $errorMessage = str_replace('{field}', $this->label, $this->langValidation[$key]);
+        $errorMessage = str_replace('{field}', $this->label, self::$langValidation[$key]);
 
         if ($value !== null) {
             if (is_array($value)) {  // utile pour 'between'
