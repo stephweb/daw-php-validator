@@ -364,16 +364,16 @@ Exemple :
 
 use DawPhpValidator\Validator;
 
+// Ajouter une nouvelle règle de validation
+// $input sera le name de l'input
+// $value sera la valeur soumise de l'input
+// $parameters sera sa valeur spécifiée à la règle de validation au 'rule_name' à un 'name_input' dans la method "rules"
+Validator::extend('rule_name', function ($input, $value, $parameters) {
+    return $value == $parameters;    // Retournez votre condition pour retourner un booléen
+}, 'Votre message d\'erreur personnalisé.');
+    
 if (Request::isPost()) {
     $validator = new Validator();
-    
-    // Ajouter une nouvelle règle de validation
-    // $input sera le name de l'input
-    // $value sera la valeur soumise de l'input
-    // $parameters sera sa valeur spécifiée à la règle de validation au 'rule_name' à un 'name_input' dans la method "rules"
-    Validator::extend('rule_name', function ($input, $value, $parameters) {
-        return $value == $parameters;    // Retournez votre condition pour retourner un booléen
-    }, 'Votre message d\'erreur personnalisé.');
     
     // Ajouter règle(s) de validation pour les inputs
     $validator->rules([
