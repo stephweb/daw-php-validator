@@ -1,4 +1,4 @@
-# DAW PHP Validator - Librarie
+# DAW PHP Validator - Librarie - Validation de formulaires
 
 [![Latest Stable Version](https://poser.pugx.org/stephweb/daw-php-validator/v/stable)](https://packagist.org/packages/stephweb/daw-php-validator)
 [![License](https://poser.pugx.org/stephweb/daw-php-validator/license)](https://packagist.org/packages/stephweb/daw-php-validator)
