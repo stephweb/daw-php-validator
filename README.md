@@ -1,4 +1,4 @@
-# DAW PHP Validator
+# DAW PHP Validator - Library
 
 [![Latest Stable Version](https://poser.pugx.org/stephweb/daw-php-validator/v/stable)](https://packagist.org/packages/stephweb/daw-php-validator)
 [![License](https://poser.pugx.org/stephweb/daw-php-validator/license)](https://packagist.org/packages/stephweb/daw-php-validator)
@@ -121,9 +121,9 @@ require_once 'your-path/daw-php-validator/DawPhpValidator/bootstrap/autoload.php
 
 ## Validator instance methods
 
-* $validator = new Validator($optionalRequestMethod);
 * Validator::extend(string $ruleName, callable $condition, string $errorMessage)
-* $validator->rules($array)
+* $validator = new Validator($optionalRequestMethod);
+* $validator->rules(array $rules)
 * $validator->isValid() *(return bool)*
 * $validator->getErrors() *(return array)*
 * $validator->getErrorsHtml() *(return string)*
