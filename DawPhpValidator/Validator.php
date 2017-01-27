@@ -13,7 +13,7 @@ use DawPhpValidator\Support\Request;
 class Validator implements ValidatorInterface
 {
     /**
-     * Les éventuels règles da validation pour un traitement spécifique
+     * Eventuel(s) règle(s) da validation à ajouter
      *
      * @var array
      */
@@ -128,7 +128,7 @@ class Validator implements ValidatorInterface
     }
 
     /**
-     * Pour éventuellement ajouter une règle da validation pour un traitement spécifique
+     * Eventuellement ajouter une règle da validation à ajouter
      *
      * @param string $rule
      * @param callable $callable

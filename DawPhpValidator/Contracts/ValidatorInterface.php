@@ -12,6 +12,16 @@ Interface ValidatorInterface
     public function __construct($requestHttp = null);
     
     /**
+     * Eventuellement ajouter une règle da validation à ajouter
+     *
+     * @param string $rule
+     * @param callable $callable
+     * @param string $message
+     * @throws ExceptionHandler
+     */
+    public static function extend($rule, callable $callable, $message);
+    
+    /**
      * Vérification des données soumises
      *
      * @param array $params
