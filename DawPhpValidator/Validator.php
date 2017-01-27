@@ -6,6 +6,7 @@ use DawPhpValidator\Contracts\ValidatorInterface;
 use DawPhpValidator\Config\Lang;
 use DawPhpValidator\Exception\ExceptionHandler;
 use DawPhpValidator\Support\Request;
+use DawPhpValidator\Support\Str;
 
 /**
  * Pour vérifications des données
@@ -194,7 +195,7 @@ class Validator implements ValidatorInterface
      */
     protected function callRule($rule)
     {
-        $methodVerify = 'verify'.$this->forReplaceUnderscoreToCamelCase($rule);
+        $methodVerify = 'verify'.Str::convertSnakeCaseToCamelCase($rule);
 
         if (method_exists($this, $methodVerify)) {
             $this->$methodVerify();
@@ -205,17 +206,6 @@ class Validator implements ValidatorInterface
 
             $this->ruleWithExtend($rule);
         }
-    }
-
-    /**
-     * Pour remplacer format snake_case par format camelCase 
-     *
-     * @param string $withUnderscore
-     * @return string
-     */
-    private function forReplaceUnderscoreToCamelCase($withUnderscore)
-    {
-        return str_replace(' ', '', ucwords(str_replace('_', ' ', $withUnderscore)));
     }
 
     /**
