@@ -5,8 +5,8 @@ namespace DawPhpValidator;
 use DawPhpValidator\Contracts\ValidatorInterface;
 use DawPhpValidator\Config\Lang;
 use DawPhpValidator\Exception\ExceptionHandler;
-use DawPhpValidator\Support\Request;
-use DawPhpValidator\Support\Str;
+use DawPhpValidator\Support\Facades\Request;
+use DawPhpValidator\Support\String\Str;
 
 /**
  * Pour vérifications des données
@@ -121,7 +121,7 @@ class Validator implements ValidatorInterface
      */
     public function __construct($requestMethod = null)
     {
-        $this->requestMethod = ($requestMethod != null) ? $requestMethod : Request::getMethodPost();
+        $this->requestMethod = ($requestMethod != null) ? $requestMethod : Request::getPost()->all();
 
         self::$langValidation = Lang::getInstance()->validation();
 

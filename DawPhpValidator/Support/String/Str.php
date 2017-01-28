@@ -1,6 +1,6 @@
 <?php
 
-namespace DawPhpValidator\Support;
+namespace DawPhpValidator\Support\String;
 
 class Str
 {

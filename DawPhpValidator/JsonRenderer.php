@@ -3,6 +3,7 @@
 namespace DawPhpValidator;
 
 use DawPhpValidator\Contracts\ValidatorInterface;
+use DawPhpValidator\Support\String\Json;
 
 /**
  * Pour retourner des string au format Json
@@ -15,7 +16,7 @@ class JsonRenderer
     private $validator;
 
 	/**
-	 * HtmlRenderconstructor.
+	 * JsonRenderer constructor.
      *
      * @param ValidatorInterface $validator
      */
@@ -29,6 +30,6 @@ class JsonRenderer
      */
     public function getErrors(): string
     {
-        return json_encode($this->validator->getErrors());
+        return Json::encode($this->validator->getErrors());
     }
 }

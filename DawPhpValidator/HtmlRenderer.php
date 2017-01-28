@@ -15,7 +15,7 @@ class HtmlRenderer
     private $validator;
     
 	/**
-	 * HtmlRenderconstructor.
+	 * HtmlRender constructor.
      *
      * @param ValidatorInterface $validator
      */
