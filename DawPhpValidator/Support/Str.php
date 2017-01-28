@@ -10,7 +10,7 @@ class Str
      * @param string $snake_case
      * @return string
      */
-    public static function convertSnakeCaseToCamelCase(string $snake_case) string
+    public static function convertSnakeCaseToCamelCase(string $snake_case): string
     {
         return str_replace(' ', '', ucwords(str_replace('_', ' ', $snake_case)));
     }
