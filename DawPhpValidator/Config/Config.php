@@ -30,7 +30,7 @@ final class Config extends SingletonConfig implements ConfigInterface
     /**
      * @return array
      */
-    public static function get()
+    public static function get(): array
     {
         static $config;
 

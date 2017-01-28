@@ -27,7 +27,7 @@ class HtmlRenderer
     /**
      * @return string - les erreurs à afficher
      */
-    public function getErrors()
+    public function getErrors(): string
     {
         $html = '';
 

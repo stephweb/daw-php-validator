@@ -27,7 +27,7 @@ final class Lang extends SingletonConfig
      * @return mixed
      * @throws ExceptionHandler
      */
-    public function __call($method, array $arguments)
+    public function __call(string $method, array $arguments)
     {
         if (!isset(self::$require[$method])) {
             $path = dirname(dirname(dirname(__FILE__))).'/resources/lang/'.$this->getLang().'/'.$method.'.php';
@@ -45,7 +45,7 @@ final class Lang extends SingletonConfig
     /**
      * @return string - Langue choisie dans config
      */
-    public function getLang()
+    public function getLang(): string
     {
         static $lang;
 

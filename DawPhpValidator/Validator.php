@@ -136,7 +136,7 @@ class Validator implements ValidatorInterface
      * @param string $message
      * @throws ExceptionHandler
      */
-    public static function extend($rule, callable $callable, $message)
+    public static function extend(string $rule, callable $callable, string $message)
     {
         if (array_key_exists($rule, self::$langValidation)) {
             throw new ExceptionHandler('Rule "'.$rule.'" already exists.');
@@ -193,7 +193,7 @@ class Validator implements ValidatorInterface
      * @param string $rule
      * @throws ExceptionHandler
      */
-    protected function callRule($rule)
+    protected function callRule(string $rule)
     {
         $methodVerify = 'verify'.Str::convertSnakeCaseToCamelCase($rule);
 
@@ -211,7 +211,7 @@ class Validator implements ValidatorInterface
     /**
      * @param string $rule
      */
-    private function ruleWithExtend($rule)
+    private function ruleWithExtend(string $rule)
     {
         if (self::$extends[$rule]['bool']($this->input, $this->requestMethod[$this->input], $this->value) === false) {
             $this->errors[$this->input] = $this->label.': '.self::$extends[$rule]['message'];
@@ -440,7 +440,7 @@ class Validator implements ValidatorInterface
      * @param null|string $value - Pour éventuellemnt {value} dans tableaux inclut dans resources/lang...
      * @return string
      */
-    private function pushError($key, $value = null)
+    private function pushError(string $key, $value = null): string
     {
         $errorMessage = str_replace('{field}', $this->label, self::$langValidation[$key]);
 
@@ -462,7 +462,7 @@ class Validator implements ValidatorInterface
     /**
      * @return string
      */
-    public function getLabel()
+    public function getLabel(): string
     {
         return $this->label;
     }
@@ -471,7 +471,7 @@ class Validator implements ValidatorInterface
      * @param string $input
      * @param string $error
      */
-    public function addErrorWithInput($input, $error)
+    public function addErrorWithInput(string $input, string $error)
     {
         $this->errors[$input] = $error;
     }
@@ -481,7 +481,7 @@ class Validator implements ValidatorInterface
      *
      * @param string $error
      */
-    public function addError($error)
+    public function addError(string $error)
     {
         $this->errors[] = $error;
     }
@@ -489,7 +489,7 @@ class Validator implements ValidatorInterface
     /**
      * @return bool - True si formulaire soumis est valide, false si pas valide
      */
-    public function isValid()
+    public function isValid(): bool
     {
         return count($this->errors) === 0;
     }
@@ -498,7 +498,7 @@ class Validator implements ValidatorInterface
      * @param string $key - name de l'input
      * @return bool - True si input à au minimum une erreur
      */
-    public function hasError($key)
+    public function hasError(string $key): bool
     {
         return (isset($this->errors[$key]));
     }
@@ -507,7 +507,7 @@ class Validator implements ValidatorInterface
      * @param string $key - name de l'input
      * @return string - Erreur(s) de l'input
      */
-    public function getError($key)
+    public function getError(string $key): string
     {
         return ($this->hasError($key)) ? $this->errors[$key] : '';
     }
@@ -515,7 +515,7 @@ class Validator implements ValidatorInterface
     /**
      * @return array - Array associatif des erreurs
      */
-    public function getErrors()
+    public function getErrors(): array
     {
         return $this->errors;
     }
@@ -523,7 +523,7 @@ class Validator implements ValidatorInterface
     /**
      * @return string - les erreurs à afficher au format HTML
      */
-    public function getErrorsHtml()
+    public function getErrorsHtml(): string
     {
         $htmlRenderer = new HtmlRenderer($this);
 
@@ -533,7 +533,7 @@ class Validator implements ValidatorInterface
     /**
      * @return string - les erreurs à afficher  au format Json
      */
-    public function getErrorsJson()
+    public function getErrorsJson(): string
     {
         $jsonRenderer = new JsonRenderer($this);
 

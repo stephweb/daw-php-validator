@@ -19,7 +19,7 @@ Interface ValidatorInterface
      * @param string $message
      * @throws ExceptionHandler
      */
-    public static function extend($rule, callable $callable, $message);
+    public static function extend(string $rule, callable $callable, string $message);
     
     /**
      * Vérification des données soumises
@@ -29,41 +29,47 @@ Interface ValidatorInterface
     public function rules(array $params);
 
     /**
+     * @param string $input
+     * @param string $error
+     */
+    public function addErrorWithInput(string $input, string $error);
+
+    /**
      * Pour éventuellemnt ajouter des traitements "à la volé" dans controllers
      *
      * @param string $error
      */
-    public function addError($error);
+    public function addError(string $error);
 
     /**
      * @return bool - True si formulaire soumis est valide, false si pas valide
      */
-    public function isValid();
+    public function isValid(): bool;
 
     /**
      * @param string $key - name de l'input
      * @return bool - True si input à au minimum une erreur
      */
-    public function hasError($key);
+    public function hasError(string $key): bool;
 
     /**
      * @param string $key - name de l'input
      * @return string - Erreur(s) de l'input
      */
-    public function getError($key);
+    public function getError(string $key): string;
 
     /**
      * @return array - Array associatif des erreurs
      */
-    public function getErrors();
+    public function getErrors(): array;
 
     /**
      * @return string - les erreurs à afficher au format HTML
      */
-    public function getErrorsHtml();
+    public function getErrorsHtml(): string;
 
     /**
      * @return string - les erreurs à afficher au format Json
      */
-    public function getErrorsJson();
+    public function getErrorsJson(): string;
 }

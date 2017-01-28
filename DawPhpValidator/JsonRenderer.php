@@ -27,7 +27,7 @@ class JsonRenderer
     /**
      * @return string - les erreurs à afficher
      */
-    public function getErrors()
+    public function getErrors(): string
     {
         return json_encode($this->validator->getErrors());
     }
