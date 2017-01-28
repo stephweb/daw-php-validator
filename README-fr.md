@@ -25,7 +25,7 @@ if (Request::isPost()) {
 
 ### Pré-requis
 
-* PHP >= 5.6.16
+* PHP >= 7.0
 
 
 
