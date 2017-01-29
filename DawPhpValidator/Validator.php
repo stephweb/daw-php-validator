@@ -117,11 +117,11 @@ class Validator implements ValidatorInterface
     /**
      * Validator constructor.
      *
-     * @param null $requestMethod
+     * @param null|array $requestMethod
      */
     public function __construct($requestMethod = null)
     {
-        $this->requestMethod = ($requestMethod != null) ? $requestMethod : Request::getPost()->all();
+        $this->requestMethod = ($requestMethod !== null) ? $requestMethod : Request::getPost()->all();
 
         self::$langValidation = Lang::getInstance()->validation();
 

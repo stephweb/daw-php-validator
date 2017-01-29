@@ -7,7 +7,7 @@ Interface ValidatorInterface
     /**
      * Validator constructor.
      *
-     * @param null $requestHttp
+     * @param null|array $requestHttp
      */
     public function __construct($requestHttp = null);
     

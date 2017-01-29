@@ -7,7 +7,7 @@ use DawPhpValidator\Support\Request\Bags\ParameterBag;
 class Request
 {
     /**
-     * $_POST
+     * @var array - $_POST
      */
     private $post;
 
