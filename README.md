@@ -41,6 +41,16 @@ https://www.devandweb.com/packages/daw-php-validator
 
 
 
+## Installation
+
+Installation via Composer:
+```
+php composer.phar require stephweb/daw-php-validator
+```
+
+
+
+
 
 
 ## Contributing
