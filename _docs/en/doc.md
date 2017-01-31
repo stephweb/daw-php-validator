@@ -44,7 +44,7 @@ https://www.devandweb.com/packages/daw-php-validator
 * Introduction
 * Installation
 * Available Validation Rules
-* Validator instance methods
+* Validator methods
 * How to do?
 * Example
 * Description of the "rules" method
@@ -119,7 +119,7 @@ require_once 'your-path/daw-php-validator/DawPhpValidator/bootstrap/autoload.php
 
 
 
-## Validator instance methods
+## Validator methods
 
 * Validator::extend(string $ruleName, callable $condition, string $errorMessage)
 * $validator = new Validator($optionalRequestMethod);
