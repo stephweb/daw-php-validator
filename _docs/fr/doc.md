@@ -425,14 +425,20 @@ Voici les méthodes disponibles pour obtenir les réponses :
 <?php
 
 if ($validator->isValid()) {
+    // Méthodes disponible uniquement si le formulaire est valide :
+
     echo $validator->getSuccess();
 } else {
+    // Méthodes disponible uniquement si le formulaire n'est pas valide :
+
     var_dump($validator->getErrors());    // return array
 
     echo $validator->getErrorsHtml();
 
     echo $validator->getErrorsJson();
 }
+
+// Méthodes disponibles peu importe si le formulaire est valide ou non :
 
 echo $validator->getMessages()->toHtml();
 // revient au même que :

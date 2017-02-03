@@ -423,14 +423,20 @@ Here are the available methods to obtain the answers:
 <?php
 
 if ($validator->isValid()) {
+    // Methods only if the form is valid:
+
     echo $validator->getSuccess();
 } else {
+    // Methods available only if the form is not valid:
+
     var_dump($validator->getErrors());    // return array
 
     echo $validator->getErrorsHtml();
 
     echo $validator->getErrorsJson();
 }
+
+// Available methods no matter if the form is valid or not:
 
 echo $validator->getMessages()->toHtml();
 // return to the same as:
