@@ -19,7 +19,7 @@ Interface ValidatorInterface
      * @param string $rule
      * @param callable $callable
      * @param string $message
-     * @throws ExceptionHandler
+     * @throws ValidatorException
      */
     public static function extend(string $rule, callable $callable, string $message);
     

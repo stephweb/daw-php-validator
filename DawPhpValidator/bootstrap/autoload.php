@@ -4,7 +4,7 @@
  * Si le package n'a pas été téléchargé avec Composer, il faut "require" manuellement ce fichier
  */
 
-require_once dirname(dirname(__FILE__)).'/Exception/ExceptionHandler.php';
+require_once dirname(dirname(__FILE__)).'/Exception/ValidatorException.php';
 
 require_once dirname(dirname(__FILE__)).'/Support/Facades/Facade.php';
 

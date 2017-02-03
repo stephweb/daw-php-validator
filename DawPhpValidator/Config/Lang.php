@@ -2,7 +2,7 @@
 
 namespace DawPhpValidator\Config;
 
-use DawPhpValidator\Exception\ExceptionHandler;
+use DawPhpValidator\Exception\ValidatorException;
 
 /**
  * Pour require les fichiers qui sont dans le dossier lang des resources
@@ -25,7 +25,7 @@ final class Lang extends SingletonConfig
      * @param string $method
      * @param array $arguments
      * @return mixed
-     * @throws ExceptionHandler
+     * @throws ValidatorException
      */
     public function __call(string $method, array $arguments)
     {
@@ -35,7 +35,7 @@ final class Lang extends SingletonConfig
             if (file_exists($path)) {
                 self::$require[$method] = require_once $path;
             } else {
-                throw new ExceptionHandler('Lang file "'.$this->getLang().'" not found.');
+                throw new ValidatorException('Lang file "'.$this->getLang().'" not found.');
             }
         }
 

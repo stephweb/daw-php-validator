@@ -4,7 +4,7 @@ namespace DawPhpValidator;
 
 use DawPhpValidator\Contracts\ValidatorInterface;
 use DawPhpValidator\Config\Lang;
-use DawPhpValidator\Exception\ExceptionHandler;
+use DawPhpValidator\Exception\ValidatorException;
 use DawPhpValidator\Support\Facades\Request;
 use DawPhpValidator\Support\String\Str;
 
@@ -134,12 +134,12 @@ class Validator implements ValidatorInterface
      * @param string $rule
      * @param callable $callable
      * @param string $message
-     * @throws ExceptionHandler
+     * @throws ValidatorException
      */
     public static function extend(string $rule, callable $callable, string $message)
     {
         if (array_key_exists($rule, self::$langValidation)) {
-            throw new ExceptionHandler('Rule "'.$rule.'" already exists.');
+            throw new ValidatorException('Rule "'.$rule.'" already exists.');
         }
 
         self::$extends[$rule]['bool'] = $callable;
@@ -150,7 +150,7 @@ class Validator implements ValidatorInterface
      * Vérification des données soumises
      *
      * @param array $array
-     * @throws ExceptionHandler
+     * @throws ValidatorException
      */
     public function rules(array $array)
     {
@@ -191,7 +191,7 @@ class Validator implements ValidatorInterface
      * Appeler la règle de validation
      *
      * @param string $rule
-     * @throws ExceptionHandler
+     * @throws ValidatorException
      */
     protected function callRule(string $rule)
     {
@@ -201,7 +201,7 @@ class Validator implements ValidatorInterface
             $this->$methodVerify();
         } else {
             if (!array_key_exists($rule, self::$extends)) {
-                throw new ExceptionHandler('Rule "'.$rule.'" not exist.');
+                throw new ValidatorException('Rule "'.$rule.'" not exist.');
             }
 
             $this->ruleWithExtend($rule);
