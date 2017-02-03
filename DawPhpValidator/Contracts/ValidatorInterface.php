@@ -2,6 +2,8 @@
 
 namespace DawPhpValidator\Contracts;
 
+use DawPhpValidator\Message;
+
 Interface ValidatorInterface
 {
     /**
@@ -62,6 +64,16 @@ Interface ValidatorInterface
      * @return array - Array associatif des erreurs
      */
     public function getErrors(): array;
+
+    /**
+     * @return string - Le message de confirmation
+     */
+    public function getSuccess(): string;
+    
+    /**
+     * @return Message
+     */
+    public function getMessages(): Message;
 
     /**
      * @return string - les erreurs à afficher au format HTML

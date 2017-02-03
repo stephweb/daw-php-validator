@@ -7,7 +7,7 @@ use DawPhpValidator\Contracts\ValidatorInterface;
 /**
  * Pour retourner des string au format HTML
  */
-class HtmlRenderer
+class HtmlRenderer implements RendererInterface
 {
     /**
      * @var ValidatorInterface
@@ -25,17 +25,33 @@ class HtmlRenderer
 	}
 
     /**
-     * @return string - les erreurs à afficher
+     * @return string - Les erreurs à afficher
      */
     public function getErrors(): string
     {
         $html = '';
 
-        if (count($this->validator->getErrors()) > 0) {
+        if (!$this->validator->isValid()) {
             $html .= '<ul>';
             foreach ($this->validator->getErrors() as $error)  {
                 $html .= '<li>'.$error.'</li>';
             }
+            $html .= '</ul>';
+        }
+
+        return $html;
+    }
+
+    /**
+     * @return string - Le message de confirmation
+     */
+    public function getSuccess(): string
+    {
+        $html = '';
+
+        if ($this->validator->isValid()) {
+            $html .= '<ul>';
+            $html .= '<li>'.$this->validator->getSuccess().'</li>';
             $html .= '</ul>';
         }
 

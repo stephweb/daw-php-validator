@@ -8,7 +8,7 @@ use DawPhpValidator\Support\String\Json;
 /**
  * Pour retourner des string au format Json
  */
-class JsonRenderer
+class JsonRenderer implements RendererInterface
 {
     /**
      * @var ValidatorInterface
@@ -26,10 +26,30 @@ class JsonRenderer
 	}
 
     /**
-     * @return string - les erreurs à afficher
+     * @return string - Les erreurs à afficher
      */
     public function getErrors(): string
     {
-        return Json::encode($this->validator->getErrors());
+        $html = '';
+
+        if (!$this->validator->isValid()) {
+            $html .= Json::encode($this->validator->getErrors());
+        }
+
+        return $html;
+    }
+
+    /**
+     * @return string - Le message de confirmation
+     */
+    public function getSuccess(): string
+    {
+        $html = '';
+
+        if ($this->validator->isValid()) {
+            $html .= Json::encode($this->validator->getSuccess());
+        }
+
+        return $html;
     }
 }

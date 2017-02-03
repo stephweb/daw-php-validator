@@ -7,6 +7,11 @@
 return [
 
     /**
+     * Validation success message
+     */
+    'success_message' => 'The form has been validated.',
+    
+    /**
      * Validation error messages
      */
     'alpha' => 'The "{field}" field must contain only alphabetical characters without accents and without special characters.',

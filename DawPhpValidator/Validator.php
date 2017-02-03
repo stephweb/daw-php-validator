@@ -60,7 +60,7 @@ class Validator implements ValidatorInterface
      *
      * @var array
      */
-    private $attributes;
+    private $attributes = [];
 
     /**
      * Contiendra les éventuels erreurs
@@ -500,7 +500,7 @@ class Validator implements ValidatorInterface
      */
     public function hasError(string $key): bool
     {
-        return (isset($this->errors[$key]));
+        return isset($this->errors[$key]);
     }
 
     /**
@@ -509,7 +509,7 @@ class Validator implements ValidatorInterface
      */
     public function getError(string $key): string
     {
-        return ($this->hasError($key)) ? $this->errors[$key] : '';
+        return $this->hasError($key) ? $this->errors[$key] : '';
     }
 
     /**
@@ -521,22 +521,34 @@ class Validator implements ValidatorInterface
     }
 
     /**
-     * @return string - les erreurs à afficher au format HTML
+     * @return string - Le message de confirmation
      */
-    public function getErrorsHtml(): string
+    public function getSuccess(): string
     {
-        $htmlRenderer = new HtmlRenderer($this);
-
-        return $htmlRenderer->getErrors();
+        return self::$langValidation['success_message'];
+    }
+    
+    /**
+     * @return Message
+     */
+    public function getMessages(): Message
+    {
+        return new Message($this);
     }
 
     /**
-     * @return string - les erreurs à afficher  au format Json
+     * @return string - Les erreurs à afficher au format HTML
+     */
+    public function getErrorsHtml(): string
+    {
+        return $this->getMessages()->toHtml();
+    }
+
+    /**
+     * @return string - Les erreurs à afficher  au format Json
      */
     public function getErrorsJson(): string
     {
-        $jsonRenderer = new JsonRenderer($this);
-
-        return $jsonRenderer->getErrors();
+        return $this->getMessages()->toJson();
     }
 }

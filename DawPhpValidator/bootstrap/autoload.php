@@ -28,8 +28,12 @@ require_once dirname(dirname(__FILE__)).'/Config/Config.php';
 
 require_once dirname(dirname(__FILE__)).'/Config/Lang.php';
 
+require_once dirname(dirname(__FILE__)).'/RendererInterface.php';
+
 require_once dirname(dirname(__FILE__)).'/HtmlRenderer.php';
 
 require_once dirname(dirname(__FILE__)).'/JsonRenderer.php';
+
+require_once dirname(dirname(__FILE__)).'/Message.php';
 
 require_once dirname(dirname(__FILE__)).'/Validator.php';

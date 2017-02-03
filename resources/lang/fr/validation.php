@@ -7,6 +7,11 @@
 return [
 
     /**
+     * Messages de confirmation des validations
+     */
+    'success_message' => 'Le formulaire a bien été validé.',
+
+    /**
      * Messages d'erreurs des validations
      */
     'alpha' => 'Le champ "{field}" doit contenir uniquement des carratères alphabétique sans acctents et sans carractères spéciaux.',
