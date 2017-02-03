@@ -51,6 +51,7 @@ https://www.devandweb.com/packages/daw-php-validator
 * To add possibly a rules of validation
 * To add an error on the fly according to a treatment
 * Verify if a specific error exists
+* Responses
 * Set default configuration
 * Contributing
 
@@ -408,6 +409,33 @@ if ($condition === false) {
 
 if ($validator->hasError('input_name')) {
     var_dump($validator->getError('input_name'));    // return string
+}
+```
+
+
+
+
+
+## Responses
+
+Here are the available methods to obtain the answers:
+```php
+<?php
+
+if ($validator->isValid()) {
+    echo $validator->getSuccess();
+} else {
+    var_dump($validator->getErrors());    // return array
+
+    echo $validator->getErrorsHtml();
+    // return to the same as:
+    echo $validator->getMessages()->toHtml();
+    // return to the same as:
+    echo $validator->getMessages();
+
+    echo $validator->getErrorsJson();
+    // return to the same as:
+    echo $validator->getMessages()->toJson();
 }
 ```
 
