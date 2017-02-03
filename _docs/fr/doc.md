@@ -430,15 +430,15 @@ if ($validator->isValid()) {
     var_dump($validator->getErrors());    // return array
 
     echo $validator->getErrorsHtml();
-    // revient au même que :
-    echo $validator->getMessages()->toHtml();
-    // revient au même que :
-    echo $validator->getMessages();
 
     echo $validator->getErrorsJson();
-    // revient au même que :
-    echo $validator->getMessages()->toJson();
 }
+
+echo $validator->getMessages()->toHtml();
+// revient au même que :
+echo $validator->getMessages();
+
+echo $validator->getMessages()->toJson();
 ```
 
 
