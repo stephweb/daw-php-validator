@@ -39,7 +39,7 @@ return [
     /**
      * Custom validation attributes
      */
-    'attributes' => [
+    'labels' => [
         "first_name" => "First Name",
         "last_name" => "Last Name",
     ],

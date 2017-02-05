@@ -39,7 +39,7 @@ return [
     /**
      * Attributs de validation personnalisés
      */
-    'attributes' => [
+    'labels' => [
         "address" => "Adresse",
         "available" => "Disponible",
         "department" => "Département",

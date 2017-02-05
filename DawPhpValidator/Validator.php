@@ -60,7 +60,7 @@ class Validator implements ValidatorInterface
      *
      * @var array
      */
-    private $attributes = [];
+    private $labels = [];
 
     /**
      * Contiendra les éventuels erreurs
@@ -125,7 +125,7 @@ class Validator implements ValidatorInterface
 
         self::$langValidation = Lang::getInstance()->validation();
 
-        $this->attributes = self::$langValidation['attributes'];
+        $this->labels = self::$langValidation['labels'];
     }
 
     /**
@@ -180,8 +180,8 @@ class Validator implements ValidatorInterface
     {
         if (isset($rules['label'])) {
             $this->label = $rules['label'];
-        } elseif (array_key_exists($this->input, $this->attributes)) {
-            $this->label = $this->attributes[$this->input];
+        } elseif (array_key_exists($this->input, $this->labels)) {
+            $this->label = $this->labels[$this->input];
         } else {
             $this->label = ucfirst($this->input);
         }
