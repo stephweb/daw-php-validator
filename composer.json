@@ -2,7 +2,7 @@
     "name": "stephweb/daw-php-validator",
     "description": "PHP library of simple Validation system",
     "type": "library",
-    "keywords": ["php","validation","validator"],
+    "keywords": ["php","validation","form","validator"],
     "license": "MIT",
     "homepage": "https://www.devandweb.com/packages/daw-php-validator",
     "support": {

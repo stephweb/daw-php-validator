@@ -7,8 +7,14 @@ use DawPhpValidator\Support\String\Json;
 
 /**
  * Pour retourner des string au format Json
+ *
+ * @link     https://www.devandweb.fr/packages/daw-php-validator
+ * @link     https://www.devandweb.com/packages/daw-php-validator
+ * @link     https://github.com/stephweb/daw-php-validator
+ * @author   stephweb <stephweb@live.fr>
+ * @license  MIT License
  */
-class JsonRenderer implements RendererInterface
+final class JsonRenderer implements RendererInterface
 {
     /**
      * @var ValidatorInterface

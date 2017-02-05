@@ -6,6 +6,12 @@ use DawPhpValidator\Exception\ValidatorException;
 
 /**
  * Pour require les fichiers qui sont dans le dossier lang des resources
+ *
+ * @link     https://www.devandweb.fr/packages/daw-php-validator
+ * @link     https://www.devandweb.com/packages/daw-php-validator
+ * @link     https://github.com/stephweb/daw-php-validator
+ * @author   stephweb <stephweb@live.fr>
+ * @license  MIT License
  */
 final class Lang extends SingletonConfig
 {
