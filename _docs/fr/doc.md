@@ -100,13 +100,21 @@ require_once 'your-path/daw-php-validator/DawPhpValidator/bootstrap/autoload.php
 * 'confirm' => array (les 2 valeurs à vérifier)
 * 'empty' => bool
 * 'format_date' => bool
+* 'format_date_if_not_empty' => bool (si le champ est rempli : vérifier le format)
 * 'format_date_time' => bool
+* 'format_date_time_if_not_empty' => bool (si le champ est rempli : vérifier le format)
 * 'format_email' => bool
+* 'format_email_if_not_empty' => bool (si le champ est rempli : vérifier le format)
 * 'format_ip' => bool
+* 'format_ip_if_not_empty' => bool (si le champ est rempli : vérifier le format)
 * 'format_name_file'
+* 'format_name_file_if_not_empty' => bool (si le champ est rempli : vérifier le format)
 * 'format_postal_code' => bool
+* 'format_postal_code_if_not_empty' => bool (si le champ est rempli : vérifier le format)
 * 'format_slug' => bool
+* 'format_slug_if_not_empty' => bool
 * 'format_tel' =>bool
+* 'format_tel_if_not_empty' =>bool
 * 'integer' => bool
 * 'in_array' => array
 * 'max' => int

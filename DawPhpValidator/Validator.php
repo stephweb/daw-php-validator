@@ -287,12 +287,32 @@ final class Validator implements ValidatorInterface
     }
 
     /**
+     * Si le champ n'est pas laissé vide -> vérifier que valeur est entrée est bien au format d'une date
+     */
+    private function verifyFormatDateIfNotEmpty()
+    {
+        if ($this->requestMethod[$this->input] != '') {
+            $this->verifyFormatDate($this->input);
+        }
+    }
+
+    /**
      * Vérifier que valeur entrée est bien au format d'une date/heure
      */
     private function verifyFormatDateTime()
     {
         if ($this->value === true && !preg_match(self::REGEX_DATE_TIME, $this->requestMethod[$this->input])) {
             $this->errors[$this->input] = $this->pushError('format_date_time');
+        }
+    }
+
+    /**
+     * Si le champ n'est pas laissé vide -> vérifier que valeur est entrée est bien au format d'une date/heure
+     */
+    private function verifyFormatDateTimeIfNotEmpty()
+    {
+        if ($this->requestMethod[$this->input] != '') {
+            $this->verifyFormatDateTime($this->input);
         }
     }
 
@@ -307,6 +327,16 @@ final class Validator implements ValidatorInterface
     }
 
     /**
+     * Si le champ n'est pas laissé vide -> vérifier que valeur est entrée est bien au format d'un Email
+     */
+    private function verifyFormatEmailIfNotEmpty()
+    {
+        if ($this->requestMethod[$this->input] != '') {
+            $this->verifyFormatEmail($this->input);
+        }
+    }
+
+    /**
      * Verifier que valeur entrée est bien au format d'une adresse IP
      */
     private function verifyFormatIp()
@@ -314,6 +344,16 @@ final class Validator implements ValidatorInterface
         if ($this->value === true && !filter_var($this->requestMethod[$this->input], FILTER_VALIDATE_IP)) {
             $this->errors[$this->input] = $this->pushError('format_ip');
         }   
+    }
+
+    /**
+     * Si le champ n'est pas laissé vide -> verifier que valeur entrée est bien au format d'une adresse IP
+     */
+    private function verifyFormatIpIfNotEmpty()
+    {
+        if ($this->requestMethod[$this->input] != '') {
+            $this->verifyFormatIp($this->input);
+        }
     }
 
     /**
@@ -327,6 +367,16 @@ final class Validator implements ValidatorInterface
     }
 
     /**
+     * Si le champ n'est pas laissé vide -> Verifier que valeur entrée est bien au format d'un nom de fichier
+     */
+    private function verifyFormatNameFileIfNotEmpty()
+    {
+        if ($this->requestMethod[$this->input] != '') {
+            $this->verifyFormatNameFile($this->input);
+        }
+    }
+
+    /**
      * Verifier que valeur entrée est bien au format d'un code postale
      */
     private function verifyFormatPostalCode()
@@ -335,7 +385,17 @@ final class Validator implements ValidatorInterface
             $this->errors[$this->input] = $this->pushError('format_postal_code');
         }
     }
-    
+
+    /**
+     * Si le champ n'est pas laissé vide -> Verif carractères format name fichier
+     */
+    private function verifyFormatPostalCodeIfNotEmpty()
+    {
+        if ($this->requestMethod[$this->input] != '') {
+            $this->verifyFormatPostalCode($this->input);
+        }
+    }
+
     /**
      * Vérifier que valeur entrée est bien au format d'un d'un slug
      */
@@ -343,6 +403,36 @@ final class Validator implements ValidatorInterface
     {
         if ($this->value === true && !preg_match(self::REGEX_SLUG, $this->requestMethod[$this->input])) {
             $this->errors[$this->input] = $this->pushError('format_slug');
+        }
+    }
+
+    /**
+     * Si le champ n'est pas laissé vide -> vérifier que valeur est entrée est bien au format d'un d'une URL
+     */
+    private function verifyFormatSlugIfNotEmpty()
+    {
+        if ($this->requestMethod[$this->input] != '') {
+            $this->verifyFormatSlug($this->input);
+        }
+    }
+
+    /**
+     * Vérifier que valeur entrée est bien au format d'un numéro de téléphone
+     */
+    private function verifyFormatTel()
+    {
+        if ($this->value === true && !preg_match(self::REGEX_TEL, $this->requestMethod[$this->input])) {
+            $this->errors[$this->input] = $this->pushError('format_tel');
+        }
+    }
+
+    /**
+     * Si le champ n'est pas laissé vide -> vérifier que valeur est entrée est bien au format d'un numéro de téléphone
+     */
+    private function verifyFormatTelIfNotEmpty()
+    {
+        if ($this->requestMethod[$this->input] != '') {
+            $this->verifyFormatTel($this->input);
         }
     }
 
@@ -357,12 +447,12 @@ final class Validator implements ValidatorInterface
     }
 
     /**
-     * Vérifier que valeur entrée est bien au format d'un numéro de téléphone
+     * Si le champ n'est pas laissé vide -> vérifier que valeur est entrée est bien au format d'un d'une URL
      */
-    private function verifyFormatTel()
+    private function verifyFormatUrlIfNotEmpty()
     {
-        if ($this->value === true && !preg_match(self::REGEX_TEL, $this->requestMethod[$this->input])) {
-            $this->errors[$this->input] = $this->pushError('format_tel');
+        if ($this->requestMethod[$this->input] != '') {
+            $this->verifyFormatUrl($this->input);
         }
     }
 

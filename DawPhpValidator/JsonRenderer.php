@@ -36,13 +36,13 @@ final class JsonRenderer implements RendererInterface
      */
     public function getErrors(): string
     {
-        $html = '';
+        $json = '';
 
         if (!$this->validator->isValid()) {
-            $html .= Json::encode($this->validator->getErrors());
+            $json .= Json::encode($this->validator->getErrors());
         }
 
-        return $html;
+        return $json;
     }
 
     /**
@@ -50,12 +50,12 @@ final class JsonRenderer implements RendererInterface
      */
     public function getSuccess(): string
     {
-        $html = '';
+        $json = '';
 
         if ($this->validator->isValid()) {
-            $html .= Json::encode($this->validator->getSuccess());
+            $json .= Json::encode($this->validator->getSuccess());
         }
 
-        return $html;
+        return $json;
     }
 }
