@@ -474,7 +474,7 @@ echo $validator->getMessages()->toJson();
 use DawPhpValidator\Config\Config;
 
 // Change the language - Is 'fr' by default. Supported: 'fr', 'en'
-Config::set(['lang'=>'en']);
+Config::set(['lang' => 'en']);
 ```
 
 

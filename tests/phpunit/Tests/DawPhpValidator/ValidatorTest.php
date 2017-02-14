@@ -38,7 +38,6 @@ class ValidatorTest extends TestCase
         $this->assertTrue(is_string($validator->getErrorsJson()));
     }
 
-
     public function testIsValid()
     {
         $_POST['test'] = 'aaa';
@@ -56,7 +55,6 @@ class ValidatorTest extends TestCase
         $this->assertEquals(0, count($validator->getErrors()));
     }
 
-
     public function testAddErrorWithInput()
     {
         $validator = new Validator();
@@ -67,7 +65,6 @@ class ValidatorTest extends TestCase
         $this->assertFalse($validator->isValid());
     }
 
-
     public function testAddError()
     {
         $validator = new Validator();
@@ -76,7 +73,6 @@ class ValidatorTest extends TestCase
 
         $this->assertFalse($validator->isValid());
     }
-
 
     public function testAllRulesValide()
     {
@@ -115,7 +111,6 @@ class ValidatorTest extends TestCase
 
         $this->assertTrue($validator->isValid());
     }
-
 
     public function testAllRulesNotValide()
     {
@@ -184,7 +179,6 @@ class ValidatorTest extends TestCase
         $this->assertTrue($validator->hasError('input_required'));
     }
 
-
     private function allRules(): Validator
     {
         $validator = new Validator();
@@ -224,5 +218,4 @@ class ValidatorTest extends TestCase
 
         return $validator;
     }
-
 }
