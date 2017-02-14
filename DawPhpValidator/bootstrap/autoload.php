@@ -6,10 +6,6 @@
 
 require_once dirname(dirname(__FILE__)).'/Exception/ValidatorException.php';
 
-require_once dirname(dirname(__FILE__)).'/Support/Facades/Facade.php';
-
-require_once dirname(dirname(__FILE__)).'/Support/Facades/Request.php';
-
 require_once dirname(dirname(__FILE__)).'/Support/Request/Bags/ParameterBag.php';
 
 require_once dirname(dirname(__FILE__)).'/Support/Request/Request.php';

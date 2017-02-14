@@ -5,7 +5,7 @@ namespace DawPhpValidator;
 use DawPhpValidator\Contracts\ValidatorInterface;
 use DawPhpValidator\Config\Lang;
 use DawPhpValidator\Exception\ValidatorException;
-use DawPhpValidator\Support\Facades\Request;
+use DawPhpValidator\Support\Request\Request;
 use DawPhpValidator\Support\String\Str;
 
 /**
@@ -19,6 +19,13 @@ use DawPhpValidator\Support\String\Str;
  */
 final class Validator implements ValidatorInterface
 {
+    /**
+     * POST ou GET - Sera à POST par defaut
+     *
+     * @var mixed
+     */
+    private $requestMethod;
+
     /**
      * Eventuel(s) règle(s) da validation à ajouter
      *
@@ -53,13 +60,6 @@ final class Validator implements ValidatorInterface
      * @var mixed
      */
     private $value;
-
-    /**
-     * POST ou GET - Sera à POST par defaut
-     *
-     * @var mixed
-     */
-    private $requestMethod;
 
     /**
      * Attributs de validation personnalisés
@@ -127,7 +127,9 @@ final class Validator implements ValidatorInterface
      */
     public function __construct($requestMethod = null)
     {
-        $this->requestMethod = ($requestMethod !== null) ? $requestMethod : Request::getPost()->all();
+        $request = new Request();
+
+        $this->requestMethod = ($requestMethod !== null) ? $requestMethod : $request->getPost()->all();
 
         self::$langValidation = Lang::getInstance()->validation();
 
@@ -168,7 +170,7 @@ final class Validator implements ValidatorInterface
                 
                 foreach ($rules as $rule => $value) {
                     if ($rule != 'label') {
-                        if ($rule == 'required' OR isset($this->requestMethod[$this->input])) {
+                        if ($rule == 'required' || isset($this->requestMethod[$this->input])) {
                             $this->value = $value;
 
                             $this->callRule($rule);
@@ -251,7 +253,7 @@ final class Validator implements ValidatorInterface
      */
     private function verifyBetween()
     {
-        if ($this->requestMethod[$this->input] < $this->value[0] OR $this->requestMethod[$this->input] > $this->value[1]) {
+        if ($this->requestMethod[$this->input] < $this->value[0] || $this->requestMethod[$this->input] > $this->value[1]) {
             $this->errors[$this->input] = $this->pushError('between', $this->value);
         }
     }

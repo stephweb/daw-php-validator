@@ -12,13 +12,24 @@ namespace DawPhpValidator\Support\String;
 class Str
 {
     /**
-     * Pour remplacer format snake_case par format camelCase 
+     * Cache de camel-cased words.
      *
-     * @param string $snake_case
+     * @var array
+     */
+    private static $camelCache = [];
+    
+    /**
+     * Pour remplacer format snake_case par format camelCase
+     *
+     * @param string $value - snake_case
      * @return string
      */
-    public static function convertSnakeCaseToCamelCase(string $snake_case): string
+    public static function convertSnakeCaseToCamelCase(string $value): string
     {
-        return str_replace(' ', '', ucwords(str_replace('_', ' ', $snake_case)));
+        if (isset(self::$camelCache[$value])) {
+            return self::$camelCache[$value];
+        }
+
+        return self::$camelCache[$value] = str_replace(' ', '', ucwords(str_replace('_', ' ', $value)));
     }
 }
