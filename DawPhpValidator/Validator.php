@@ -146,7 +146,7 @@ final class Validator implements ValidatorInterface
      */
     public static function extend(string $rule, callable $callable, string $message)
     {
-        if (array_key_exists($rule, self::$langValidation)) {
+        if (array_key_exists($rule, Lang::getInstance()->validation())) {
             throw new ValidatorException('Rule "'.$rule.'" already exists.');
         }
 
