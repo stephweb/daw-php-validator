@@ -131,7 +131,7 @@ final class Validator implements ValidatorInterface
 
         $this->requestMethod = ($requestMethod !== null) ? $requestMethod : $request->getPost()->all();
 
-        self::$langValidation = Lang::getInstance()->validation();
+        self::setLangValidation();
 
         $this->labels = self::$langValidation['labels'];
     }
@@ -146,12 +146,24 @@ final class Validator implements ValidatorInterface
      */
     public static function extend(string $rule, callable $callable, string $message)
     {
-        if (array_key_exists($rule, Lang::getInstance()->validation())) {
+        self::setLangValidation();
+
+        if (array_key_exists($rule, self::$langValidation)) {
             throw new ValidatorException('Rule "'.$rule.'" already exists.');
         }
 
         self::$extends[$rule]['bool'] = $callable;
         self::$extends[$rule]['message'] = $message;
+    }
+
+    /**
+     * Charger la langue choisie dans config/config.php
+     */
+    private static function setLangValidation()
+    {
+        if (self::$langValidation === null) {
+            self::$langValidation = Lang::getInstance()->validation();
+        }
     }
     
     /**

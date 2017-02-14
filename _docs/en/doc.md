@@ -115,6 +115,8 @@ require_once 'your-path/daw-php-validator/DawPhpValidator/bootstrap/autoload.php
 * 'format_slug_if_not_empty' => bool
 * 'format_tel' =>bool
 * 'format_tel_if_not_empty' =>bool
+* 'format_url' => bool
+* 'format_url_if_not_empty' => bool
 * 'integer' => bool
 * 'in_array' => array
 * 'max' => int
@@ -215,6 +217,9 @@ if (Request::isPost()) {
         'tel' => [
             'format_tel' => true,     
         ],
+        'url' => [
+            'format_url' => true,     
+        ],
         'integer' => [
             'integer' => true,     
         ],
@@ -299,6 +304,9 @@ if (Request::isPost()) {
 
     <label>TEL:</label>
     <input type="text" name="tel"><br>
+
+    <label>URL:</label>
+    <input type="text" name="url"><br>
 
     <label>Integer:</label>
     <input type="text" name="integer"><br>
