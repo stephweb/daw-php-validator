@@ -48,7 +48,7 @@ https://www.devandweb.com/packages/daw-php-validator
 * How to do?
 * Example
 * Description of the "rules" method
-* To add possibly a rules of validation
+* Add custom validation rules
 * To add an error on the fly according to a treatment
 * Verify if a specific error exists
 * Responses
@@ -369,7 +369,7 @@ if (Request::isPost()) {
 
 
 
-## To add possibly a rules of validation
+## Add custom validation rules
 
 If you want to add a validation rule, you must use the "extend" method before the "rules" method.
 Example:

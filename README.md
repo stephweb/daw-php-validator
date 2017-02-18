@@ -6,6 +6,8 @@
 DAW PHP Validator is a Open Source PHP library of simple validation system.
 
 *Verify easily the submitted data!*
+
+Simple validation:
 ```php
 <?php
 
@@ -20,6 +22,16 @@ if (Request::isPost()) {
 }
 ```
 
+Add custom validation rules:
+```php
+<?php
+
+Validator::extend('rule_name', function ($input, $value, $parameters) {
+    return $value == $parameters;
+}, 'Your custom error messge.');
+```
+
+You also have many other features
 
 
 
