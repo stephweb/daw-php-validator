@@ -48,7 +48,7 @@ https://www.devandweb.fr/packages/daw-php-validator
 * Comment faire ?
 * Exemple
 * Description de la méthode "rules"
-* Pour éventuellement ajouter des règles de validation
+* Ajouter des règles de validation personnalisées
 * Pour éventuellement ajouter une erreur à la volé selon un traitement
 * Vérifier si une erreur spécifique existe
 * Réponses
@@ -371,7 +371,7 @@ if (Request::isPost()) {
 
 
 
-## Pour éventuellement ajouter des règles de validation
+## Ajouter des règles de validation personnalisées
 
 Si vous souhaitez ajouter une règle de validation, il faut utiliser la méthode "extend" avant la méthodes "rules".
 Exemple :
