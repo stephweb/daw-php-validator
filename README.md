@@ -44,7 +44,7 @@ You also have many other features
 
 ### Documentation
 
-The documentation is in folder "_docs" of this package.
+The documentation is in folder "docs" of this package.
 
 The full documentation is on this Website:
 
