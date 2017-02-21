@@ -30,7 +30,7 @@ if (Request::isPost()) {
 
 
 
-### Full documentation
+### Package website
 
 https://www.devandweb.com/packages/daw-php-validator
 
