@@ -84,7 +84,7 @@ Example:
 ```php
 <?php
 
-require_once 'your-path/daw-php-validator/DawPhpValidator/bootstrap/load.php';
+require_once 'your-path/daw-php-validator/src/DawPhpValidator/bootstrap/load.php';
 ```
 
 
