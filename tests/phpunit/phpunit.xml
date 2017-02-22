@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit backupGlobals="false"
          backupStaticAttributes="false"
-         bootstrap="../../DawPhpValidator/bootstrap/autoload.php"
+         bootstrap="../../src/DawPhpValidator/bootstrap/load.php"
          colors="true"
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
@@ -9,7 +9,7 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="App">
+        <testsuite name="Core tests">
             <directory>Tests/DawPhpValidator</directory>
         </testsuite>
     </testsuites>

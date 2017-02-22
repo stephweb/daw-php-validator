@@ -46,9 +46,9 @@ You also have many other features
 
 * The documentation is in folder "docs" of this package:
 
-[French](https://github.com/stephweb/daw-php-validator/blob/master/docs/fr/doc.md)
-|
 [English](https://github.com/stephweb/daw-php-validator/blob/master/docs/en/doc.md)
+|
+[French](https://github.com/stephweb/daw-php-validator/blob/master/docs/fr/doc.md)
 
 
 * Package website:
