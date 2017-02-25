@@ -74,7 +74,7 @@ L'objectif est de vérifier les données soumises, ce qui est indispensable pour
 
 Installation via Composer :
 ```
-php composer.phar require stephweb/daw-php-validator
+php composer.phar require stephweb/daw-php-validator 1.1.*
 ```
 
 

@@ -62,7 +62,7 @@ https://www.devandweb.com/packages/daw-php-validator
 
 Installation via Composer:
 ```
-php composer.phar require stephweb/daw-php-validator
+php composer.phar require stephweb/daw-php-validator 1.1.*
 ```
 
 

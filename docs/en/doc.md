@@ -74,7 +74,7 @@ The objective is to verify the submitted data, which is essential for the securi
 
 Installation via Composer:
 ```
-php composer.phar require stephweb/daw-php-validator
+php composer.phar require stephweb/daw-php-validator 1.1.*
 ```
 
 
