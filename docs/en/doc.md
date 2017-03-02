@@ -385,7 +385,7 @@ use DawPhpValidator\Validator;
 // $parameters will be its specified value to the 'rule_name' validation rule to a 'name_input' in the rules method
 Validator::extend('rule_name', function ($input, $value, $parameters) {
     return $value == $parameters;    // Return your condition for return a bool
-}, 'Your custom error messge.');
+}, 'Your custom error message.');
     
 if (Request::isPost()) {
     $validator = new Validator();
@@ -409,7 +409,7 @@ if (Request::isPost()) {
 <?php
 
 if ($condition === false) {
-    $validator->addError('Your custom error messge...');
+    $validator->addError('Your custom error message...');
 }
 ```
 

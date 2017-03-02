@@ -28,7 +28,7 @@ Add custom validation rules:
 
 Validator::extend('rule_name', function ($input, $value, $parameters) {
     return $value == $parameters;
-}, 'Your custom error messge.');
+}, 'Your custom error message.');
 ```
 
 You also have many other features
