@@ -72,6 +72,18 @@ php composer.phar require stephweb/daw-php-validator 1.1.*
 
 ## Contributing
 
+
+
+
+### Author
+
+Package developed by:
+[Développeur Web Grenoble](https://www.devandweb.fr)
+
+
+
+
+
 ### Bugs and security Vulnerabilities
 
 If you discover a bug or a security vulnerability within DAW PHP Validator, please send a message to Steph. Thank you.
