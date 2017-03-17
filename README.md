@@ -53,7 +53,7 @@ You also have many other features
 
 * Package website:
 
-https://www.devandweb.com/packages/daw-php-validator
+[DAW PHP Validator documentation](https://www.devandweb.com/packages/daw-php-validator)
 
 
 
@@ -90,4 +90,4 @@ The DAW PHP Validator is Open Source software licensed under the MIT license.
 ### Author
 
 Package developed by:
-[Développeur PHP Grenoble](https://www.devandweb.fr)
+[Développeur PHP de Grenoble](https://www.devandweb.fr)
