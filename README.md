@@ -35,6 +35,16 @@ You also have many other features
 
 
 
+
+### Author
+
+Package developed by:
+[Développeur PHP de Grenoble](https://www.devandweb.fr)
+[![Developpeur PHP Grenoble](https://www.devandweb.fr/medias/website/favicon.ico)](https://www.devandweb.fr)
+
+
+
+
 ### Requirements
 
 * PHP >= 7.0
@@ -82,11 +92,3 @@ All bugs and all security vulnerabilities will be promptly addressed.
 ### License
 
 The DAW PHP Validator is Open Source software licensed under the MIT license.
-
-
-
-
-### Author
-
-Package developed by:
-[Développeur PHP de Grenoble](https://www.devandweb.fr)
