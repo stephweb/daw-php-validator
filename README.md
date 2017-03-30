@@ -46,14 +46,13 @@ You also have many other features
 
 * The documentation is in folder "docs" of this package:
 
-[English](https://github.com/stephweb/daw-php-validator/blob/master/docs/en/doc.md)
+[Documentation](https://github.com/stephweb/daw-php-validator/blob/master/docs/doc.md)
+
+* The documentation is also on the package website:
+
+[DAW PHP Validator - English documentation](https://www.devandweb.com/packages/daw-php-validator)
 |
-[French](https://github.com/stephweb/daw-php-validator/blob/master/docs/fr/doc.md)
-
-
-* Package website:
-
-[DAW PHP Validator documentation](https://www.devandweb.com/packages/daw-php-validator)
+[DAW PHP Validator - French documentation](https://www.devandweb.fr/packages/daw-php-validator)
 
 
 
