@@ -40,7 +40,7 @@ You also have many other features
 
 Package developed by:
 [Développeur PHP de Grenoble](https://www.devandweb.fr)
-[![Developpeur PHP Grenoble](https://www.devandweb.fr/medias/website/favicon.ico)](https://www.devandweb.fr)
+[![Developpeur PHP Grenoble](https://www.devandweb.fr/medias/website/developpeur-web.png)](https://www.devandweb.fr)
 
 
 

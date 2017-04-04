@@ -32,7 +32,7 @@ if (Request::isPost()) {
 
 ### Package website
 
-https://www.devandweb.com/packages/daw-php-validator
+[DAW PHP Validator - Documentation](https://www.devandweb.com/packages/daw-php-validator)
 
 
 
