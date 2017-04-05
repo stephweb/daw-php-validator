@@ -3,9 +3,9 @@
 [![Latest Stable Version](https://poser.pugx.org/stephweb/daw-php-validator/v/stable)](https://packagist.org/packages/stephweb/daw-php-validator)
 [![License](https://poser.pugx.org/stephweb/daw-php-validator/license)](https://packagist.org/packages/stephweb/daw-php-validator)
 
-DAW PHP Validator is a Open Source PHP library of simple validation system.
+DAW PHP Validator est une librairie PHP Open Source d'un simple système de validation.
 
-*Verify easily the submitted data!*
+*Vérifiez facilement les données soumises !*
 ```php
 <?php
 
@@ -23,37 +23,30 @@ if (Request::isPost()) {
 
 
 
-### Requirements
+### Pré-requis
 
 * PHP >= 7.0
 
 
 
 
-### Package website
-
-[DAW PHP Validator - Documentation](https://www.devandweb.com/packages/daw-php-validator)
 
 
-
-
-
-
-## * Summary *
+## * Sommaire *
 
 * Introduction
 * Installation
-* Available Validation Rules
-* Validator methods
-* How to do?
-* Example
-* Description of the "rules" method
-* Add custom validation rules
-* To add an error on the fly according to a treatment
-* Verify if a specific error exists
-* Responses
-* Set default configuration
-* Contributing
+* Règles de validations disponibles
+* Méthodes du Validator
+* Comment faire ?
+* Exemple
+* Description de la méthode "rules"
+* Ajouter des règles de validation personnalisées
+* Pour éventuellement ajouter une erreur à la volé selon un traitement
+* Vérifier si une erreur spécifique existe
+* Réponses
+* Modifier la configuration par défaut
+* Contribuer
 
 
 
@@ -62,8 +55,8 @@ if (Request::isPost()) {
 
 ## Introduction
 
-This Open Source library allows you to validate your forms.
-The objective is to verify the submitted data, which is essential for the security of your web applications.
+Cette librairie Open Source vous permet de valider vos formulaire.
+L'objectif est de vérifier les données soumises, ce qui est indispensable pour la sécurité de vos applications web.
 
 
 
@@ -72,15 +65,15 @@ The objective is to verify the submitted data, which is essential for the securi
 
 ## Installation
 
-Installation via Composer:
+Installation via Composer :
 ```
-php composer.phar require stephweb/daw-php-validator 1.1.*
+php composer.phar require stephweb/daw-php-validator
 ```
 
 
-If you do not use Composer to install this package,
-you will have to manually "require" before using this package.
-Example:
+Si vous n'utilisez pas Composer pour installer ce package,
+vous deverez faire le "require" manuellement avant d'utiliser ce package.
+Exemple :
 ```php
 <?php
 
@@ -92,25 +85,25 @@ require_once 'your-path/daw-php-validator/src/DawPhpValidator/bootstrap/load.php
 
 
 
-## Available Validation Rules
+## Règles de validations disponibles
 
 * 'alpha' => bool
 * 'alpha_numeric' => bool
-* 'between' => array (2 values: min value, max value)
-* 'confirm' => array (2 values to verify)
+* 'between' => array (2 valeurs : valeur min, valeur max)
+* 'confirm' => array (les 2 valeurs à vérifier)
 * 'empty' => bool
 * 'format_date' => bool
-* 'format_date_if_not_empty' => bool (if the field is not empty: verify the format)
+* 'format_date_if_not_empty' => bool (si le champ est rempli : vérifier le format)
 * 'format_date_time' => bool
-* 'format_date_time_if_not_empty' => bool (if the field is not empty: verify the format)
+* 'format_date_time_if_not_empty' => bool (si le champ est rempli : vérifier le format)
 * 'format_email' => bool
-* 'format_email_if_not_empty' => bool (if the field is not empty: verify the format)
+* 'format_email_if_not_empty' => bool (si le champ est rempli : vérifier le format)
 * 'format_ip' => bool
-* 'format_ip_if_not_empty' => bool (if the field is not empty: verify the format)
+* 'format_ip_if_not_empty' => bool (si le champ est rempli : vérifier le format)
 * 'format_name_file'
-* 'format_name_file_if_not_empty' => bool (if the field is not empty: verify the format)
+* 'format_name_file_if_not_empty' => bool (si le champ est rempli : vérifier le format)
 * 'format_postal_code' => bool
-* 'format_postal_code_if_not_empty' => bool (if the field is not empty: verify the format)
+* 'format_postal_code_if_not_empty' => bool (si le champ est rempli : vérifier le format)
 * 'format_slug' => bool
 * 'format_slug_if_not_empty' => bool
 * 'format_tel' =>bool
@@ -121,8 +114,8 @@ require_once 'your-path/daw-php-validator/src/DawPhpValidator/bootstrap/load.php
 * 'in_array' => array
 * 'max' => int
 * 'min' => int
-* 'no_regex'=> string (regex which must not match)
-* 'regex'=> string (regex must match)
+* 'no_regex'=> string (regex qui ne doit pas matcher)
+* 'regex'=> string (regex qui doit matcher)
 * 'required' => bool
 
 
@@ -130,7 +123,7 @@ require_once 'your-path/daw-php-validator/src/DawPhpValidator/bootstrap/load.php
 
 
 
-## Validator methods
+## Méthodes du Validator
 
 * Validator::extend(string $ruleName, callable $condition, string $errorMessage)
 * $validator = new Validator($optionalRequestMethod);
@@ -147,21 +140,21 @@ require_once 'your-path/daw-php-validator/src/DawPhpValidator/bootstrap/load.php
 
 
 
-## How to do?
+## Comment faire ?
 
-* You must first instantiate the Validator.
-* Then you pass him validation rules.
-* Then check whether the submitted form is valid according to the rules defined.
-* The response can then be returned in HTML or Json format.
-
-
+* Il faut d'abord instancier le Validateur.
+* Il faut ensuite lui passez lui des règles de validation.
+* Il faut ensuite vérifiez si le formulaire soumis est valide en fonction des règles définis.
+* On peut ensuite renvoyer la réponse au format HTML ou au format Json.
 
 
 
 
-## Example
 
-### PHP Code (with for example all validation rules available in my method "rules")
+
+## Exemple
+
+### Code PHP (avec pour exemple toute les règles de validations disponibles dans ma méthode "rules")
 
 ```php
 <?php
@@ -169,24 +162,25 @@ require_once 'your-path/daw-php-validator/src/DawPhpValidator/bootstrap/load.php
 use DawPhpValidator\Validator;
 
 if (Request::isPost()) {
-    // Instantiate the Validator
+    // Instancier le Validateur
     $validator = new Validator();
 
-    //$validator = new Validator($_GET);  // For method GET instead of POST
-
-    // Add validation rule(s) for inputs
+    //$validator = new Validator($_GET);  // pour method GET au lieu de POST
+    
+    // Ajouter règle(s) de validation pour les inputs
     $validator->rules([
         'alpha' => [
              'alpha' => true
         ],
         'alpha_numeric' => [
-            'label' => 'Alpha numeric',
+            'label' => 'Alpha numerique',
             'alpha_numeric' => true
         ],
         'between' => [
             'between' => [2, 9]
         ],
         'password' => [
+            'label' => 'Mot de passe',
             'confirm' => [$_POST['password'], $_POST['password_confirmation']]
         ],
         'empty' => [
@@ -205,7 +199,7 @@ if (Request::isPost()) {
             'format_ip' => true,
         ],
         'name_file' => [
-            'label' => 'File name',
+            'label' => 'Nom du fichier',
             'format_name_file' => true
         ],
         'postal_code' => [
@@ -239,15 +233,16 @@ if (Request::isPost()) {
             'regex' => "#^[a-z]+$#",    
         ],
         'required' => [
+            'label' => 'Requis',
             'required' => true,     
         ],
     ]);
     
-    // Verify if the form is valid
+    // Vérifier si le formulaire est valide
     if ($validator->isValid()) {
-        // Success
+        // Succès
     } else {
-        // Show all errors:
+        // Récupérer toutes les erreurs :
         var_dump($validator->getErrors());    // return array
         var_dump($validator->getErrorsHtml());    // return string
         var_dump($validator->getErrorsJson());    // return string
@@ -258,60 +253,60 @@ if (Request::isPost()) {
 
 
 
-### HTML Code (example of form to test the code PHP of above)
+### Code HTML (exemple de formulaire pour tester le code PHP de ci-dessus)
 
 ```html
 
 <form action="#" method="post">
-    <label>Alpha:</label>
+    <label>Alpha :</label>
     <input type="text" name="alpha"><br>
 
-    <label>Alpha numeriqc:</label>
+    <label>Alpha numerique :</label>
     <input type="text" name="alpha_numeric"><br>
 
-    <label>Between:</label>
+    <label>Between :</label>
     <input type="text" name="between"><br>
 
-    <label>Password:</label>
+    <label>Mot de passe :</label>
     <input type="password" name="password"><br>
 
-    <label>Confirmamtion of Password:</label>
+    <label>Confirmamtion du Mot de passe :</label>
     <input type="password_confirmation" name="password_confirmation"><br>
 
-    <label>Empty:</label>
+    <label>Empty :</label>
     <input type="empty" name="empty"><br>
 
-    <label>Date:</label>
+    <label>Date :</label>
     <input type="date" name="date"><br>
 
-    <label>Date time:</label>
+    <label>Date time :</label>
     <input type="date_time" name="date_time"><br>
 
-    <label>Email:</label>
+    <label>Email :</label>
     <input type="email" name="email"><br>
 
-    <label>IP:</label>
+    <label>IP :</label>
     <input type="ip" name="ip"><br>
 
-    <label>File name:</label>
+    <label>Nom du fichier :</label>
     <input type="name_file" name="name_file"><br>
 
-    <label>Postal code:</label>
+    <label>Code postale :</label>
     <input type="postal_code" name="postal_code"><br>
 
-    <label>Slug:</label>
+    <label>Slug :</label>
     <input type="text" name="slug"><br>
 
-    <label>TEL:</label>
+    <label>TEL :</label>
     <input type="text" name="tel"><br>
 
     <label>URL:</label>
     <input type="text" name="url"><br>
-
-    <label>Integer:</label>
+    
+    <label>Integer :</label>
     <input type="text" name="integer"><br>
 
-    <label>In array:</label>
+    <label>In array :</label>
     <select name="in_array">
         <option value="0">Choisir...</option>
         <option value="1">Choix 1</option>
@@ -319,19 +314,19 @@ if (Request::isPost()) {
         <option value="3">Choix 3</option>
     </select><br>
 
-    <label>Max:</label>
+    <label>Max :</label>
     <input type="text" name="max"><br>
 
-    <label>Min:</label>
+    <label>Min :</label>
     <input type="text" name="min"><br>
 
-    <label>No regex:</label>
+    <label>No regex :</label>
     <input type="text" name="no_regex"><br>
 
-    <label>Regex:</label>
+    <label>Regex :</label>
     <input type="text" name="regex"><br>
 
-    <label>Required:</label>
+    <label>Requis :</label>
     <input type="text" name="required"><br>
 
     <input type="submit" value="Envoyer">
@@ -343,10 +338,10 @@ if (Request::isPost()) {
 
 
 
-## Description of the "rules" method
+## Description de la méthode "rules"
 
-In parameter of the method "rules" one must pass an associative array.
-The keys (string) must be the name of the inputs, the values (array) must be the rules that are specified to this input.
+En paramètre de la méthode "rules" on doit y passer un array associatif.
+Les keys (string) doivent êtres les name des inputs, les values (array) doivent êtres les règles que l'on spécifie à cette input.
 ```php
 <?php
 
@@ -369,30 +364,30 @@ if (Request::isPost()) {
 
 
 
-## Add custom validation rules
+## Ajouter des règles de validation personnalisées
 
-If you want to add a validation rule, you must use the "extend" method before the "rules" method.
-Example:
+Si vous souhaitez ajouter une règle de validation, il faut utiliser la méthode "extend" avant la méthodes "rules".
+Exemple :
 
 ```php
 <?php
 
 use DawPhpValidator\Validator;
 
-// Add a new validation rule
-// $input will be the name of the input
-// $value will be the submitted value of the input
-// $parameters will be its specified value to the 'rule_name' validation rule to a 'name_input' in the rules method
+// Ajouter une nouvelle règle de validation
+// $input sera le name de l'input
+// $value sera la valeur soumise de l'input
+// $parameters sera sa valeur spécifiée à la règle de validation au 'rule_name' à un 'name_input' dans la method "rules"
 Validator::extend('rule_name', function ($input, $value, $parameters) {
-    return $value == $parameters;    // Return your condition for return a bool
-}, 'Your custom error message.');
+    return $value == $parameters;    // Retournez votre condition pour retourner un booléen
+}, 'Votre message d\'erreur personnalisé.');
     
 if (Request::isPost()) {
     $validator = new Validator();
     
-    // Add validation rule(s) for inputs
+    // Ajouter règle(s) de validation pour les inputs
     $validator->rules([
-        // Add the validation rule you just created for the input
+        // Ajouter la règle de validation que vous venez de créer pour le input
         'input_name' => ['rule_name'=>'value_to_rules'],
     ]);
 }
@@ -403,13 +398,13 @@ if (Request::isPost()) {
 
 
 
-## To add an error on the fly according to a treatment
+## Pour éventuellement ajouter une erreur à la volé selon un traitement
 
 ```php
 <?php
 
 if ($condition === false) {
-    $validator->addError('Your custom error message...');
+     $validator->addError('Votre message d\'erreur personnalisé...');
 }
 ```
 
@@ -418,7 +413,7 @@ if ($condition === false) {
 
 
 
-## Verify if a specific error exists
+## Vérifier si une erreur spécifique existe
 
 ```php
 <?php
@@ -432,18 +427,18 @@ if ($validator->hasError('input_name')) {
 
 
 
-## Responses
+## Réponses
 
-Here are the available methods to obtain the answers:
+Voici les méthodes disponibles pour obtenir les réponses :
 ```php
 <?php
 
 if ($validator->isValid()) {
-    // Methods only if the form is valid:
+    // Méthodes disponible uniquement si le formulaire est valide :
 
     echo $validator->getSuccess();
 } else {
-    // Methods available only if the form is not valid:
+    // Méthodes disponible uniquement si le formulaire n'est pas valide :
 
     var_dump($validator->getErrors());    // return array
 
@@ -452,10 +447,10 @@ if ($validator->isValid()) {
     echo $validator->getErrorsJson();
 }
 
-// Available methods no matter if the form is valid or not:
+// Méthodes disponibles peu importe si le formulaire est valide ou non :
 
 echo $validator->getMessages()->toHtml();
-// return to the same as:
+// revient au même que :
 echo $validator->getMessages();
 
 echo $validator->getMessages()->toJson();
@@ -466,14 +461,14 @@ echo $validator->getMessages()->toJson();
 
 
 
-## Set default configuration
+## Modifier la configuration par défaut
 
 ```php
 <?php
 
 use DawPhpValidator\Config\Config;
 
-// Change the language - Is 'fr' by default. Supported: 'fr', 'en'
+// Changer la langue. Est à 'fr' par défaut. 'fr' et 'en' sont supportés
 Config::set(['lang' => 'en']);
 ```
 
@@ -482,16 +477,16 @@ Config::set(['lang' => 'en']);
 
 
 
-## Contributing
+## Contribuer
 
-### Bugs and security Vulnerabilities
+### Bugs et vulnérabilités de sécurité
 
-If you discover a bug or a security vulnerability within DAW PHP Validator, please send a message to Steph. Thank you.
-All bugs and all security vulnerabilities will be promptly addressed.
-
-
+Si vous découvrez un bug ou une faille de sécurité au sein de DAW PHP Validator, merci d'envoyez message à Steph.
+Tout les bugs et failles de sécurité seront traitées rapidement.
 
 
-### License
 
-The DAW PHP Validator is Open Source software licensed under the MIT license.
+
+### Licence
+
+DAW PHP Validator est une librarie Open Source sous la licence MIT.

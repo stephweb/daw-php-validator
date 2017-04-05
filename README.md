@@ -56,13 +56,9 @@ Package developed by:
 
 * The documentation is in folder "docs" of this package:
 
-[Documentation](https://github.com/stephweb/daw-php-validator/blob/master/docs/doc.md)
-
-* The documentation is also on the package website:
-
-[DAW PHP Validator - English documentation](https://www.devandweb.com/packages/daw-php-validator)
+[English](https://github.com/stephweb/daw-php-validator/blob/master/docs/en/doc.md)
 |
-[DAW PHP Validator - French documentation](https://www.devandweb.fr/packages/daw-php-validator)
+[French](https://github.com/stephweb/daw-php-validator/blob/master/docs/fr/doc.md)
 
 
 
