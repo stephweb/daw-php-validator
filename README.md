@@ -31,7 +31,7 @@ Validator::extend('rule_name', function ($input, $value, $parameters) {
 }, 'Your custom error message.');
 ```
 
-You also have many other features
+You also have many other features.
 
 
 
