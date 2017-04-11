@@ -7,8 +7,6 @@ use DawPhpValidator\Contracts\Config\ConfigInterface;
 /**
  * Pour require fichier(s) qui sont dans le dossier de config
  *
- * @link     https://www.devandweb.fr/packages/daw-php-validator
- * @link     https://www.devandweb.com/packages/daw-php-validator
  * @link     https://github.com/stephweb/daw-php-validator
  * @author   stephweb <stephweb@live.fr>
  * @license  MIT License
