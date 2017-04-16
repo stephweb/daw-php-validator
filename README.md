@@ -11,7 +11,7 @@ Simple validation:
 ```php
 <?php
 
-if (Request::isPost()) {
+if ($request->isPost()) {
     $validator = new Validator();
 
     $validator->rules($arrayRules);
