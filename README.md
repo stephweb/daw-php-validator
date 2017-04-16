@@ -18,6 +18,9 @@ if (Request::isPost()) {
 
     if ($validator->isValid()) {
         // Response with success
+        return $validator->getMessages()->toHtml();
+    } else {
+        return $validator->getErrorsHtml();
     }
 }
 ```
