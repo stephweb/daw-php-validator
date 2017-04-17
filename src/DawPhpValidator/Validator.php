@@ -211,7 +211,7 @@ final class Validator implements ValidatorInterface
      * @param string $rule
      * @throws ValidatorException
      */
-    protected function callRule(string $rule)
+    private function callRule(string $rule)
     {
         $methodVerify = 'verify'.Str::convertSnakeCaseToCamelCase($rule);
 
