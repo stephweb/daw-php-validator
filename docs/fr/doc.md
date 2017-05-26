@@ -115,6 +115,7 @@ require_once 'your-path/daw-php-validator/src/DawPhpValidator/bootstrap/load.php
 * 'max' => int
 * 'min' => int
 * 'no_regex'=> string (regex qui ne doit pas matcher)
+* 'not_in_array' => array
 * 'regex'=> string (regex qui doit matcher)
 * 'required' => bool
 

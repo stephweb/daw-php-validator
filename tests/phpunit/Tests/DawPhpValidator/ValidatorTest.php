@@ -104,6 +104,7 @@ class ValidatorTest extends TestCase
         $_POST['input_max'] = '123';
         $_POST['input_min'] = '123456789';
         $_POST['input_no_regex'] = 'afg5_';
+        $_POST['input_not_in_array'] = 'aaazzz';
         $_POST['input_regex'] = 'ab';
         $_POST['input_required'] = 'adfr';
 
@@ -142,6 +143,7 @@ class ValidatorTest extends TestCase
         $_POST['input_max'] = '123456789';
         $_POST['input_min'] = '123';
         $_POST['input_no_regex'] = '12';
+        $_POST['input_not_in_array'] = 'aaa';
         $_POST['input_regex'] = 'abc44';
         $_POST['input_required'] = '';
 
@@ -175,6 +177,7 @@ class ValidatorTest extends TestCase
         $this->assertTrue($validator->hasError('input_max'));
         $this->assertTrue($validator->hasError('input_min'));
         $this->assertTrue($validator->hasError('input_no_regex'));
+        $this->assertTrue($validator->hasError('input_not_in_array'));
         $this->assertTrue($validator->hasError('input_regex'));
         $this->assertTrue($validator->hasError('input_required'));
     }
@@ -212,6 +215,7 @@ class ValidatorTest extends TestCase
             'input_max' => ['max' => 5,],
             'input_min' => ['min' => 5,],
             'input_no_regex' => ['no_regex' => "/^[0-9]+$/",],
+            'input_not_in_array' => ['not_in_array' => ['aaa', 'zzz']],
             'input_regex' => ['regex' => "/^[a-z]+$/",],
             'input_required' => ['required' => true,],
         ]);

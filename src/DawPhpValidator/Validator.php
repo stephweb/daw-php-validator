@@ -9,6 +9,8 @@ use DawPhpValidator\Support\Request\Request;
 use DawPhpValidator\Support\String\Str;
 
 /**
+ * Classe client
+ *
  * Pour vérifications des données
  *
  * @link     https://github.com/stephweb/daw-php-validator
@@ -515,6 +517,16 @@ final class Validator implements ValidatorInterface
     {
         if (preg_match($this->value, $this->requestMethod[$this->input])) {
             $this->errors[$this->input] = $this->pushError('no_regex', $this->value);
+        }
+    }
+
+    /**
+     * Vérifier si donnée envoyés n'est pas dans un array
+     */
+    private function verifyNotInArray()
+    {
+        if (in_array($this->requestMethod[$this->input], $this->value)) {
+            $this->errors[$this->input] = $this->pushError('not_in_array');
         }
     }
     

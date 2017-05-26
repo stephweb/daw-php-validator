@@ -33,6 +33,7 @@ return [
     'max' => 'The "{field}" field must not exceed {value} characteres.',
     'min' => 'The "{field}" field must not be less than {value} characteres.',
     'no_regex' => 'The "{field}" field must not have value in a format with the regex "{value}"',
+    'not_in_array' => 'The "{field}" field is invalid',
     'regex' => 'The "{field}" field must have value as a format with the regex "{value}"',
     'required' => 'The "{field}" field is required.',
 
