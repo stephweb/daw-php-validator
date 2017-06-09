@@ -87,17 +87,17 @@ require_once 'your-path/daw-php-validator/src/DawPhpValidator/bootstrap/load.php
 
 ## API
 
-| Method | Return type | Description |
+| Method | Name | Description |
 | ------- | -------------- | ----------- |
-| Validator::extend(string $ruleName, callable $condition, string $errorMessage) | void | To add a validation rule|
-| __construct($requestMethod = null) | void | Constructor |
-| $validator->rules(array $inputsWithRules) | void | Activate the validator |
-| $validator->isValid() | bool | True if submitted form is valid |
-| $validator->getErrors() | string | Associative array of errors |
-| $validator->getErrorsHtml() | string | Errors to display in HTML format |
-| $validator->getErrorsJson() | string | Errors to display in JSON format |
-| $validator->hasError('input_name') | bool | True if an input to an error |
-| $validator->getError('input_name') | string | Error(s) of the input |
+| static void | Validator::extend(string $ruleName, callable $condition, string $errorMessage) | To add a validation rule |
+| void | __construct($requestMethod = null) | Constructor |
+| void | rules(array $inputsWithRules) | Activate the validator |
+| bool | isValid() | True if submitted form is valid |
+| string | getErrors() | Associative array of errors |
+| string | getErrorsHtml() | Errors to display in HTML format |
+| string | getErrorsJson() | Errors to display in JSON format |
+| bool | hasError('input_name') | True if an input to an error |
+| string | getError('input_name') | Error(s) of the input |
 
 
 

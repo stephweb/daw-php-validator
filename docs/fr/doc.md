@@ -87,17 +87,17 @@ require_once 'your-path/daw-php-validator/src/DawPhpValidator/bootstrap/load.php
 
 ## API
 
-| Méthode | Type de retour | Description |
+| Méthode | Nom | Description |
 | ------- | -------------- | ----------- |
-| Validator::extend(string $ruleName, callable $condition, string $errorMessage) | void | Pour ajouter une règle dee validation |
-| __construct($requestMethod = null) | void | Constructor |
-| $validator->rules(array $inputsWithRules) | void | Active le validateur |
-| $validator->isValid() | bool | True si formulaire soumis est valide |
-| $validator->getErrors() | string | Tableau associatif des erreurs |
-| $validator->getErrorsHtml() | string | Les erreurs à afficher au format HTML |
-| $validator->getErrorsJson() | string | Les erreurs à afficher au format JSON |
-| $validator->hasError('input_name') | bool | True si un input à une erreur |
-| $validator->getError('input_name') | string | Erreur(s) de l'input |
+| static void | Validator::extend(string $ruleName, callable $condition, string $errorMessage) | Pour ajouter une règle dee validation |
+| void | __construct($requestMethod = null) | Constructeur |
+| void | rules(array $inputsWithRules) | Active le validateur |
+| bool | isValid() | True si formulaire soumis est valide |
+| string | getErrors() | Tableau associatif des erreurs |
+| string | getErrorsHtml() | Les erreurs à afficher au format HTML |
+| string | getErrorsJson() | Les erreurs à afficher au format JSON |
+| bool | hasError('input_name') | True si un input à une erreur |
+| string | getError('input_name') | Erreur(s) de l'input |
 
 
 
