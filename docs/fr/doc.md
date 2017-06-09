@@ -89,7 +89,7 @@ require_once 'your-path/daw-php-validator/src/DawPhpValidator/bootstrap/load.php
 
 | Méthode | Nom | Description |
 | ------- | -------------- | ----------- |
-| static void | Validator::extend(string $ruleName, callable $condition, string $errorMessage) | Pour ajouter une règle dee validation |
+| static void | extend(string $ruleName, callable $condition, string $errorMessage) | Pour ajouter une règle dee validation |
 | void | __construct($requestMethod = null) | Constructeur |
 | void | rules(array $inputsWithRules) | Active le validateur |
 | bool | isValid() | True si formulaire soumis est valide |
