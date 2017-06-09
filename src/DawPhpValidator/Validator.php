@@ -9,9 +9,15 @@ use DawPhpValidator\Support\Request\Request;
 use DawPhpValidator\Support\String\Str;
 
 /**
- * Classe client
+ * Classe client.
  *
- * Pour vérifications des données
+ * Pour vérifications des données.
+ *
+ * _Fonctionnement de ce package :
+ * Pour générer les réponses,
+ * la classe "Validator" fait appelle à la classe "Message"
+ * qui fait appelle à un Renderer ("HtmlRenderer", ou "JsonRenderer")
+ * et retournera la réponse (success ou erreur(s)).
  *
  * @link     https://github.com/stephweb/daw-php-validator
  * @author   stephweb <stephweb@live.fr>
@@ -137,7 +143,7 @@ final class Validator implements ValidatorInterface
     }
 
     /**
-     * Eventuellement ajouter une règle da validation à ajouter
+     * Pour ajouter une règle de validation
      *
      * @param string $rule
      * @param callable $callable
@@ -167,14 +173,14 @@ final class Validator implements ValidatorInterface
     }
     
     /**
-     * Vérification des données soumises
+     * Active le validateur
      *
-     * @param array $array
+     * @param array $inputsWithRules
      * @throws ValidatorException
      */
-    public function rules(array $array)
+    public function rules(array $inputsWithRules)
     {
-        foreach ($array as $input => $rules) {
+        foreach ($inputsWithRules as $input => $rules) {
             $this->input = $input;
 
             if (is_array($rules)) {
@@ -615,6 +621,8 @@ final class Validator implements ValidatorInterface
     }
 
     /**
+     * Vérifier si un input à une erreur
+     *
      * @param string $key - name de l'input
      * @return bool - True si input à au minimum une erreur
      */
@@ -633,7 +641,7 @@ final class Validator implements ValidatorInterface
     }
 
     /**
-     * @return array - Array associatif des erreurs
+     * @return array - Tableau associatif des erreurs
      */
     public function getErrors(): array
     {

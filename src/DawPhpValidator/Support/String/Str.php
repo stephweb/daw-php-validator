@@ -19,7 +19,7 @@ class Str
     /**
      * Pour remplacer format snake_case par format camelCase
      *
-     * @param string $value - snake_case
+     * @param string $value - camelCase
      * @return string
      */
     public static function convertSnakeCaseToCamelCase(string $value): string

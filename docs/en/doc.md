@@ -124,17 +124,17 @@ require_once 'your-path/daw-php-validator/src/DawPhpValidator/bootstrap/load.php
 
 
 
-## Validator methods
+## API
 
-* Validator::extend(string $ruleName, callable $condition, string $errorMessage)
+* Validator::extend(string $ruleName, callable $condition, string $errorMessage) | return void | To add a validation rule
 * $validator = new Validator($optionalRequestMethod);
-* $validator->rules(array $rules)
-* $validator->isValid() *(return bool)*
-* $validator->getErrors() *(return array)*
-* $validator->getErrorsHtml() *(return string)*
-* $validator->getErrorsJson() *(return string)*
-* $validator->hasError('input_name') *(return bool)*
-* $validator->getError('input_name') *(return string)*
+* $validator->rules(array $inputsWithRules) | return void | Activate the validator
+* $validator->isValid() | return bool | True if submitted form is valid
+* $validator->getErrors() | return array | Associative array of errors
+* $validator->getErrorsHtml() | return string | Errors to display in HTML format
+* $validator->getErrorsJson() | return string | Errors to display in JSON format
+* $validator->hasError('input_name') | return bool | True if an input to an error
+* $validator->getError('input_name') | return string | Error(s) of the input
 
 
 
