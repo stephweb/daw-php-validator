@@ -85,9 +85,9 @@ require_once 'your-path/daw-php-validator/src/DawPhpValidator/bootstrap/load.php
 
 
 
-## API
+## Methods
 
-| Methods | Name | Description |
+| Static ? Return type | Name | Description |
 | ------- | -------------- | ----------- |
 | static void | extend(string $rule, callable $callable, string $message) | To add a validation rule |
 | void | __construct($requestMethod = null) | Constructor |
