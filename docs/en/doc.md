@@ -85,6 +85,23 @@ require_once 'your-path/daw-php-validator/src/DawPhpValidator/bootstrap/load.php
 
 
 
+## API
+
+* Validator::extend(string $ruleName, callable $condition, string $errorMessage) | return void | To add a validation rule
+* $validator = new Validator($optionalRequestMethod);
+* $validator->rules(array $inputsWithRules) | return void | Activate the validator
+* $validator->isValid() | return bool | True if submitted form is valid
+* $validator->getErrors() | return array | Associative array of errors
+* $validator->getErrorsHtml() | return string | Errors to display in HTML format
+* $validator->getErrorsJson() | return string | Errors to display in JSON format
+* $validator->hasError('input_name') | return bool | True if an input to an error
+* $validator->getError('input_name') | return string | Error(s) of the input
+
+
+
+
+
+
 ## Available Validation Rules
 
 * 'alpha' => bool
@@ -118,23 +135,6 @@ require_once 'your-path/daw-php-validator/src/DawPhpValidator/bootstrap/load.php
 * 'not_in_array' => array
 * 'regex'=> string (regex must match)
 * 'required' => bool
-
-
-
-
-
-
-## API
-
-* Validator::extend(string $ruleName, callable $condition, string $errorMessage) | return void | To add a validation rule
-* $validator = new Validator($optionalRequestMethod);
-* $validator->rules(array $inputsWithRules) | return void | Activate the validator
-* $validator->isValid() | return bool | True if submitted form is valid
-* $validator->getErrors() | return array | Associative array of errors
-* $validator->getErrorsHtml() | return string | Errors to display in HTML format
-* $validator->getErrorsJson() | return string | Errors to display in JSON format
-* $validator->hasError('input_name') | return bool | True if an input to an error
-* $validator->getError('input_name') | return string | Error(s) of the input
 
 
 
