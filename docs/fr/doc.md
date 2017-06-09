@@ -87,11 +87,10 @@ require_once 'your-path/daw-php-validator/src/DawPhpValidator/bootstrap/load.php
 
 ## API
 
-* $validator = new Validator($optionalRequestMethod);
-
 | Méthode | Type de retour | Description |
 | ------- | -------------- | ----------- |
 | Validator::extend(string $ruleName, callable $condition, string $errorMessage) | void | Pour ajouter une règle dee validation |
+| __construct($requestMethod = null) | void | Constructor |
 | $validator->rules(array $inputsWithRules) | void | Active le validateur |
 | $validator->isValid() | bool | True si formulaire soumis est valide |
 | $validator->getErrors() | string | Tableau associatif des erreurs |
