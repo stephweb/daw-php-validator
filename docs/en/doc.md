@@ -85,6 +85,25 @@ require_once 'your-path/daw-php-validator/src/DawPhpValidator/bootstrap/load.php
 
 
 
+## Methods
+
+| Static ? Return type | Name | Description |
+| ------- | -------------- | ----------- |
+| static void | extend(string $rule, callable $callable, string $message) | To add a validation rule |
+| void | __construct($requestMethod = null) | Constructor |
+| void | rules(array $inputsWithRules) | Activate the validator |
+| bool | isValid() | True if submitted form is valid |
+| string | getErrors() | Associative array of errors |
+| string | getErrorsHtml() | Errors to display in HTML format |
+| string | getErrorsJson() | Errors to display in JSON format |
+| bool | hasError('input_name') | True if an input to an error |
+| string | getError('input_name') | Error(s) of the input |
+
+
+
+
+
+
 ## Available Validation Rules
 
 * 'alpha' => bool
@@ -115,25 +134,9 @@ require_once 'your-path/daw-php-validator/src/DawPhpValidator/bootstrap/load.php
 * 'max' => int
 * 'min' => int
 * 'no_regex'=> string (regex which must not match)
+* 'not_in_array' => array
 * 'regex'=> string (regex must match)
 * 'required' => bool
-
-
-
-
-
-
-## Validator methods
-
-* Validator::extend(string $ruleName, callable $condition, string $errorMessage)
-* $validator = new Validator($optionalRequestMethod);
-* $validator->rules(array $rules)
-* $validator->isValid() *(return bool)*
-* $validator->getErrors() *(return array)*
-* $validator->getErrorsHtml() *(return string)*
-* $validator->getErrorsJson() *(return string)*
-* $validator->hasError('input_name') *(return bool)*
-* $validator->getError('input_name') *(return string)*
 
 
 
