@@ -673,7 +673,7 @@ final class Validator implements ValidatorInterface
     }
 
     /**
-     * @return string - Les erreurs à afficher  au format Json
+     * @return string - Les erreurs à afficher au format Json
      */
     public function getErrorsJson(): string
     {
