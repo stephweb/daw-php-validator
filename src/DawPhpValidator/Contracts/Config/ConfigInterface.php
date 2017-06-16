@@ -7,7 +7,7 @@ namespace DawPhpValidator\Contracts\Config;
  * @author   stephweb <stephweb@live.fr>
  * @license  MIT License
  */
-interface ConfigInterface
+Interface ConfigInterface
 {
     /**
      * @param array $config
