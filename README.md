@@ -42,8 +42,8 @@ You also have many other features.
 ### Author
 
 Package developed by:
-[Développeur PHP de Grenoble](https://www.devandweb.fr)
-[![Developpeur PHP Grenoble](https://www.devandweb.fr/medias/website/developpeur-web.png)](https://www.devandweb.fr)
+[Developpeur PHP Freelance](https://www.devandweb.fr)
+[![Developpeur web Freelance](https://www.devandweb.fr/medias/website/developpeur-web.png)](https://www.devandweb.fr)
 
 
 
