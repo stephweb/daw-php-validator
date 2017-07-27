@@ -2,16 +2,22 @@
     "name": "stephweb/daw-php-validator",
     "description": "PHP library of simple Validation system",
     "type": "library",
-    "keywords": ["php","validation","form","validator"],
+    "keywords": ["php","validation","validator","form"],
     "license": "MIT",
     "authors": [
         {
-            "name": "stephweb",
+            "name": "Stephen Damian",
             "email": "stephweb@live.fr",
             "homepage": "https://www.devandweb.fr",
             "role": "Developer"
         }
     ],
+    "support": {
+        "email": "stephweb@live.fr",
+        "issues": "https://github.com/stephweb/daw-php-validator/issues",
+        "source": "https://github.com/stephweb/daw-php-validator",
+        "docs": "https://github.com/stephweb/daw-php-validator/tree/master/docs/en"
+    },
     "require": {
         "php": ">=7.0"
     },
