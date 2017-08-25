@@ -29,6 +29,11 @@
             "DawPhpValidator\\": "src/DawPhpValidator/"
         }
     },
+    "scripts": {
+        "tests": [
+            "phpunit -c tests/phpunit/phpunit.xml"
+        ]
+    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }
