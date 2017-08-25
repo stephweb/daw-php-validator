@@ -8,7 +8,7 @@ use DawPhpValidator\Exception\ValidatorException;
  * Pour require les fichiers qui sont dans le dossier lang des resources
  *
  * @link     https://github.com/stephweb/daw-php-validator
- * @author   stephweb <stephweb@live.fr>
+ * @author   Stephen Damian <contact@devandweb.fr>
  * @license  MIT License
  */
 final class Lang extends SingletonConfig

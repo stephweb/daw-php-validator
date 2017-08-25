@@ -9,7 +9,7 @@ use DawPhpValidator\Support\String\Json;
  * Pour retourner des string au format Json
  *
  * @link     https://github.com/stephweb/daw-php-validator
- * @author   stephweb <stephweb@live.fr>
+ * @author   Stephen Damian <contact@devandweb.fr>
  * @license  MIT License
  */
 final class JsonRenderer implements RendererInterface

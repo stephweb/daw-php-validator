@@ -6,7 +6,7 @@ use Exception;
 
 /**
  * @link     https://github.com/stephweb/daw-php-validator
- * @author   stephweb <stephweb@live.fr>
+ * @author   Stephen Damian <contact@devandweb.fr>
  * @license  MIT License
  */
 class ValidatorException extends Exception

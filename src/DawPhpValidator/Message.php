@@ -8,7 +8,7 @@ use DawPhpValidator\Contracts\ValidatorInterface;
  * Pour retourner les messages du Validator
  *
  * @link     https://github.com/stephweb/daw-php-validator
- * @author   stephweb <stephweb@live.fr>
+ * @author   Stephen Damian <contact@devandweb.fr>
  * @license  MIT License
  */
 final class Message

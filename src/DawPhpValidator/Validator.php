@@ -20,7 +20,7 @@ use DawPhpValidator\Support\String\Str;
  * et retournera la réponse (success ou erreur(s)).
  *
  * @link     https://github.com/stephweb/daw-php-validator
- * @author   stephweb <stephweb@live.fr>
+ * @author   Stephen Damian <contact@devandweb.fr>
  * @license  MIT License
  */
 final class Validator implements ValidatorInterface

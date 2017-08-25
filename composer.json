@@ -7,13 +7,13 @@
     "authors": [
         {
             "name": "Stephen Damian",
-            "email": "stephweb@live.fr",
+            "email": "contact@devandweb.fr",
             "homepage": "https://www.devandweb.fr",
             "role": "Developer"
         }
     ],
     "support": {
-        "email": "stephweb@live.fr",
+        "email": "contact@devandweb.fr",
         "issues": "https://github.com/stephweb/daw-php-validator/issues",
         "source": "https://github.com/stephweb/daw-php-validator",
         "docs": "https://github.com/stephweb/daw-php-validator/tree/master/docs/en"

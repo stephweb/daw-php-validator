@@ -6,7 +6,7 @@ namespace DawPhpValidator\Config;
  * Classe parent des classes de config
  *
  * @link     https://github.com/stephweb/daw-php-validator
- * @author   stephweb <stephweb@live.fr>
+ * @author   Stephen Damian <contact@devandweb.fr>
  * @license  MIT License
  */
 abstract class SingletonConfig

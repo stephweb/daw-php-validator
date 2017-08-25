@@ -8,7 +8,7 @@ use DawPhpValidator\Contracts\Config\ConfigInterface;
  * Pour require fichier(s) qui sont dans le dossier de config
  *
  * @link     https://github.com/stephweb/daw-php-validator
- * @author   stephweb <stephweb@live.fr>
+ * @author   Stephen Damian <contact@devandweb.fr>
  * @license  MIT License
  */
 final class Config extends SingletonConfig implements ConfigInterface
