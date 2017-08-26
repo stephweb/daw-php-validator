@@ -86,7 +86,7 @@ php composer.phar require stephweb/daw-php-validator 1.1.*
 
 ### Bugs and security Vulnerabilities
 
-If you discover a bug or a security vulnerability within DAW PHP Validator, please send a message to Steph. Thank you.
+If you discover a bug or a security vulnerability within DAW PHP Validator, please send a message to Stephen. Thank you.
 All bugs and all security vulnerabilities will be promptly addressed.
 
 

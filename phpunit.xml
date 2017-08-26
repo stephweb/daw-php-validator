@@ -9,7 +9,7 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="Core tests">
+        <testsuite name="Kernel tests">
             <directory>tests/phpunit/DawPhpValidator</directory>
         </testsuite>
     </testsuites>
