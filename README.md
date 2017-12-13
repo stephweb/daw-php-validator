@@ -13,8 +13,8 @@ DAW PHP Validator is a Open Source PHP library of simple validation system.
 ### Author
 
 Package developed by:
-[Développeur web Grenoble](https://www.devandweb.fr)
-[![Developpeur PHP Freelance](https://www.devandweb.fr/medias/website/developpeur-web.png)](https://www.devandweb.fr)
+[Développeur web Freelance](https://www.devandweb.fr)
+[![Developpeur PHP Freelance](https://www.devandweb.fr/medias/website/developpeur-web.png)](https://www.devandweb.fr/freelance/developpeur-php)
 
 
 
