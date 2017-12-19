@@ -82,23 +82,14 @@ class ValidatorTest extends TestCase
         $_POST['input_confirm'] = 'aaaaa';
         $_POST['input_empty'] = '';
         $_POST['input_format_date'] = '19/01/2017';
-        $_POST['input_format_date_if_not_empty'] = '';
         $_POST['input_format_date_time'] = '19/01/2017 19:50';
-        $_POST['input_format_date_time_if_not_empty'] = '';
         $_POST['input_format_email'] = 'test@live.fr';
-        $_POST['input_format_email_if_not_empty'] = '';
         $_POST['input_format_ip'] = '22.233.56.22';
-        $_POST['input_format_ip_if_not_empty'] = '';
         $_POST['input_format_postal_code'] = '38000';
-        $_POST['input_format_postal_code_if_not_empty'] = '';
         $_POST['input_format_slug'] = 'slug-test';
-        $_POST['input_format_slug_if_not_empty'] = '';
         $_POST['input_format_name_file'] = 'file-test.png';
-        $_POST['input_format_name_file_if_not_empty'] = '';
         $_POST['input_format_tel'] = '06 06 06 06 06';
-        $_POST['input_format_tel_if_not_empty'] = '';
         $_POST['input_format_url'] = 'https://www.url-test.com';
-        $_POST['input_format_url_if_not_empty'] = '';
         $_POST['input_integer'] = '123';
         $_POST['input_in_array'] = '11';
         $_POST['input_max'] = '123';
@@ -121,23 +112,14 @@ class ValidatorTest extends TestCase
         $_POST['input_confirm'] = 'aaaaazzz';
         $_POST['input_empty'] = 'zzz';
         $_POST['input_format_date'] = 'sfefefef';
-        $_POST['input_format_date_if_not_empty'] = 'sfefefef';
         $_POST['input_format_date_time'] = '21edfefe';
-        $_POST['input_format_date_time_if_not_empty'] = '21edfefe';
         $_POST['input_format_email'] = 'tesdddddfr';
-        $_POST['input_format_email_if_not_empty'] = 'tesdddddfr';
         $_POST['input_format_ip'] = 'dz5554dz5dz';
-        $_POST['input_format_ip_if_not_empty'] = 'dz5554dz5dz';
         $_POST['input_format_postal_code'] = '35ddef';
-        $_POST['input_format_postal_code_if_not_empty'] = '35ddef';
         $_POST['input_format_slug'] = 'slugà-_/test';
-        $_POST['input_format_slug_if_not_empty'] = 'slugà-_/test';
         $_POST['input_format_name_file'] = 'file test';
-        $_POST['input_format_name_file_if_not_empty'] = 'file test';
         $_POST['input_format_tel'] = '06feef/EFl';
-        $_POST['input_format_tel_if_not_empty'] = '06feef/EFl';
         $_POST['input_format_url'] = 'deffeeffe';
-        $_POST['input_format_url_if_not_empty'] = 'deffeeffe';
         $_POST['input_integer'] = '123aaaa';
         $_POST['input_in_array'] = '1';
         $_POST['input_max'] = '123456789';
@@ -155,23 +137,14 @@ class ValidatorTest extends TestCase
         $this->assertTrue($validator->hasError('input_confirm'));
         $this->assertTrue($validator->hasError('input_empty'));
         $this->assertTrue($validator->hasError('input_format_date'));
-        $this->assertTrue($validator->hasError('input_format_date_if_not_empty'));
         $this->assertTrue($validator->hasError('input_format_date_time'));
-        $this->assertTrue($validator->hasError('input_format_date_time_if_not_empty'));
         $this->assertTrue($validator->hasError('input_format_email'));
-        $this->assertTrue($validator->hasError('input_format_email_if_not_empty'));
         $this->assertTrue($validator->hasError('input_format_ip'));
-        $this->assertTrue($validator->hasError('input_format_ip_if_not_empty'));
         $this->assertTrue($validator->hasError('input_format_postal_code'));
-        $this->assertTrue($validator->hasError('input_format_postal_code_if_not_empty'));
         $this->assertTrue($validator->hasError('input_format_slug'));
-        $this->assertTrue($validator->hasError('input_format_slug_if_not_empty'));
         $this->assertTrue($validator->hasError('input_format_name_file'));
-        $this->assertTrue($validator->hasError('input_format_name_file_if_not_empty'));
         $this->assertTrue($validator->hasError('input_format_tel'));
-        $this->assertTrue($validator->hasError('input_format_tel_if_not_empty'));
         $this->assertTrue($validator->hasError('input_format_url'));
-        $this->assertTrue($validator->hasError('input_format_url_if_not_empty'));
         $this->assertTrue($validator->hasError('input_integer'));
         $this->assertTrue($validator->hasError('input_in_array'));
         $this->assertTrue($validator->hasError('input_max'));
@@ -193,23 +166,14 @@ class ValidatorTest extends TestCase
             'input_confirm' => ['confirm' => [$_POST['input_confirm'], 'aaaaa']],
             'input_empty' => ['empty' => true],
             'input_format_date' => ['format_date' => true,],
-            'input_format_date_if_not_empty' => ['format_date_if_not_empty' => true,],
             'input_format_date_time' => ['format_date_time' => true,],
-            'input_format_date_time_if_not_empty' => ['format_date_time_if_not_empty' => true,],
             'input_format_email' => ['format_email' => true,],
-            'input_format_email_if_not_empty' => ['format_email_if_not_empty' => true,],
             'input_format_ip' => ['format_ip' => true,],
-            'input_format_ip_if_not_empty' => ['format_ip_if_not_empty' => true,],
             'input_format_name_file' => ['format_name_file' => true,],
-            'input_format_name_file_if_not_empty' => ['format_name_file_if_not_empty' => true,],
             'input_format_postal_code' => ['format_postal_code' => true,],
-            'input_format_postal_code_if_not_empty' => ['format_postal_code_if_not_empty' => true,],
             'input_format_slug' => ['format_slug' => true,],
-            'input_format_slug_if_not_empty' => ['format_slug_if_not_empty' => true,],
             'input_format_tel' => ['format_tel' => true,],
-            'input_format_tel_if_not_empty' => ['format_tel_if_not_empty' => true,],
             'input_format_url' => ['format_url' => true,],
-            'input_format_url_if_not_empty' => ['format_url_if_not_empty' => true,],
             'input_integer' => ['integer' => true,],
             'input_in_array' => ['in_array' => ['11', '12', '13'],],
             'input_max' => ['max' => 5,],

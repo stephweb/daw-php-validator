@@ -112,23 +112,14 @@ require_once 'your-path/daw-php-validator/src/DawPhpValidator/bootstrap/load.php
 * 'confirm' => array (2 values to verify)
 * 'empty' => bool
 * 'format_date' => bool
-* 'format_date_if_not_empty' => bool (if the field is not empty: verify the format)
 * 'format_date_time' => bool
-* 'format_date_time_if_not_empty' => bool (if the field is not empty: verify the format)
 * 'format_email' => bool
-* 'format_email_if_not_empty' => bool (if the field is not empty: verify the format)
 * 'format_ip' => bool
-* 'format_ip_if_not_empty' => bool (if the field is not empty: verify the format)
 * 'format_name_file'
-* 'format_name_file_if_not_empty' => bool (if the field is not empty: verify the format)
 * 'format_postal_code' => bool
-* 'format_postal_code_if_not_empty' => bool (if the field is not empty: verify the format)
 * 'format_slug' => bool
-* 'format_slug_if_not_empty' => bool
 * 'format_tel' =>bool
-* 'format_tel_if_not_empty' =>bool
 * 'format_url' => bool
-* 'format_url_if_not_empty' => bool
 * 'integer' => bool
 * 'in_array' => array
 * 'max' => int
@@ -137,6 +128,9 @@ require_once 'your-path/daw-php-validator/src/DawPhpValidator/bootstrap/load.php
 * 'not_in_array' => array
 * 'regex'=> string (regex must match)
 * 'required' => bool
+
+For the "format_*", the format will only check if a value is submitted.
+So think of adding to the rules of the field a 'required' if you want to ban the empty value.
 
 
 
