@@ -66,9 +66,9 @@ If you want an accounting with PHP 7.0 or 7.1 or PHP 7.2 or PHP 7.3, you can use
 
 * The documentation is in folder "docs" of this package:
 
-[English](https://github.com/stephweb/daw-php-validator/blob/master/docs/en/doc.md)
+[English](https://github.com/stephweb/daw-php-validator/tree/2.0/docs/en/doc.md)
 |
-[French](https://github.com/stephweb/daw-php-validator/blob/master/docs/fr/doc.md)
+[French](https://github.com/stephweb/daw-php-validator/tree/2.0/docs/fr/doc.md)
 
 
 
