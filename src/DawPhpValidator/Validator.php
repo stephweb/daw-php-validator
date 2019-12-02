@@ -37,7 +37,7 @@ final class Validator implements ValidatorInterface
      *
      * @var array
      */
-    private static $extends = [];
+    private static array $extends = [];
 
     /**
      * Langue choisie dans config/config.php
@@ -51,14 +51,14 @@ final class Validator implements ValidatorInterface
      *
      * @var string
      */
-    private $label;
+    private string $label;
 
     /**
      * Name du input
      *
      * @var string
      */
-    private $input;
+    private string $input;
 
     /**
      * Valeur des rules qu'on passe à un input
@@ -72,14 +72,14 @@ final class Validator implements ValidatorInterface
      *
      * @var array
      */
-    private $labels = [];
+    private array $labels = [];
 
     /**
      * Contiendra les éventuels erreurs
      *
      * @var array
      */
-    private $errors = [];
+    private array $errors = [];
 
     /**
      * @const string
@@ -150,7 +150,7 @@ final class Validator implements ValidatorInterface
      * @param string $message
      * @throws ValidatorException
      */
-    public static function extend(string $rule, callable $callable, string $message)
+    public static function extend(string $rule, callable $callable, string $message): void
     {
         self::setLangValidation();
 
@@ -165,7 +165,7 @@ final class Validator implements ValidatorInterface
     /**
      * Charger la langue choisie dans config/config.php
      */
-    private static function setLangValidation()
+    private static function setLangValidation(): void
     {
         if (self::$langValidation === null) {
             self::$langValidation = Lang::getInstance()->validation();
@@ -178,7 +178,7 @@ final class Validator implements ValidatorInterface
      * @param array $inputsWithRules
      * @throws ValidatorException
      */
-    public function rules(array $inputsWithRules)
+    public function rules(array $inputsWithRules): void
     {
         foreach ($inputsWithRules as $input => $rules) {
             $this->input = $input;
@@ -202,7 +202,7 @@ final class Validator implements ValidatorInterface
     /**
      * @param array $rules
      */
-    private function setLabel(array $rules)
+    private function setLabel(array $rules): void
     {
         if (isset($rules['label'])) {
             $this->label = $rules['label'];
@@ -219,7 +219,7 @@ final class Validator implements ValidatorInterface
      * @param string $rule
      * @throws ValidatorException
      */
-    private function callRule(string $rule)
+    private function callRule(string $rule): void
     {
         $methodVerify = 'verify'.Str::convertSnakeCaseToCamelCase($rule);
 
@@ -237,7 +237,7 @@ final class Validator implements ValidatorInterface
     /**
      * @param string $rule
      */
-    private function ruleWithExtend(string $rule)
+    private function ruleWithExtend(string $rule): void
     {
         if (self::$extends[$rule]['bool']($this->input, $this->requestMethod[$this->input], $this->value) === false) {
             $this->errors[$this->input] = $this->label.': '.self::$extends[$rule]['message'];
@@ -247,7 +247,7 @@ final class Validator implements ValidatorInterface
     /**
      * Vérifier que valeur entrée dans le champ est bien alphabétique
      */
-    private function verifyAlpha()
+    private function verifyAlpha(): void
     {
         if ($this->value === true && !preg_match(self::REGEX_ALPHA, $this->requestMethod[$this->input])) {
             $this->errors[$this->input] = $this->pushError('alpha');
@@ -257,7 +257,7 @@ final class Validator implements ValidatorInterface
     /**
      * Vérifier que valeur entrée dans le champ est bien alphanumérique
      */
-    private function verifyAlphaNumeric()
+    private function verifyAlphaNumeric(): void
     {
         if ($this->value === true && !preg_match(self::REGEX_ALPHA_NUMERIC, $this->requestMethod[$this->input])) {
             $this->errors[$this->input] = $this->pushError('alpha_numeric');
@@ -269,7 +269,7 @@ final class Validator implements ValidatorInterface
      *
      * $this->value - (array numeroté). Valeur doit etre entre $this->value[0] (valeur min) et $this->value[1] (valeur max)
      */
-    private function verifyBetween()
+    private function verifyBetween(): void
     {
         if ($this->requestMethod[$this->input] < $this->value[0] || $this->requestMethod[$this->input] > $this->value[1]) {
             $this->errors[$this->input] = $this->pushError('between', $this->value);
@@ -279,7 +279,7 @@ final class Validator implements ValidatorInterface
     /**
      * Pour obliger 2 valeurs à êtres égales
      */
-    private function verifyConfirm()
+    private function verifyConfirm(): void
     {
         if ($this->value[0] != $this->value[1]) {
             $this->errors[$this->input] = $this->pushError('confirm');
@@ -289,7 +289,7 @@ final class Validator implements ValidatorInterface
     /**
      * Champ doit obligatoirement rester vide
      */
-    private function verifyEmpty()
+    private function verifyEmpty(): void
     {
         if ($this->requestMethod[$this->input] != '') {
             $this->errors[$this->input] = $this->pushError('empty');
@@ -299,7 +299,7 @@ final class Validator implements ValidatorInterface
     /**
      * Vérifier que valeur entrée est bien au format d'une date
      */
-    private function verifyFormatDate()
+    private function verifyFormatDate(): void
     {
         if ($this->requestMethod[$this->input] != '') {
             if ($this->value === true && !preg_match(self::REGEX_DATE, $this->requestMethod[$this->input])) {
@@ -311,7 +311,7 @@ final class Validator implements ValidatorInterface
     /**
      * Vérifier que valeur entrée est bien au format d'une date/heure
      */
-    private function verifyFormatDateTime()
+    private function verifyFormatDateTime(): void
     {
         if ($this->requestMethod[$this->input] != '') {
             if ($this->value === true && !preg_match(self::REGEX_DATE_TIME, $this->requestMethod[$this->input])) {
@@ -323,7 +323,7 @@ final class Validator implements ValidatorInterface
     /**
      * Vérifier que valeur entrée est bien au format d'un Email
      */
-    private function verifyFormatEmail()
+    private function verifyFormatEmail(): void
     {
         if ($this->requestMethod[$this->input] != '') {
             if ($this->value === true && !filter_var($this->requestMethod[$this->input], FILTER_VALIDATE_EMAIL) == true) {
@@ -335,7 +335,7 @@ final class Validator implements ValidatorInterface
     /**
      * Verifier que valeur entrée est bien au format d'une adresse IP
      */
-    private function verifyFormatIp()
+    private function verifyFormatIp(): void
     {
         if ($this->requestMethod[$this->input] != '') {
             if ($this->value === true && !filter_var($this->requestMethod[$this->input], FILTER_VALIDATE_IP)) {
@@ -347,7 +347,7 @@ final class Validator implements ValidatorInterface
     /**
      * Verifier que valeur entrée est bien au format d'un nom de fichier
      */
-    private function verifyFormatNameFile()
+    private function verifyFormatNameFile(): void
     {
         if ($this->requestMethod[$this->input] != '') {
             if ($this->value === true && preg_match(self::REGEX_CHARACTERS_PROHIBITED_NAME_FILE, $this->requestMethod[$this->input])) {
@@ -359,7 +359,7 @@ final class Validator implements ValidatorInterface
     /**
      * Verifier que valeur entrée est bien au format d'un code postale
      */
-    private function verifyFormatPostalCode()
+    private function verifyFormatPostalCode(): void
     {
         if ($this->requestMethod[$this->input] != '') {
             if ($this->value === true && !preg_match(self::REGEX_POSTALE_CODE, $this->requestMethod[$this->input])) {
@@ -371,7 +371,7 @@ final class Validator implements ValidatorInterface
     /**
      * Vérifier que valeur entrée est bien au format d'un d'un slug
      */
-    private function verifyFormatSlug()
+    private function verifyFormatSlug(): void
     {
         if ($this->requestMethod[$this->input] != '') {
             if ($this->value === true && !preg_match(self::REGEX_SLUG, $this->requestMethod[$this->input])) {
@@ -383,7 +383,7 @@ final class Validator implements ValidatorInterface
     /**
      * Vérifier que valeur entrée est bien au format d'un numéro de téléphone
      */
-    private function verifyFormatTel()
+    private function verifyFormatTel(): void
     {
         if ($this->requestMethod[$this->input] != '') {
             if ($this->value === true && !preg_match(self::REGEX_TEL, $this->requestMethod[$this->input])) {
@@ -395,7 +395,7 @@ final class Validator implements ValidatorInterface
     /**
      * Vérifier que valeur entrée est bien au format d'un d'une URL
      */
-    private function verifyFormatUrl()
+    private function verifyFormatUrl(): void
     {
         if ($this->requestMethod[$this->input] != '') {
             if ($this->value === true && !filter_var($this->requestMethod[$this->input], FILTER_VALIDATE_URL)) {
@@ -407,7 +407,7 @@ final class Validator implements ValidatorInterface
     /**
      * Vérifier que valeur entrée dans le champ est bien un entier
      */
-    private function verifyInteger()
+    private function verifyInteger(): void
     {
         if ($this->value === true && !preg_match(self::REGEX_INTEGER, $this->requestMethod[$this->input])) {
             $this->errors[$this->input] = $this->pushError('integer');
@@ -417,7 +417,7 @@ final class Validator implements ValidatorInterface
     /**
      * Vérifier si donnée envoyés est dans un array
      */
-    private function verifyInArray()
+    private function verifyInArray(): void
     {
         if (!in_array($this->requestMethod[$this->input], $this->value)) {
             $this->errors[$this->input] = $this->pushError('in_array');
@@ -427,7 +427,7 @@ final class Validator implements ValidatorInterface
     /**
      * Nombre de caractères maximum autorisés dans champ
      */
-    private function verifyMax()
+    private function verifyMax(): void
     {
         if (mb_strlen($this->requestMethod[$this->input]) > $this->value) {
             $this->errors[$this->input] = $this->pushError('max', $this->value);
@@ -437,7 +437,7 @@ final class Validator implements ValidatorInterface
     /**
      * Nombre de caractères minimum autorisés dans champ
      */
-    private function verifyMin()
+    private function verifyMin(): void
     {
         if (mb_strlen($this->requestMethod[$this->input]) < $this->value) {
             $this->errors[$this->input] = $this->pushError('min', $this->value);
@@ -447,7 +447,7 @@ final class Validator implements ValidatorInterface
     /**
      * Verifier que valeur entrée n'est pas au format d'un regex spécifique
      */
-    private function verifyNoRegex()
+    private function verifyNoRegex(): void
     {
         if (preg_match($this->value, $this->requestMethod[$this->input])) {
             $this->errors[$this->input] = $this->pushError('no_regex', $this->value);
@@ -457,7 +457,7 @@ final class Validator implements ValidatorInterface
     /**
      * Vérifier si donnée envoyés n'est pas dans un array
      */
-    private function verifyNotInArray()
+    private function verifyNotInArray(): void
     {
         if (in_array($this->requestMethod[$this->input], $this->value)) {
             $this->errors[$this->input] = $this->pushError('not_in_array');
@@ -467,7 +467,7 @@ final class Validator implements ValidatorInterface
     /**
      * Verifier que valeur entrée est bien au format d'un regex spécifique
      */
-    private function verifyRegex()
+    private function verifyRegex(): void
     {
         if (!preg_match($this->value, $this->requestMethod[$this->input])) {
             $this->errors[$this->input] = $this->pushError('regex', $this->value);
@@ -477,7 +477,7 @@ final class Validator implements ValidatorInterface
     /**
      * Champ doit obligatoirement etre remplis
      */
-    private function verifyRequired()
+    private function verifyRequired(): void
     {
         if (
             ($this->value === true && !array_key_exists($this->input, $this->requestMethod)) OR
@@ -491,7 +491,7 @@ final class Validator implements ValidatorInterface
      * Si il y a une erreur -> pushera une erreur par input
      *
      * @param string $key - Key dans tableaux inclut dans resources/lang...
-     * @param null|string $value - Pour éventuellemnt {value} dans tableaux inclut dans resources/lang...
+     * @param null|string|array $value - Pour éventuellemnt {value} dans tableaux inclut dans resources/lang...
      * @return string
      */
     private function pushError(string $key, $value = null): string
@@ -525,7 +525,7 @@ final class Validator implements ValidatorInterface
      * @param string $input
      * @param string $error
      */
-    public function addErrorWithInput(string $input, string $error)
+    public function addErrorWithInput(string $input, string $error): void
     {
         $this->errors[$input] = $error;
     }
@@ -535,7 +535,7 @@ final class Validator implements ValidatorInterface
      *
      * @param string $error
      */
-    public function addError(string $error)
+    public function addError(string $error): void
     {
         $this->errors[] = $error;
     }

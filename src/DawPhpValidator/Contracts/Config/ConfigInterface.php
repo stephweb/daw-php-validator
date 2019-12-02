@@ -12,10 +12,10 @@ Interface ConfigInterface
     /**
      * @param array $config
      */
-    public static function set(array $config);
+    public static function set(array $config): void;
 
     /**
-     * @return array
+     * @return array|string
      */
-    public static function get(): array;
+    public static function get(string $param = null);
 }

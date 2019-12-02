@@ -25,7 +25,10 @@ if (Request::isPost()) {
 
 ### Pré-requis
 
-* PHP >= 7.0
+* PHP >= 7.4
+
+Si vous souhaitez une comptabilité avec PHP 7.0 ou 7.1 ou PHP 7.2 ou PHP 7.3, vous pouvez utiliser la version 1.0 :
+[DAW PHP Validator 1.1](https://github.com/stephweb/daw-php-validator/tree/1.1)
 
 
 
@@ -67,7 +70,7 @@ L'objectif est de vérifier les données soumises, ce qui est indispensable pour
 
 Installation via Composer :
 ```
-php composer.phar require stephweb/daw-php-validator
+php composer.phar require stephweb/daw-php-validator 2.0.*
 ```
 
 

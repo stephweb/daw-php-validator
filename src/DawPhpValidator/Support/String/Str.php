@@ -14,7 +14,7 @@ class Str
      *
      * @var array
      */
-    private static $camelCache = [];
+    private static array $camelCache = [];
     
     /**
      * Pour remplacer format snake_case par format camelCase

@@ -16,7 +16,7 @@ final class Message
     /**
      * @var ValidatorInterface
      */
-    private $validator;
+    private ValidatorInterface $validator;
 
     /**
      * Message constructor.

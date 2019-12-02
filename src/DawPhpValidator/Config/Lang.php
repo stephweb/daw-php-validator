@@ -16,12 +16,12 @@ final class Lang extends SingletonConfig
     /**
      * @var Lang
      */
-    protected static $instance;
+    protected static ?self $instance = null;
 
     /**
      * @var array
      */
-    private static $require = [];
+    private static array $require = [];
 
     /**
      * Pour charger fichier(s) de lang

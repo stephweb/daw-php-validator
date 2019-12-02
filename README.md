@@ -14,7 +14,7 @@ DAW PHP Validator is a Open Source PHP library of simple validation system.
 
 Package developed by:
 [Développeur web Freelance](https://www.devandweb.fr)
-[![Developpeur PHP Freelance](https://www.devandweb.fr/medias/website/developpeur-web.png)](https://www.devandweb.fr/freelance/developpeur-php)
+[![Developpeur PHP Freelance](https://www.devandweb.fr/medias/app/website/developpeur-web.png)](https://www.devandweb.fr/freelance/developpeur-php)
 
 
 
@@ -54,7 +54,10 @@ You also have many other features.
 
 ### Requirements
 
-* PHP >= 7.0
+* PHP >= 7.4
+
+If you want an accounting with PHP 7.0 or 7.1 or PHP 7.2 or PHP 7.3, you can use version 1.0:
+[DAW PHP Validator 1.1](https://github.com/stephweb/daw-php-validator/tree/1.1)
 
 
 
@@ -74,7 +77,7 @@ You also have many other features.
 
 Installation via Composer:
 ```
-php composer.phar require stephweb/daw-php-validator 1.1.*
+php composer.phar require stephweb/daw-php-validator 2.0.*
 ```
 
 

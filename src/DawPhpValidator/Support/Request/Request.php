@@ -12,9 +12,9 @@ use DawPhpValidator\Support\Request\Bags\ParameterBag;
 class Request
 {
     /**
-     * @var array - $_POST
+     * @var ParameterBag - $_POST
      */
-    private $post;
+    private ParameterBag $post;
 
     /**
      * Request Constructor.

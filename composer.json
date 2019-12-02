@@ -19,10 +19,10 @@
         "docs": "https://github.com/stephweb/daw-php-validator/tree/master/docs/en"
     },
     "require": {
-        "php": ">=7.0"
+        "php": ">=7.4"
     },
     "require-dev": {
-        "phpunit/phpunit": "6.0.*"
+        "phpunit/phpunit": "8.4.*"
     },
     "autoload": {
         "psr-4" : {

@@ -14,7 +14,7 @@ class ParameterBag
      *
      * @var array
      */
-    private $parameters;
+    private array $parameters;
 
     /**
      * ParameterBag Constructor.

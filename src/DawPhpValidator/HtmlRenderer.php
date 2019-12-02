@@ -16,7 +16,7 @@ final class HtmlRenderer implements RendererInterface
     /**
      * @var ValidatorInterface
      */
-    private $validator;
+    private ValidatorInterface $validator;
     
 	/**
 	 * HtmlRender constructor.

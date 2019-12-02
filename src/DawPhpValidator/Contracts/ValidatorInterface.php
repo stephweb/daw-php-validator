@@ -26,27 +26,27 @@ Interface ValidatorInterface
      * @param string $message
      * @throws ValidatorException
      */
-    public static function extend(string $rule, callable $callable, string $message);
+    public static function extend(string $rule, callable $callable, string $message): void;
     
     /**
      * Vérification des données soumises
      *
      * @param array $params
      */
-    public function rules(array $params);
+    public function rules(array $params): void;
 
     /**
      * @param string $input
      * @param string $error
      */
-    public function addErrorWithInput(string $input, string $error);
+    public function addErrorWithInput(string $input, string $error): void;
 
     /**
      * Pour éventuellemnt ajouter des traitements "à la volé" dans controllers
      *
      * @param string $error
      */
-    public function addError(string $error);
+    public function addError(string $error): void;
 
     /**
      * @return bool - True si formulaire soumis est valide, false si pas valide

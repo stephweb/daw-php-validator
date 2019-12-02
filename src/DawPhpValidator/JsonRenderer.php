@@ -17,7 +17,7 @@ final class JsonRenderer implements RendererInterface
     /**
      * @var ValidatorInterface
      */
-    private $validator;
+    private ValidatorInterface $validator;
 
 	/**
 	 * JsonRenderer constructor.
