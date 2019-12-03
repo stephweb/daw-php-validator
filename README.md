@@ -54,7 +54,7 @@ You also have many other features.
 
 ### Requirements
 
-* PHP >= 7.0
+* PHP : 7.0 || 7.1 || 7.2 || 7.3
 
 
 
