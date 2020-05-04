@@ -22,7 +22,7 @@
         "php": ">=7.4"
     },
     "require-dev": {
-        "phpunit/phpunit": "8.4.*"
+        "phpunit/phpunit": "8.5.*"
     },
     "autoload": {
         "psr-4" : {
@@ -31,7 +31,23 @@
     },
     "scripts": {
         "tests": [
-            "phpunit -c phpunit.xml"
+            "php ./vendor/phpunit/phpunit/phpunit"
+        ],
+        "test-class": [
+            "php ./vendor/phpunit/phpunit/phpunit --filter"
+        ],
+
+        "co-i": [
+            "composer install --no-plugins --no-scripts"
+        ],
+        "co-u": [
+            "composer update --no-plugins --no-scripts"
+        ],
+        "co-s": [
+            "composer self-update"
+        ],
+        "co-d": [
+            "composer dump-autoload"
         ]
     },
     "minimum-stability": "dev",

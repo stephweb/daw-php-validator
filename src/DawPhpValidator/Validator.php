@@ -154,7 +154,7 @@ final class Validator implements ValidatorInterface
     {
         self::setLangValidation();
 
-        if (array_key_exists($rule, self::$langValidation)) {
+        if (array_key_exists($rule, self::$extends)) {
             throw new ValidatorException('Rule "'.$rule.'" already exists.');
         }
 
